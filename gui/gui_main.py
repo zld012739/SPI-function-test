@@ -40,7 +40,7 @@ class App:
         
         #测试开始按钮
         start_wid = Button(self.master, width = 18,height = 2, text = '开始测试')
-        start_wid.bind('<Button-1>', lambda event : serialset_gui.uart_send())
+        start_wid.bind('<Button-1>', lambda event : serialset_gui.uart_open(self.scr))
         start_wid.place(x = 660, y = 480)
         
         

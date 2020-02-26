@@ -8,6 +8,13 @@ import tkinter.filedialog
 
 filenames = ''
 ser = 0
+comport_new = ''
+bpsport_new = '115200'
+
+def com_bpsset(com,bps):
+    global comport_new, bpsport_new
+    comport_new = com.get()
+    bpsport_new = bps.get()
 
 def  getcom():
     port_list = list(serial.tools.list_ports.comports())
@@ -23,13 +30,13 @@ def thread_recv(text_handel):
         try:
             read = ser.readall()
             if len(read) > 0:
-                text_handel.insert(END, bytes(read).decode('gb2312'))
+                text_handel.insert(END, bytes(read).decode('gb2312')+'\n')
         except Exception as e:
             pass
     
-def uart_open(com,bps,text_handel):
-    global ser
-    ser = serial.Serial(port = com, baudrate = int(bps), timeout = 0.2)
+def uart_open(text_handel):
+    global ser,bpsport_new,comport_new
+    ser = serial.Serial(port = comport_new, baudrate = int(bpsport_new), timeout = 0.2)
     if ser.is_open:
         pass
     else:
@@ -47,33 +54,8 @@ def uart_open(com,bps,text_handel):
     # except Exception:
         # pass
         
-    print(com,bps)
+    print(comport_new,bpsport_new)
 
-
-# def serial_paraset(text_handel):
-    # top = Toplevel()
-    # top.title('串口设置')
-    # top.geometry('720x500+150+150')
-    # label_com = Label(top, text = '串口号',height = 2).place(x = 20,y = 36,width = 40,height = 30)
-    # label_bps = Label(top, text = '波特率',height = 2).place(x = 20,y = 72,width = 40,height = 30)
-    
-    # #串口设置
-    # varport = StringVar()
-    # combo_com = ttk.Combobox(top, textvariable = varport, width = 8, height = 2, justify = CENTER)
-    # combo_com['value'] = com_list
-    # combo_com.current(1)
-    # combo_com.place(x = 80, y=36, width = 80, height = 30)
-    
-    # #波特率设置
-    # varbitrate = StringVar()
-    # combo_bps = ttk.Combobox(top, textvariable = varbitrate, width = 8 ,height = 2, justify = CENTER)
-    # combo_bps['value'] = ('9600','19200','38400','115200','230400')
-    # combo_bps.current(1)
-    # combo_bps.place(x = 80, y = 72, width = 80, height = 30)
-    
-    # make_set = Button(top,text = '确定',width = 18, height = 2)
-    # make_set.bind('<Button-1>', lambda event : uart_open(combo_com.get(),combo_bps.get(),text_handel))
-    # make_set.place(x = 520,y=420)
 def serial_paraset():
     top = Toplevel()
     top.title('串口设置')
@@ -96,7 +78,7 @@ def serial_paraset():
     combo_bps.place(x = 80, y = 72, width = 80, height = 30)
     
     make_set = Button(top,text = '确定',width = 18, height = 2)
-    make_set.bind('<Button-1>', lambda event : uart_open(combo_com.get(),combo_bps.get(),text_handel))
+    make_set.bind('<Button-1>', lambda event : com_bpsset(combo_com,combo_bps))
     make_set.place(x = 520,y=420)
 
 def file_select():
