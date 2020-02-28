@@ -6,8 +6,10 @@ import threading
 import tkinter.filedialog
 import re
 import tkinter.messagebox as tm
+import time
 
 filenames = ''
+vfilenames = ''
 ser = 0
 comport_new = ''
 bpsport_new = '115200'
@@ -46,36 +48,45 @@ def thread_recv(text_handel):
         except Exception as e:
             pass
 
-def thread_send():
+def thread_send(text_handel):
     global ser
 
-    global filenames
+    global filenames,vfilenames
     f = open(filenames)
     f_lines = f.readlines()
     f.close()
     for index in f_lines:
         ser.write(index.encode('gb2312'))
+        text_handel.insert(END, index+'\n')
+        time.sleep(0.1)
+        read = ser.readall()
+        if len(read) > 0:
+            text_handel.insert(END, bytes(read).decode('gb2312')+'\n')
    
 def uart_open(text_handel):
     global ser,bpsport_new,comport_new,filenames
-
-    if ser != 0:
-        ser.close()
-    ser = serial.Serial(port = comport_new, baudrate = int(bpsport_new), timeout = 0.2)
-    if ser.is_open:
-        pass
+    if comport_new == '':
+        port_selectwarn = threading.Thread(target = tm.showwarning,args = ('提示','没有选择串口！'),name = 'T4')
+        port_selectwarn.start()
     else:
-        ser.open()
-    # recv_data = threading.Thread(target = thread_recv,args = (text_handel,),name = 'T1')
-    # recv_data.setDaemon(True)
-    # recv_data.start()
-    if re.match('.*txt',filenames):
-        send_data = threading.Thread(target = thread_send,name = 'T2')
-        send_data.setDaemon(True)
-        send_data.start()
-    else:
-        file_selectwarn = threading.Thread(target = tm.showwarning,args = ('提示','文件选择错误！'),name = 'T3')
-        file_selectwarn.start()
+        if ser != 0:
+            ser.close()
+        ser = serial.Serial(port = comport_new, baudrate = int(bpsport_new), timeout = 0.2)
+        if ser.is_open:
+            pass
+        else:
+            ser.open()
+        # recv_data = threading.Thread(target = thread_recv,args = (text_handel,),name = 'T1')
+        # recv_data.setDaemon(True)
+        # recv_data.start()
+        #if re.match('.*txt',filenames) && re.match('.*txt',vfilenames):
+        if re.match('.*txt',filenames):
+            send_data = threading.Thread(target = thread_send,args = (text_handel,),name = 'T2')
+            send_data.setDaemon(True)
+            send_data.start()
+        else:
+            file_selectwarn = threading.Thread(target = tm.showwarning,args = ('提示','文件选择错误！'),name = 'T3')
+            file_selectwarn.start()
 
 def serial_paraset():
     global top,bpsport_new,comport_new
@@ -125,5 +136,9 @@ def serial_paraset():
 def file_select():
     global filenames
     filenames = tkinter.filedialog.askopenfilename()
+    
+def vfile_select():
+    global vfilenames
+    vfilenames = tkinter.filedialog.askopenfilename()
     
     

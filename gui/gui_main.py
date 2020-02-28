@@ -14,6 +14,7 @@ class App:
         filemenu = Menu(self.menubar,tearoff = 0)
         self.menubar.add_cascade(label='文件',menu = filemenu)
         filemenu.add_command(label = '选择测试文件',command = serialset_gui.file_select)
+        filemenu.add_command(label = '选择验证文件',command = serialset_gui.vfile_select)
         filemenu.add_separator()
         filemenu.add_command(label = '退出',command = self.master.quit)
         
