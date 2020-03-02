@@ -1,0 +1,1 @@
+Step1:Test data is transmitted MSB first from the UUT, Read Product ID register (0x56)#56

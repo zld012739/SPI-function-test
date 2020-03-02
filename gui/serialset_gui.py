@@ -15,6 +15,8 @@ comport_new = ''
 bpsport_new = '115200'
 top = 0
 buadrate_list = ['9600','19200','38400','115200','230400']
+log_filepath = 'F:\\IMU383_SPI_AUTOTEST'
+t = []
 def message_askokcancel(title, info):
     file_warn = Tk()
     file_warn.withdraw()
@@ -50,18 +52,35 @@ def thread_recv(text_handel):
 
 def thread_send(text_handel):
     global ser
-
     global filenames,vfilenames
+    current_time = time.strftime('%Y_%m_%d_%H_%M_%S',time.localtime(time.time()))
     f = open(filenames)
     f_lines = f.readlines()
     f.close()
-    for index in f_lines:
-        ser.write(index.encode('gb2312'))
-        text_handel.insert(END, index+'\n')
+    fv = open(vfilenames)
+    fv_lines = fv.readlines()
+    fv.close()
+    f_log =  open((log_filepath+'\\spi_function_test_log_%s.txt')%current_time,'a+')
+    for index in range(len(f_lines)):
+        send_split = f_lines[index].split('#')
+        ser.write(bytes.fromhex(send_split[1][:-1]))
+        current_time = time.strftime('%Y_%m_%d_%H:%M:%S',time.localtime(time.time()))
+        text_handel.insert(END, current_time+'    ' + send_split[0]+'\n')
+        f_log.write(current_time+'    '+send_split[0]+'\n')
         time.sleep(0.1)
         read = ser.readall()
         if len(read) > 0:
-            text_handel.insert(END, bytes(read).decode('gb2312')+'\n')
+            current_time = time.strftime('%Y_%m_%d_%H:%M:%S',time.localtime(time.time()))
+            t.append(fv_lines[index])
+            t.append(bytes(read).decode('gb2312'))
+            print(t)
+            if fv_lines[index][:-1] == bytes(read).decode('gb2312'):
+                result_com = '------PASS'
+            else:
+                result_com = '------FALL'
+            text_handel.insert(END, current_time+'    '+bytes(read).decode('gb2312')+result_com+'\n')
+            f_log.write(current_time+'    '+bytes(read).decode('gb2312')+result_com+'\n')
+    f_log.close()
    
 def uart_open(text_handel):
     global ser,bpsport_new,comport_new,filenames
@@ -80,7 +99,7 @@ def uart_open(text_handel):
         # recv_data.setDaemon(True)
         # recv_data.start()
         #if re.match('.*txt',filenames) && re.match('.*txt',vfilenames):
-        if re.match('.*txt',filenames):
+        if re.match('.*Cfile.txt',filenames) and re.match('.*Vfile.txt',vfilenames):
             send_data = threading.Thread(target = thread_send,args = (text_handel,),name = 'T2')
             send_data.setDaemon(True)
             send_data.start()
