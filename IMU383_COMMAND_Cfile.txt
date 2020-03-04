@@ -1,1 +1,35 @@
-Step1:Test data is transmitted MSB first from the UUT, Read Product ID register (0x56)#56
+default_check#Step1:Test data is transmitted MSB first from the UUT, Read Product ID register (0x56)#560A
+default_check#Step2:Read 0x01 register to verify that default value is 0x18#010A
+default_check#Step3:Read 0x02 register to verify that default value is 0x00#020A
+default_check#Step4:Read 0x03 register to verify that default value is 0x00#030A
+default_check#Step5:Read 0x1A register to verify that default value is 0xFF#1A0A
+default_check#Step6:Read 0x1B register to verify that default value is 0xFF#1B0A
+default_check#Step7:Read 0x1C register to verify that default value is 0xFF#1C0A
+default_check#Step8:Read 0x1D register to verify that default value is 0x00#1D0A
+default_check#Step9:Read 0x34 register to verify that default value is 0x04#340A
+default_check#Step10:Read 0x37 register to verify that default value is 0x01#370A
+default_check#Step11:Read 0x38 register to verify that default value is 0x06#380A
+default_check#Step12:Read 0x39 register to verify that default value is 0x02#390A
+default_check#Step13:Read 0x54 register to verify that default value is 0x00#540A
+default_check#Step14:Read 0x74 register to verify that default value is 0x00#740A
+default_check#Step15:Read 0x75 register to verify that default value is 0x00#750A
+default_check#Step16:Read 0x78 register to verify that default value is 0x06AB or 0x46AB#780A
+default_check#Step17:Read 0x7E register to verify that default value is 0x00#7E0A
+default_check#Step18:Read 0x7F register to verify that default value is 0x00#7F0A
+default_check#Step19:Read 0x56 register to verify that default value is 0x38#560A
+default_check#Step20:Read 0x57 register to verify that default value is 0x13#570A
+read_only#Step21:0x1D register is read-only (Sensor Status, Chip1) test#1D560A
+read_only#Step22:0x1E register is read-only (Sensor Status, Chip2) test#1E560A
+read_only#Step23:0x1F register is read-only (Sensor Status, Chip3) test#1F560A
+read_only#Step24:0x3C register is read-only (Status) test#3C560A
+read_only#Step25:0x3E register is read-only (Standard Burst) test#3E560A
+read_only#Step26:0x3F register is read-only (Extended Burst) test#3F560A
+read_only#Step27:0x52 register is read-only (Manufacturing Code information) test#52560A
+read_only#Step28:0x54 register is read-only (Unit Code information) test#54560A
+read_only#Step29:0x56 register is read-only (Product ID Status information - High Byte) test#56560A
+read_only#Step30:0x57 register is read-only (Product ID Status information - Low Byte) test#57560A
+read_only#Step31:0x58 register is read-only (Serial Number information) test#58560A
+read_only#Step32:0x78 register is read-only (Boot Status) test#78560A
+read_only#Step33:0x7E register is read-only (Software Version information) test#7E560A
+read_only#Step34:0x7F register is read-only (Hardware Version information) test#7F560A
+configuration_verification#Step35:Write 0x09 to the ODR(0x37) register verify that value in ODR register changes to 0x09#37090A
