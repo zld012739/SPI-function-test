@@ -31,21 +31,26 @@ def default_check(text_handel,address,descript,f_log,fv_lines,index,type):
     read = ser.readall()
     if len(read) > 0:
         current_time = time.strftime('%Y_%m_%d_%H:%M:%S',time.localtime(time.time()))
-        if type == 'default_check':
+        if type == 'default_check1':
             if fv_lines[index][:-1] == bytes(read).decode('gb2312'):
                 result_com = '------PASS'
             else:
-                result_com = '------FALL'
+                result_com = '------FAIL'
         elif type == 'read_only':
             if re.match(fv_lines[index][:-1]+'.{2}',bytes(read).decode('gb2312')):
-                result_com = '------FALL'
+                result_com = '------FAIL'
             else:
                 result_com = '------PASS'
-        elif type == 'configuration_verification':
-            if re.match(fv_lines[index][:-1]+'.{2}',bytes(read).decode('gb2312')):
+        elif type == 'configuration_verification' or type == 'default_check':
+            if re.match(fv_lines[index][:-1]+'.*',bytes(read).decode('gb2312')):
                 result_com = '------PASS'
             else:
-                result_com = '------FALL'
+                result_com = '------FAIL'
+        elif type == 'burst_sp':
+            if re.match(fv_lines[index][:-1]+'.*',bytes(read).decode('gb2312').split('\n')[1][:-1]):
+                result_com = '------PASS'
+            else:
+                result_com = '------FAIL'
         text_handel.insert(END, current_time+'    '+bytes(read).decode('gb2312')+result_com+'\n')
         f_log.write(current_time+'    '+bytes(read).decode('gb2312')+result_com+'\n')
 
@@ -97,7 +102,7 @@ def thread_send(text_handel):
     f_log =  open((log_filepath+'\\spi_function_test_log_%s.txt')%current_time,'a+')
     for index in range(len(f_lines)):
         send_split = f_lines[index].split('#')
-        if send_split[0] == 'default_check' or send_split[0] == 'read_only' or send_split[0] == 'configuration_verification':
+        if send_split[0] == 'default_check' or send_split[0] == 'default_check1' or send_split[0] == 'read_only' or send_split[0] == 'configuration_verification' or send_split[0] == 'burst_sp':
             default_check(text_handel,send_split[2][:-1],send_split[1],f_log,fv_lines,index,send_split[0])
             
     f_log.close()

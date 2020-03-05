@@ -1,4 +1,4 @@
-default_check#Step1:Test data is transmitted MSB first from the UUT, Read Product ID register (0x56)#560A
+default_check1#Step1:Test data is transmitted MSB first from the UUT, Read Product ID register (0x56)#560A
 default_check#Step2:Read 0x01 register to verify that default value is 0x18#010A
 default_check#Step3:Read 0x02 register to verify that default value is 0x00#020A
 default_check#Step4:Read 0x03 register to verify that default value is 0x00#030A
@@ -10,10 +10,10 @@ default_check#Step9:Read 0x34 register to verify that default value is 0x04#340A
 default_check#Step10:Read 0x37 register to verify that default value is 0x01#370A
 default_check#Step11:Read 0x38 register to verify that default value is 0x06#380A
 default_check#Step12:Read 0x39 register to verify that default value is 0x02#390A
-default_check#Step13:Read 0x54 register to verify that default value is 0x00#540A
+default_check1#Step13:Read 0x54 register to verify that default value is 0x0000#540A
 default_check#Step14:Read 0x74 register to verify that default value is 0x00#740A
 default_check#Step15:Read 0x75 register to verify that default value is 0x00#750A
-default_check#Step16:Read 0x78 register to verify that default value is 0x06AB or 0x46AB#780A
+default_check1#Step16:Read 0x78 register to verify that default value is 0x06AB or 0x46AB#780A
 default_check#Step17:Read 0x7E register to verify that default value is 0x00#7E0A
 default_check#Step18:Read 0x7F register to verify that default value is 0x00#7F0A
 default_check#Step19:Read 0x56 register to verify that default value is 0x38#560A
@@ -33,3 +33,13 @@ read_only#Step32:0x78 register is read-only (Boot Status) test#78560A
 read_only#Step33:0x7E register is read-only (Software Version information) test#7E560A
 read_only#Step34:0x7F register is read-only (Hardware Version information) test#7F560A
 configuration_verification#Step35:Write 0x09 to the ODR(0x37) register verify that value in ODR register changes to 0x09#37090A
+configuration_verification#Step36:Write 0x06 to the ODR(0x37) register verify that value in ODR register changes to 0x09#37060A
+configuration_verification#Step37:Write 0x00 to 0x1A to disable Chip1 verify that value in register is 0x00#1A000A
+configuration_verification#Step38:Write 0x00 to 0x1B to disable Chip2 verify that value in register is 0x00#1B000A
+configuration_verification#Step39:Write 0x00 to 0x1C to disable Chip3 verify that value in register is 0x00#1C000A
+burst_sp#Step40:Accel and Rate-Sensor data in Standard Data packet is 0#3E0A
+configuration_verification#Step41:Write 0xFF to 0x1A to disable Chip1 verify that value in register is 0xFF#1AFF0A
+configuration_verification#Step42:Write 0xFF to 0x1B to disable Chip2 verify that value in register is 0xFF#1BFF0A
+configuration_verification#Step43:Write 0xFF to 0x1C to disable Chip3 verify that value in register is 0xFF#1CFF0A
+configuration_verification#Step44:Write 0x00 to DRDY register(0x34) and verify that DRDY is not set active#34000A
+configuration_verification#Step45:Write 0x04 to DRDY register(0x34) and verify that DRDY is set active#34040A
