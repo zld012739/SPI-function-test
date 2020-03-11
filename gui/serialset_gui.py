@@ -8,7 +8,9 @@ import re
 import tkinter.messagebox as tm
 import time
 import os
+from openpyxl import Workbook
 
+excel_line = 2
 fail_num = 0
 filenames = ''
 vfilenames = ''
@@ -43,8 +45,8 @@ def packet_1M_check(file):
                 fail_num = fail_num + 1
                 break
 
-def default_check(text_handel,address,descript,f_log,fv_lines,index,type):
-    global ser,fail_num,test_steps
+def default_check(text_handel,address,descript,f_log,fv_lines,index,type,ws):
+    global ser,fail_num,test_steps,excel_line
     ser.write(bytes.fromhex(address))
     current_time = time.strftime('%Y_%m_%d_%H:%M:%S',time.localtime(time.time()))
     text_handel.insert(END, current_time+'    ' +'Step%d:'%test_steps+descript+'\n')
@@ -59,16 +61,29 @@ def default_check(text_handel,address,descript,f_log,fv_lines,index,type):
                 result_com = '------PASS'
             else:
                 result_com = '------FAIL'
+            ws.cell(row = excel_line,column = 1,value = descript)
+            ws.cell(row = excel_line,column = 3,value = fv_lines[index][:-1])
+            ws.cell(row = excel_line,column = 4,value = bytes(read).decode('gb2312'))
+            ws.cell(row = excel_line,column = 5,value = result_com)
         elif type == 'read_only':
             if re.match(fv_lines[index][:-1]+'.{2}',bytes(read).decode('gb2312')):
                 result_com = '------FAIL'
             else:
                 result_com = '------PASS'
+            ws.cell(row = excel_line,column = 1,value = descript)
+            ws.cell(row = excel_line,column = 2,value = fv_lines[index][:-1])
+            ws.cell(row = excel_line,column = 3,value = 'NOT'+fv_lines[index][:-1])
+            ws.cell(row = excel_line,column = 4,value = bytes(read).decode('gb2312'))
+            ws.cell(row = excel_line,column = 5,value = result_com)
         elif type == 'configuration_verification' or type == 'default_check':
             if re.match(fv_lines[index][:-1]+'.*',bytes(read).decode('gb2312')):
                 result_com = '------PASS'
             else:
                 result_com = '------FAIL'
+            ws.cell(row = excel_line,column = 1,value = descript)
+            ws.cell(row = excel_line,column = 3,value = fv_lines[index][:-1])
+            ws.cell(row = excel_line,column = 4,value = bytes(read).decode('gb2312'))
+            ws.cell(row = excel_line,column = 5,value = result_com)
         elif type == 'burst_sp':
             if fv_lines[index][:-1] == '0000':
                 if(re.match('0000     0.0000     0.0000     0.0000    0.0000    0.0000    0.0000.*',bytes(read).decode('gb2312').split('\n')[1][:-1])):
@@ -84,10 +99,15 @@ def default_check(text_handel,address,descript,f_log,fv_lines,index,type):
                     result_com = '------PASS'
                 else:
                     result_com = '------FAIL'
+            ws.cell(row = excel_line,column = 1,value = descript)
+            ws.cell(row = excel_line,column = 5,value = result_com)
         elif type == 'power_cycle':
             time.sleep(2)
             result_com = '------PASS'
+            ws.cell(row = excel_line,column = 1,value = descript)
+            ws.cell(row = excel_line,column = 5,value = result_com)
         else:
+            ws.cell(row = excel_line,column = 1,value = descript)
             result_com = '------NO NEED MATCH!'
         if re.match('.*FAIL',result_com):
             fail_num = fail_num + 1
@@ -127,6 +147,7 @@ def thread_recv(text_handel,data_packets):
         data_packets.write(bytes(read).decode('gb2312'))
 
 def thread_send(text_handel):
+    global excel_line
     global ser,test_steps,fail_num,result_com
     global filenames,vfilenames
     current_time = time.strftime('%Y_%m_%d_%H_%M_%S',time.localtime(time.time()))
@@ -137,6 +158,14 @@ def thread_send(text_handel):
     fv_lines = fv.readlines()
     fv.close()
     f_log =  open((log_filepath+'\\spi_function_test_log_%s.txt')%current_time,'a+')
+    wb = Workbook()
+    ws = wb.active
+    ws.title = 'SPI function test result'
+    ws['A1'] = 'Tset name'
+    ws['B1'] = 'Valu set'
+    ws['C1'] = 'Expected outpt'
+    ws['D1'] = 'Actual outpt'
+    ws['E1'] = 'Result'
     for index in range(len(f_lines)):
         send_split = f_lines[index].split('#')
         if send_split[0] == 'end of command file':
@@ -163,11 +192,15 @@ def thread_send(text_handel):
             current_time = time.strftime('%Y_%m_%d_%H:%M:%S',time.localtime(time.time()))
             text_handel.insert(END, current_time+'    '+result_com+'\n')
             f_log.write(current_time+'    '+result_com+'\n')
+            ws.cell(row = excel_line,column = 1,value = send_split[0])
+            ws.cell(row = excel_line,column = 5,value = result_com)
         else:
-            default_check(text_handel,send_split[2][:-1],send_split[1],f_log,fv_lines,index,send_split[0])
+            default_check(text_handel,send_split[2][:-1],send_split[1],f_log,fv_lines,index,send_split[0],ws)
+            excel_line += 1
             
     f_log.close()
-
+    current_time = time.strftime('%Y_%m_%d_%H_%M_%S',time.localtime(time.time()))
+    wb.save((log_filepath+'\\spi_result_%s.xlsx')%current_time)
 def uut_uart():
     global ser1,bpsport_new1,comport_new1
     ser1 = serial.Serial(port = comport_new1, baudrate = int(bpsport_new1), timeout = 0.2)
