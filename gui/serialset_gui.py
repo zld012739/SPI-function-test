@@ -7,7 +7,9 @@ import tkinter.filedialog
 import re
 import tkinter.messagebox as tm
 import time
+import os
 
+fail_num = 0
 filenames = ''
 vfilenames = ''
 ser = 0
@@ -20,16 +22,37 @@ top = 0
 buadrate_list = ['9600','19200','38400','115200','230400']
 log_filepath = 'F:\\IMU383_SPI_AUTOTEST'
 t = []
+test_steps = 1
+result_com = ''
+
+def packet_1M_check(file):
+    global result_com,fail_num
+    f = open(log_filepath+'\\spi_data_packet.txt','r')
+    f_lines = f.readlines()
+    f.close()
+    for line in f_lines:
+        if re.match('0000.*',line):
+            line_list = line[:-1].split()
+            burst_list_int = []
+            for cell in line_list:
+                burst_list_int.append(abs(float(cell)))
+            if(0<=burst_list_int[1]<1 and 0<=burst_list_int[2]<1 and 0<=burst_list_int[3]<1 and 0<=burst_list_int[4]<0.1 and 0<=burst_list_int[5]<0.1 and 0.9<burst_list_int[6]<=1.1):
+                result_com = '------PASS'
+            else:
+                result_com = '------FAIL'
+                fail_num = fail_num + 1
+                break
 
 def default_check(text_handel,address,descript,f_log,fv_lines,index,type):
-    global ser
+    global ser,fail_num,test_steps
     ser.write(bytes.fromhex(address))
     current_time = time.strftime('%Y_%m_%d_%H:%M:%S',time.localtime(time.time()))
-    text_handel.insert(END, current_time+'    ' +descript+'\n')
-    f_log.write(current_time+'    '+descript+'\n')
+    text_handel.insert(END, current_time+'    ' +'Step%d:'%test_steps+descript+'\n')
+    f_log.write(current_time+'    '+'Step%d:'%test_steps+descript+'\n')
+    test_steps += 1
     time.sleep(0.1)
     read = ser.readall()
-    if len(read) > 0:
+    if len(read) > 0 or type == 'power_cycle' or type == 'write_only':
         current_time = time.strftime('%Y_%m_%d_%H:%M:%S',time.localtime(time.time()))
         if type == 'default_check1':
             if fv_lines[index][:-1] == bytes(read).decode('gb2312'):
@@ -47,10 +70,27 @@ def default_check(text_handel,address,descript,f_log,fv_lines,index,type):
             else:
                 result_com = '------FAIL'
         elif type == 'burst_sp':
-            if re.match(fv_lines[index][:-1]+'.*',bytes(read).decode('gb2312').split('\n')[1][:-1]):
-                result_com = '------PASS'
+            if fv_lines[index][:-1] == '0000':
+                if(re.match('0000     0.0000     0.0000     0.0000    0.0000    0.0000    0.0000.*',bytes(read).decode('gb2312').split('\n')[1][:-1])):
+                    result_com = '------PASS'
+                else:
+                    result_com = '------FAIL'
             else:
-                result_com = '------FAIL'
+                burst_list = bytes(read).decode('gb2312').split('\n')[1][:-1].split()
+                burst_list_int = []
+                for cell in burst_list:
+                    burst_list_int.append(abs(float(cell)))
+                if(0<=burst_list_int[1]<1 and 0<=burst_list_int[2]<1 and 0<=burst_list_int[3]<1 and 0<=burst_list_int[4]<0.1 and 0<=burst_list_int[5]<0.1 and 0.9<burst_list_int[6]<=1.1):
+                    result_com = '------PASS'
+                else:
+                    result_com = '------FAIL'
+        elif type == 'power_cycle':
+            time.sleep(2)
+            result_com = '------PASS'
+        else:
+            result_com = '------NO NEED MATCH!'
+        if re.match('.*FAIL',result_com):
+            fail_num = fail_num + 1
         text_handel.insert(END, current_time+'    '+bytes(read).decode('gb2312')+result_com+'\n')
         f_log.write(current_time+'    '+bytes(read).decode('gb2312')+result_com+'\n')
 
@@ -79,18 +119,15 @@ def  getcom():
     return serial_com
 
 
-def thread_recv(text_handel):
+def thread_recv(text_handel,data_packets):
     global ser
-    while True:
-        try:
-            read = ser.readall()
-            if len(read) > 0:
-                text_handel.insert(END, bytes(read).decode('gb2312')+'\n')
-        except Exception as e:
-            pass
+    read = ser.readline()
+    if len(read) > 0:
+        text_handel.insert(END, '*')
+        data_packets.write(bytes(read).decode('gb2312'))
 
 def thread_send(text_handel):
-    global ser
+    global ser,test_steps,fail_num,result_com
     global filenames,vfilenames
     current_time = time.strftime('%Y_%m_%d_%H_%M_%S',time.localtime(time.time()))
     f = open(filenames)
@@ -102,7 +139,31 @@ def thread_send(text_handel):
     f_log =  open((log_filepath+'\\spi_function_test_log_%s.txt')%current_time,'a+')
     for index in range(len(f_lines)):
         send_split = f_lines[index].split('#')
-        if send_split[0] == 'default_check' or send_split[0] == 'default_check1' or send_split[0] == 'read_only' or send_split[0] == 'configuration_verification' or send_split[0] == 'burst_sp':
+        if send_split[0] == 'end of command file':
+            current_time = time.strftime('%Y_%m_%d_%H:%M:%S',time.localtime(time.time()))
+            text_handel.insert(END, current_time+'    '+'All fail %d steps'%fail_num+'\n')
+            f_log.write(current_time+'    '+'All fail %d steps'%fail_num+'\n')
+            test_steps = 1
+            fail_num = 0
+        elif send_split[0] == '1M data packets check with ODR 200Hz':
+            if os.path.exists(log_filepath+'\\spi_data_packet.txt'):
+                os.remove(log_filepath+'\\spi_data_packet.txt')
+            data_packets =  open((log_filepath+'\\spi_data_packet.txt'),'a+')
+            ser.write(bytes.fromhex('3E00000A'))
+            current_time = time.strftime('%Y_%m_%d_%H:%M:%S',time.localtime(time.time()))
+            text_handel.insert(END, current_time+'    ' +'Step%d:'%test_steps+send_split[0]+'\n')
+            f_log.write(current_time+'    '+'Step%d:'%test_steps+send_split[0]+'\n')
+            test_steps += 1
+            time.sleep(0.1)
+            for read_index in range(1000):
+                thread_recv(text_handel,data_packets)
+            data_packets.close()
+            packet_1M_check(log_filepath+'\\spi_data_packet.txt')
+            text_handel.insert(END,'\n')
+            current_time = time.strftime('%Y_%m_%d_%H:%M:%S',time.localtime(time.time()))
+            text_handel.insert(END, current_time+'    '+result_com+'\n')
+            f_log.write(current_time+'    '+result_com+'\n')
+        else:
             default_check(text_handel,send_split[2][:-1],send_split[1],f_log,fv_lines,index,send_split[0])
             
     f_log.close()
