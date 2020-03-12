@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<Workspace>
+  <ConfigDictionary>
+    
+  <CurrentConfigs><Project>salvo/Debug</Project></CurrentConfigs></ConfigDictionary>
+  <Desktop>
+    <Static>
+      <Workspace>
+        <ColumnWidths>
+          
+          
+          
+          
+        <Column0>330</Column0><Column1>27</Column1><Column2>27</Column2><Column3>27</Column3></ColumnWidths>
+      </Workspace>
+      <Build>
+        
+        
+        
+        
+      <ColumnWidth0>20</ColumnWidth0><ColumnWidth1>921</ColumnWidth1><ColumnWidth2>245</ColumnWidth2><ColumnWidth3>61</ColumnWidth3></Build>
+    <Find-in-Files><ColumnWidth0>442</ColumnWidth0><ColumnWidth1>63</ColumnWidth1><ColumnWidth2>759</ColumnWidth2></Find-in-Files></Static>
+    <Windows>
+      
+      
+    <Wnd0>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-23899-32687</Identity>
+            <TabName>Workspace</TabName>
+            <Factory>Workspace</Factory>
+            <Session>
+              
+            <NodeDict><ExpandedNode>salvo</ExpandedNode><ExpandedNode>salvo/src</ExpandedNode></NodeDict></Session>
+          </Tab>
+        </Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd0><Wnd1>
+        <Tabs>
+          <Tab>
+            <Identity>TabID-20972-3044</Identity>
+            <TabName>Build</TabName>
+            <Factory>Build</Factory>
+            <Session/>
+          </Tab>
+        <Tab><Identity>TabID-30881-18697</Identity><TabName>Find in Files</TabName><Factory>Find-in-Files</Factory><Session/></Tab></Tabs>
+        
+      <SelectedTab>0</SelectedTab></Wnd1></Windows>
+    <Editor>
+      
+      
+      
+      
+    <Pane><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Src\IARARM\salvoportiararm.s79</Filename><XPos>0</XPos><YPos>123</YPos><SelStart>5542</SelStart><SelEnd>5542</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Inc\salvolib.h</Filename><XPos>0</XPos><YPos>963</YPos><SelStart>35895</SelStart><SelEnd>35895</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Inc\salvofpt.h</Filename><XPos>0</XPos><YPos>450</YPos><SelStart>13148</SelStart><SelEnd>13148</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Src\salvodelay.c</Filename><XPos>0</XPos><YPos>89</YPos><SelStart>2851</SelStart><SelEnd>2851</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Src\salvotimer.c</Filename><XPos>0</XPos><YPos>59</YPos><SelStart>2716</SelStart><SelEnd>2734</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Inc\salvo.h</Filename><XPos>0</XPos><YPos>416</YPos><SelStart>14116</SelStart><SelEnd>14133</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Inc\salvoscb.h</Filename><XPos>0</XPos><YPos>273</YPos><SelStart>7029</SelStart><SelEnd>7029</SelEnd></Tab><Tab><Factory>TextEditor</Factory><Filename>$WS_DIR$\..\Src\salvohook_interrupt.c</Filename><XPos>0</XPos><YPos>36</YPos><SelStart>1551</SelStart><SelEnd>1564</SelEnd></Tab><ActiveTab>7</ActiveTab></Pane><ActivePane>0</ActivePane><Sizes><Pane><X>1000000</X><Y>1000000</Y></Pane></Sizes><SplitMode>1</SplitMode></Editor>
+    <Positions>
+      
+      
+      
+      
+      
+    <Top><Row0><Sizes><Toolbar-01c923e0><key>iaridepm.enu1</key></Toolbar-01c923e0></Sizes></Row0></Top><Left><Row0><Sizes><Wnd0><Rect><Top>-2</Top><Left>-2</Left><Bottom>711</Bottom><Right>421</Right><x>-2</x><y>-2</y><xscreen>239</xscreen><yscreen>206</yscreen><sizeHorzCX>155498</sizeHorzCX><sizeHorzCY>214583</sizeHorzCY><sizeVertCX>275211</sizeVertCX><sizeVertCY>742708</sizeVertCY></Rect></Wnd0></Sizes></Row0></Left><Right><Row0><Sizes/></Row0></Right><Bottom><Row0><Sizes><Wnd1><Rect><Top>-2</Top><Left>-2</Left><Bottom>204</Bottom><Right>1539</Right><x>-2</x><y>-2</y><xscreen>1541</xscreen><yscreen>206</yscreen><sizeHorzCX>1002602</sizeHorzCX><sizeHorzCY>214583</sizeHorzCY><sizeVertCX>155498</sizeVertCX><sizeVertCY>214583</sizeVertCY></Rect></Wnd1></Sizes></Row0></Bottom><Float><Sizes/></Float></Positions>
+  </Desktop>
+</Workspace>
+
+

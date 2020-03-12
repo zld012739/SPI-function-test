@@ -1,0 +1,80 @@
+IMPORTANT NOTE: Always uninstall and remove the Salvo installation
+in Pumpkin\Salvo prior to installing Salvo 4. Failure to do so may
+result in newer files from the installer not being installed properly.  
+
+
+*** aek 2013-03-08
+
+salvoportiararm.s79
+
+  * Updated Salvo for IAR EWARM context switcher that forcibly aligns the stack on an 8-byte
+      boundary, to ensure compatibility when 8-byte-long variables (e.g., doubles) are present.
+
+*** aek 2011-08-30
+
+salvo-lite|le|pro-arm-4.3.0-ex1.exe:
+
+  * EXPERIMENTAL update including the GCC-ARM, ARM RealView & C-ARM context switchers from the
+      original Salvo 4.0.0 release (2006 vintage). Source and Header files only, plus some
+      documentation, for these compilers. No attempt has been made to validate these files 
+      within the current 4.3.0 framework. Experienced Salvo users may be able to get these to
+      compile and run, with modifications primarily relating to the preprocessor. No libraries.
+  * No changes to the (working) IAR EWARM portions of this distribution. 
+  * Also, added older, possible incompatible salvo-pro-arm-4.0.2.-rc1.exe to serve as a comparitive reference
+      for users porting the GCC-ARM, ARM RealView & C-ARM context switchers to v4.3.0.
+
+*** aek 2011-07-06
+
+salvo-lite|le|pro-arm-4.3.0-ex0.exe:
+
+  * First release of Salvo 4 for ARM that is consistent with the other
+      releases (MSP430, AVR, PIC24/dsPIC, PIC32, S1C17).
+  * For IAR EWARM v5 & v6
+  * For ARM7TDMI, Cortex-M3 and Cortex-M4 targets. Other targets may also work.
+  * Examples are not up-to-date.
+  * Some documentation is not up-to-date.
+
+***
+
+salvo-lite|le|pro-arm-4.0.2-rc1.exe:
+
+  * Fixes a problem when OSCOMBINE_EVENT_SERVICES is TRUE
+      and OSENABLE_FAST_SIGNALING is TRUE.
+
+***
+
+salvo-lite|le|pro-arm-4.0.1-rc1.exe:
+
+  * Fixes a problem involving union u3 and libraries.
+  * Changes the calling convention, return codes and
+      error checking for OStID() and OSeID(). These functions
+      are now runtime capable, even in library builds.
+  * Changes the function prototype for OSMakeStr().
+  * Adds a functinal OSDestroyTask() that can destroy tasks
+      in any state.
+  * IAR: Fixes OS_Replace().
+
+  Also, Compiler reference manual RM-IARARM.PDF is now available online.
+
+***
+
+salvo-lite|le|pro-arm-4.0.0-rc50.exe supports the following
+tools and targets:
+
+  ARM RealView Tools:			ARM7TDMI & Cortex-M3
+  GCC-ARM:				Cortex-M3
+  IAR Embedded Workbench for ARM:	ARM7TDMI
+
+-rc50 is the first release to support big-endian targets, 
+with the IAR compiler. 
+
+***
+
+salvo-lite|le|pro-arm-4.0.0-rc34.exe adds support for
+all ARM7TDMI cores, in both Thumb and ARM mode. It includes 
+an example for the Atmel AT91SAM7S-EK evalutation board.
+Until a Getting Started Guide is issued for Salvo on ARM7,
+please use the Getting Started Guides for Salvo on the Stellaris
+as a guide for configuring your own projects. This installer
+fully supports Stellaris as well.
+

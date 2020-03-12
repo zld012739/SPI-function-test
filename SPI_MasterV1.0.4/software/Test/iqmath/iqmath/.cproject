@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?fileVersion 4.0.0?>
+
+<cproject storage_type_id="org.eclipse.cdt.core.XmlProjectDescriptionStorage">
+<storageModule moduleId="org.eclipse.cdt.core.settings">
+<cconfiguration id="com.atollic.truestudio.exe.debug.2089988516">
+<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.atollic.truestudio.exe.debug.2089988516" moduleId="org.eclipse.cdt.core.settings" name="Debug">
+<externalSettings/>
+<extensions>
+<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+</extensions>
+</storageModule>
+<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<configuration artifactExtension="elf" artifactName="iqmath" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="com.atollic.truestudio.exe.debug.2089988516" name="Debug" parent="com.atollic.truestudio.exe.debug" postbuildStep="arm-atollic-eabi-objcopy -O ihex ${BuildArtifactFileBaseName}.elf ${BuildArtifactFileBaseName}.hex">
+<folderInfo id="com.atollic.truestudio.exe.debug.2089988516." name="/" resourcePath="">
+<toolChain id="com.atollic.truestudio.exe.debug.toolchain.219205574" name="Atollic ARM Tools" superClass="com.atollic.truestudio.exe.debug.toolchain">
+<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.atollic.truestudio.exe.debug.toolchain.platform.1701129693" isAbstract="false" name="Debug platform" superClass="com.atollic.truestudio.exe.debug.toolchain.platform"/>
+<builder buildPath="${workspace_loc:/iqmath/Debug}" id="com.atollic.truestudio.mbs.builder1.845496737" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
+<tool id="com.atollic.truestudio.exe.debug.toolchain.as.1954094195" name="Assembler" superClass="com.atollic.truestudio.exe.debug.toolchain.as">
+<option id="com.atollic.truestudio.common_options.target.endianess.994242769" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
+<option id="com.atollic.truestudio.common_options.target.mcpu.2090350846" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F103VG" valueType="enumerated"/>
+<option id="com.atollic.truestudio.common_options.target.instr_set.140670818" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
+<inputType id="com.atollic.truestudio.as.input.1244515530" name="Input" superClass="com.atollic.truestudio.as.input"/>
+</tool>
+<tool id="com.atollic.truestudio.exe.debug.toolchain.gcc.1665025037" name="C Compiler" superClass="com.atollic.truestudio.exe.debug.toolchain.gcc">
+<option id="com.atollic.truestudio.gcc.directories.select.1095288417" name="Include path" superClass="com.atollic.truestudio.gcc.directories.select" valueType="includePath">
+<listOptionValue builtIn="false" value="../firmware/CMSIS/CM3/CoreSupport"/>
+<listOptionValue builtIn="false" value="../firmware/CMSIS/CM3/DeviceSupport/ST/STM32F10x"/>
+<listOptionValue builtIn="false" value="../firmware/STM32F10x_StdPeriph_Driver/inc"/>
+<listOptionValue builtIn="false" value="../src"/>
+<listOptionValue builtIn="false" value="../STM32_EVAL"/>
+<listOptionValue builtIn="false" value="../STM32_EVAL/Common"/>
+<listOptionValue builtIn="false" value="../STM32_EVAL/Board"/>
+<listOptionValue builtIn="false" value="../../../../Trunk/include"/>
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/iqmath/include}&quot;"/>
+</option>
+<option id="com.atollic.truestudio.gcc.symbols.defined.1652605049" name="Defined symbols" superClass="com.atollic.truestudio.gcc.symbols.defined" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="STM32F10X_XL"/>
+<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
+</option>
+<option id="com.atollic.truestudio.common_options.target.endianess.1636217577" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
+<option id="com.atollic.truestudio.common_options.target.mcpu.1467568196" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F103VG" valueType="enumerated"/>
+<option id="com.atollic.truestudio.common_options.target.instr_set.1217596256" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
+<option id="com.atollic.truestudio.gcc.optimization.prep_garbage.1956156035" name="Prepare dead code removal" superClass="com.atollic.truestudio.gcc.optimization.prep_garbage" value="true" valueType="boolean"/>
+<option id="com.atollic.truestudio.gcc.optimization.prep_data.1430619311" name="Prepare dead data removal" superClass="com.atollic.truestudio.gcc.optimization.prep_data" value="true" valueType="boolean"/>
+<inputType id="com.atollic.truestudio.gcc.input.553292837" superClass="com.atollic.truestudio.gcc.input"/>
+</tool>
+<tool id="com.atollic.truestudio.exe.debug.toolchain.ld.667093690" name="C Linker" superClass="com.atollic.truestudio.exe.debug.toolchain.ld">
+<option id="com.atollic.truestudio.common_options.target.endianess.76194112" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
+<option id="com.atollic.truestudio.common_options.target.mcpu.1170542617" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F103VG" valueType="enumerated"/>
+<option id="com.atollic.truestudio.common_options.target.instr_set.2114019240" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
+<option id="com.atollic.truestudio.ld.general.scriptfile.2528656" name="Linker script" superClass="com.atollic.truestudio.ld.general.scriptfile" value="${workspace_loc:\iqmath\stm32_flash.ld}" valueType="string"/>
+<option id="com.atollic.truestudio.ld.optimization.do_garbage.436475194" name="Dead code removal" superClass="com.atollic.truestudio.ld.optimization.do_garbage" value="true" valueType="boolean"/>
+<option id="com.atollic.truestudio.ld.libraries.searchpath.1060851472" name="Library search path" superClass="com.atollic.truestudio.ld.libraries.searchpath" valueType="libPaths">
+<listOptionValue builtIn="false" value="&quot;${workspace_loc:/iqmath/lib}&quot;"/>
+</option>
+<inputType id="com.atollic.truestudio.ld.input.2109569843" name="Input" superClass="com.atollic.truestudio.ld.input">
+<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+</inputType>
+</tool>
+<tool id="com.atollic.truestudio.exe.debug.toolchain.gpp.2051699739" name="C++ Compiler" superClass="com.atollic.truestudio.exe.debug.toolchain.gpp">
+<option id="com.atollic.truestudio.gpp.symbols.defined.1122126541" name="Defined symbols" superClass="com.atollic.truestudio.gpp.symbols.defined" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="STM32F10X_XL"/>
+<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
+</option>
+<option id="com.atollic.truestudio.gpp.directories.select.658915739" name="Include path" superClass="com.atollic.truestudio.gpp.directories.select" valueType="includePath">
+<listOptionValue builtIn="false" value="../firmware/CMSIS/CM3/CoreSupport"/>
+<listOptionValue builtIn="false" value="../firmware/CMSIS/CM3/DeviceSupport/ST/STM32F10x"/>
+<listOptionValue builtIn="false" value="../firmware/STM32F10x_StdPeriph_Driver/inc"/>
+<listOptionValue builtIn="false" value="../src"/>
+<listOptionValue builtIn="false" value="../STM32_EVAL"/>
+<listOptionValue builtIn="false" value="../STM32_EVAL/Common"/>
+<listOptionValue builtIn="false" value="../STM32_EVAL/Board"/>
+</option>
+<option id="com.atollic.truestudio.common_options.target.endianess.656944776" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
+<option id="com.atollic.truestudio.common_options.target.mcpu.1965883562" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F103VG" valueType="enumerated"/>
+<option id="com.atollic.truestudio.common_options.target.instr_set.322475095" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
+<option id="com.atollic.truestudio.gpp.optimization.prep_garbage.49071849" name="Prepare dead code removal" superClass="com.atollic.truestudio.gpp.optimization.prep_garbage" value="true" valueType="boolean"/>
+<option id="com.atollic.truestudio.gpp.optimization.prep_data.1528381692" name="Prepare dead data removal" superClass="com.atollic.truestudio.gpp.optimization.prep_data" value="true" valueType="boolean"/>
+<option id="com.atollic.truestudio.gpp.optimization.fno_rtti.259137343" name="Disable RTTI" superClass="com.atollic.truestudio.gpp.optimization.fno_rtti"/>
+<option id="com.atollic.truestudio.gpp.optimization.fno_exceptions.1621204860" name="Disable exception handling" superClass="com.atollic.truestudio.gpp.optimization.fno_exceptions"/>
+</tool>
+<tool id="com.atollic.truestudio.exe.debug.toolchain.ldcc.1683064939" name="C++ Linker" superClass="com.atollic.truestudio.exe.debug.toolchain.ldcc">
+<option id="com.atollic.truestudio.common_options.target.endianess.1331143745" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
+<option id="com.atollic.truestudio.common_options.target.mcpu.1902106137" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F103VG" valueType="enumerated"/>
+<option id="com.atollic.truestudio.common_options.target.instr_set.18492505" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
+<option id="com.atollic.truestudio.ldcc.optimization.do_garbage.219635247" name="Dead code removal" superClass="com.atollic.truestudio.ldcc.optimization.do_garbage" value="true" valueType="boolean"/>
+<option id="com.atollic.truestudio.ldcc.general.scriptfile.1203449910" name="Linker script" superClass="com.atollic.truestudio.ldcc.general.scriptfile" value="${workspace_loc:\iqmath\stm32_flash.ld}" valueType="string"/>
+</tool>
+</toolChain>
+</folderInfo>
+<sourceEntries>
+<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="STM32_EVAL"/>
+<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="firmware"/>
+<entry excluding="timer.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+</sourceEntries>
+</configuration>
+</storageModule>
+<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+<storageModule moduleId="org.eclipse.cdt.core.language.mapping"/>
+<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+<storageModule moduleId="scannerConfiguration">
+<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile"/>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="makefileGenerator">
+<runAction arguments="-f ${project_name}_scd.mk" command="make" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-c 'gcc -E -P -v -dD &quot;${plugin_state_location}/${specs_file}&quot;'" command="sh" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-c 'g++ -E -P -v -dD &quot;${plugin_state_location}/specs.cpp&quot;'" command="sh" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-c 'gcc -E -P -v -dD &quot;${plugin_state_location}/specs.c&quot;'" command="sh" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<scannerConfigBuildInfo instanceId="com.atollic.truestudio.exe.debug.2089988516;com.atollic.truestudio.exe.debug.2089988516.;com.atollic.truestudio.exe.debug.toolchain.gcc.1665025037;com.atollic.truestudio.gcc.input.553292837">
+<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="makefileGenerator">
+<runAction arguments="-f ${project_name}_scd.mk" command="make" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-c 'gcc -E -P -v -dD &quot;${plugin_state_location}/${specs_file}&quot;'" command="sh" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-c 'g++ -E -P -v -dD &quot;${plugin_state_location}/specs.cpp&quot;'" command="sh" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-c 'gcc -E -P -v -dD &quot;${plugin_state_location}/specs.c&quot;'" command="sh" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+</scannerConfigBuildInfo>
+</storageModule>
+</cconfiguration>
+<cconfiguration id="com.atollic.truestudio.configuration.release.1283337308">
+<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="com.atollic.truestudio.configuration.release.1283337308" moduleId="org.eclipse.cdt.core.settings" name="Release">
+<externalSettings/>
+<extensions>
+<extension id="org.eclipse.cdt.core.ELF" point="org.eclipse.cdt.core.BinaryParser"/>
+<extension id="org.eclipse.cdt.core.GCCErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GASErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+<extension id="org.eclipse.cdt.core.GLDErrorParser" point="org.eclipse.cdt.core.ErrorParser"/>
+</extensions>
+</storageModule>
+<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<configuration artifactExtension="elf" artifactName="iqmath" buildArtefactType="org.eclipse.cdt.build.core.buildArtefactType.exe" buildProperties="org.eclipse.cdt.build.core.buildArtefactType=org.eclipse.cdt.build.core.buildArtefactType.exe" cleanCommand="rm -rf" description="" id="com.atollic.truestudio.configuration.release.1283337308" name="Release" parent="com.atollic.truestudio.configuration.release" postbuildStep="arm-atollic-eabi-objcopy -O ihex ${BuildArtifactFileBaseName}.elf ${BuildArtifactFileBaseName}.hex">
+<folderInfo id="com.atollic.truestudio.configuration.release.1283337308." name="/" resourcePath="">
+<toolChain id="com.atollic.truestudio.exe.release.toolchain.788051108" name="Atollic ARM Tools" superClass="com.atollic.truestudio.exe.release.toolchain">
+<targetPlatform archList="all" binaryParser="org.eclipse.cdt.core.ELF" id="com.atollic.truestudio.exe.release.toolchain.platform.1504104874" isAbstract="false" name="release platform" superClass="com.atollic.truestudio.exe.release.toolchain.platform"/>
+<builder buildPath="${workspace_loc:/iqmath/Release}" id="com.atollic.truestudio.mbs.builder1.1570943718" keepEnvironmentInBuildfile="false" managedBuildOn="true" name="CDT Internal Builder" superClass="com.atollic.truestudio.mbs.builder1"/>
+<tool id="com.atollic.truestudio.exe.release.toolchain.as.984160176" name="Assembler" superClass="com.atollic.truestudio.exe.release.toolchain.as">
+<option id="com.atollic.truestudio.common_options.target.endianess.1438475921" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
+<option id="com.atollic.truestudio.common_options.target.mcpu.43403405" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F103VG" valueType="enumerated"/>
+<option id="com.atollic.truestudio.common_options.target.instr_set.2142828134" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
+<inputType id="com.atollic.truestudio.as.input.1859320776" name="Input" superClass="com.atollic.truestudio.as.input"/>
+</tool>
+<tool id="com.atollic.truestudio.exe.release.toolchain.gcc.1903728567" name="C Compiler" superClass="com.atollic.truestudio.exe.release.toolchain.gcc">
+<option id="com.atollic.truestudio.gcc.directories.select.986495107" name="Include path" superClass="com.atollic.truestudio.gcc.directories.select" valueType="includePath">
+<listOptionValue builtIn="false" value="../firmware/CMSIS/CM3/CoreSupport"/>
+<listOptionValue builtIn="false" value="../firmware/CMSIS/CM3/DeviceSupport/ST/STM32F10x"/>
+<listOptionValue builtIn="false" value="../firmware/STM32F10x_StdPeriph_Driver/inc"/>
+<listOptionValue builtIn="false" value="../src"/>
+<listOptionValue builtIn="false" value="../STM32_EVAL"/>
+<listOptionValue builtIn="false" value="../STM32_EVAL/Common"/>
+<listOptionValue builtIn="false" value="../STM32_EVAL/Board"/>
+</option>
+<option id="com.atollic.truestudio.gcc.symbols.defined.2145320390" name="Defined symbols" superClass="com.atollic.truestudio.gcc.symbols.defined" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="STM32F10X_XL"/>
+<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
+</option>
+<option id="com.atollic.truestudio.common_options.target.endianess.1478436491" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
+<option id="com.atollic.truestudio.common_options.target.mcpu.1085470621" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F103VG" valueType="enumerated"/>
+<option id="com.atollic.truestudio.common_options.target.instr_set.1047033348" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
+<option id="com.atollic.truestudio.gcc.optimization.prep_garbage.2080013903" name="Prepare dead code removal" superClass="com.atollic.truestudio.gcc.optimization.prep_garbage" value="true" valueType="boolean"/>
+<option id="com.atollic.truestudio.gcc.optimization.prep_data.1097010834" name="Prepare dead data removal" superClass="com.atollic.truestudio.gcc.optimization.prep_data" value="true" valueType="boolean"/>
+<inputType id="com.atollic.truestudio.gcc.input.1436658690" superClass="com.atollic.truestudio.gcc.input"/>
+</tool>
+<tool id="com.atollic.truestudio.exe.release.toolchain.ld.1898324604" name="C Linker" superClass="com.atollic.truestudio.exe.release.toolchain.ld">
+<option id="com.atollic.truestudio.common_options.target.endianess.323603808" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
+<option id="com.atollic.truestudio.common_options.target.mcpu.883730731" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F103VG" valueType="enumerated"/>
+<option id="com.atollic.truestudio.common_options.target.instr_set.1694747175" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
+<option id="com.atollic.truestudio.ld.general.scriptfile.837517498" name="Linker script" superClass="com.atollic.truestudio.ld.general.scriptfile" value="${workspace_loc:\iqmath\stm32_flash.ld}" valueType="string"/>
+<option id="com.atollic.truestudio.ld.optimization.do_garbage.1785999924" name="Dead code removal" superClass="com.atollic.truestudio.ld.optimization.do_garbage" value="true" valueType="boolean"/>
+<inputType id="com.atollic.truestudio.ld.input.472099552" name="Input" superClass="com.atollic.truestudio.ld.input">
+<additionalInput kind="additionalinputdependency" paths="$(USER_OBJS)"/>
+<additionalInput kind="additionalinput" paths="$(LIBS)"/>
+</inputType>
+</tool>
+<tool id="com.atollic.truestudio.exe.release.toolchain.gpp.2036749718" name="C++ Compiler" superClass="com.atollic.truestudio.exe.release.toolchain.gpp">
+<option id="com.atollic.truestudio.gpp.symbols.defined.1615235397" name="Defined symbols" superClass="com.atollic.truestudio.gpp.symbols.defined" valueType="definedSymbols">
+<listOptionValue builtIn="false" value="STM32F10X_XL"/>
+<listOptionValue builtIn="false" value="USE_STDPERIPH_DRIVER"/>
+</option>
+<option id="com.atollic.truestudio.gpp.directories.select.1749986644" name="Include path" superClass="com.atollic.truestudio.gpp.directories.select" valueType="includePath">
+<listOptionValue builtIn="false" value="../firmware/CMSIS/CM3/CoreSupport"/>
+<listOptionValue builtIn="false" value="../firmware/CMSIS/CM3/DeviceSupport/ST/STM32F10x"/>
+<listOptionValue builtIn="false" value="../firmware/STM32F10x_StdPeriph_Driver/inc"/>
+<listOptionValue builtIn="false" value="../src"/>
+<listOptionValue builtIn="false" value="../STM32_EVAL"/>
+<listOptionValue builtIn="false" value="../STM32_EVAL/Common"/>
+<listOptionValue builtIn="false" value="../STM32_EVAL/Board"/>
+</option>
+<option id="com.atollic.truestudio.common_options.target.endianess.400308890" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
+<option id="com.atollic.truestudio.common_options.target.mcpu.189986693" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F103VG" valueType="enumerated"/>
+<option id="com.atollic.truestudio.common_options.target.instr_set.1700991185" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
+<option id="com.atollic.truestudio.gpp.optimization.prep_garbage.301107204" name="Prepare dead code removal" superClass="com.atollic.truestudio.gpp.optimization.prep_garbage" value="true" valueType="boolean"/>
+<option id="com.atollic.truestudio.gpp.optimization.prep_data.1870794389" name="Prepare dead data removal" superClass="com.atollic.truestudio.gpp.optimization.prep_data" value="true" valueType="boolean"/>
+<option id="com.atollic.truestudio.gpp.optimization.fno_rtti.663180694" name="Disable RTTI" superClass="com.atollic.truestudio.gpp.optimization.fno_rtti"/>
+<option id="com.atollic.truestudio.gpp.optimization.fno_exceptions.512950255" name="Disable exception handling" superClass="com.atollic.truestudio.gpp.optimization.fno_exceptions"/>
+</tool>
+<tool id="com.atollic.truestudio.exe.release.toolchain.ldcc.716972135" name="C++ Linker" superClass="com.atollic.truestudio.exe.release.toolchain.ldcc">
+<option id="com.atollic.truestudio.common_options.target.endianess.391972064" name="Endianess" superClass="com.atollic.truestudio.common_options.target.endianess"/>
+<option id="com.atollic.truestudio.common_options.target.mcpu.840863025" name="Microcontroller" superClass="com.atollic.truestudio.common_options.target.mcpu" value="STM32F103VG" valueType="enumerated"/>
+<option id="com.atollic.truestudio.common_options.target.instr_set.418168927" name="Instruction set" superClass="com.atollic.truestudio.common_options.target.instr_set" value="com.atollic.truestudio.common_options.target.instr_set.thumb2" valueType="enumerated"/>
+<option id="com.atollic.truestudio.ldcc.optimization.do_garbage.96543319" name="Dead code removal" superClass="com.atollic.truestudio.ldcc.optimization.do_garbage" value="true" valueType="boolean"/>
+<option id="com.atollic.truestudio.ldcc.general.scriptfile.2104795948" name="Linker script" superClass="com.atollic.truestudio.ldcc.general.scriptfile" value="${workspace_loc:\iqmath\stm32_flash.ld}" valueType="string"/>
+</tool>
+</toolChain>
+</folderInfo>
+<sourceEntries>
+<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="STM32_EVAL"/>
+<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="firmware"/>
+<entry excluding="timer.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="src"/>
+</sourceEntries>
+</configuration>
+</storageModule>
+<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
+<storageModule moduleId="org.eclipse.cdt.core.language.mapping"/>
+<storageModule moduleId="org.eclipse.cdt.internal.ui.text.commentOwnerProjectMappings"/>
+<storageModule moduleId="scannerConfiguration">
+<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile"/>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="makefileGenerator">
+<runAction arguments="-f ${project_name}_scd.mk" command="make" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-c 'gcc -E -P -v -dD &quot;${plugin_state_location}/${specs_file}&quot;'" command="sh" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-c 'g++ -E -P -v -dD &quot;${plugin_state_location}/specs.cpp&quot;'" command="sh" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-c 'gcc -E -P -v -dD &quot;${plugin_state_location}/specs.c&quot;'" command="sh" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<scannerConfigBuildInfo instanceId="com.atollic.truestudio.exe.debug.2089988516;com.atollic.truestudio.exe.debug.2089988516.;com.atollic.truestudio.exe.debug.toolchain.gcc.1665025037;com.atollic.truestudio.gcc.input.553292837">
+<autodiscovery enabled="true" problemReportingEnabled="true" selectedProfileId="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC"/>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.make.core.GCCStandardMakePerFileProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="makefileGenerator">
+<runAction arguments="-f ${project_name}_scd.mk" command="make" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/${specs_file}" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileCPP">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.cpp" command="g++" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCManagedMakePerProjectProfileC">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-E -P -v -dD ${plugin_state_location}/specs.c" command="gcc" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfile">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-c 'gcc -E -P -v -dD &quot;${plugin_state_location}/${specs_file}&quot;'" command="sh" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileCPP">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-c 'g++ -E -P -v -dD &quot;${plugin_state_location}/specs.cpp&quot;'" command="sh" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+<profile id="org.eclipse.cdt.managedbuilder.core.GCCWinManagedMakePerProjectProfileC">
+<buildOutputProvider>
+<openAction enabled="true" filePath=""/>
+<parser enabled="true"/>
+</buildOutputProvider>
+<scannerInfoProvider id="specsFile">
+<runAction arguments="-c 'gcc -E -P -v -dD &quot;${plugin_state_location}/specs.c&quot;'" command="sh" useDefault="true"/>
+<parser enabled="true"/>
+</scannerInfoProvider>
+</profile>
+</scannerConfigBuildInfo>
+</storageModule>
+</cconfiguration>
+</storageModule>
+<storageModule moduleId="cdtBuildSystem" version="4.0.0">
+<project id="iqmath.com.atollic.truestudio.exe.1038486600" name="Executable" projectType="com.atollic.truestudio.exe"/>
+</storageModule>
+</cproject>

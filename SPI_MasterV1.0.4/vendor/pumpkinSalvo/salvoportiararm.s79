@@ -1,0 +1,372 @@
+/**********************************************************
+; The contents of this file are subject to the Pumpkin Salvo
+; License (the "License").  You may not use this file except
+; in compliance with the License. You may obtain a copy of
+; the License at http://www.pumpkininc.com, or from
+; warranty@pumpkininc.com.
+;
+; Software distributed under the License is distributed on an
+; "AS IS" basis, WITHOUT WARRANTY OF ANY KIND, either express
+; or implied. See the License for specific language governing
+; the warranty and the rights and limitations under the
+; License.
+;
+; The Original Code is Salvo - The RTOS that runs in tiny
+; places(TM). Copyright (C) 1995-2002 Pumpkin, Inc. and its
+; Licensor(s). All Rights Reserved.
+;
+; $Source: C:\\RCS\\D\\Pumpkin\\Salvo\\Src\\IARARM\\salvoportiararm.s79,v $
+; $Author: aek $
+; $Revision: 3.11 $
+; $Date: 2013-03-08 09:23:18-08 $
+;
+; Context switcher for IAR ARM C compiler. For big- and
+;  little-endian ARM7TDMI and similar targets.
+;
+; Effect of Assembler directives:
+;
+;  none:          Thumb mode, no INTERWORK
+;  MAKE_FOR_ARM=0,
+;   MAKE_FOR_INTERWORK=0:  Thumb mode, no INTERWORK
+;  MAKE_FOR_ARM=0,
+;   MAKE_FOR_INTERWORK=1:  Thumb mode, INTERWORK
+;  MAKE_FOR_ARM=1,
+;   MAKE_FOR_INTERWORK=0:  ARM mode, no INTERWORK
+;  MAKE_FOR_ARM=1,
+;   MAKE_FOR_INTERWORK=1:  ARM mode, INTERWORK
+;
+; IAR ARM C Calling Convention:
+;  R0-R3     scratch
+;  R4-R11    preserved by called function
+;  R12       scratch
+;  R13 (SP)  stack pointer, grows downwards
+;  R14 (LR)  link register
+;  R15 (PC)  program counter
+;
+; Register Usage:
+;  R0-R3     all used
+;  R4-R11    explicitly preserved on stack
+;  R12       not used
+;  R13 (SP)  stack pointer, grows downwards
+;  R14 (LR)  pushed onto and popped of stack
+;  R15 (PC)  not used
+;
+; We use R0 as pointing to the start of the current
+;  task's tcb, as the ARM instruction modes allow
+;  us to access the elements of the tcb structure rather
+;  easily via LDR/STR's immediate offset.
+;
+;
+; **********************************************************/
+
+        MODULE    PORTIARARM
+
+        EXTERN    OScTcbP
+        EXTERN    OSframeP
+
+; /**********************************************************
+; ****                                                   ****
+; **                                                       **
+; void OSDispatch ( void ) for Thumb mode
+;
+; Replaces call-by-pointer in OSSched(). Replacement is
+;  necessary because context switcher is a function, and
+;  needs to know how large the task's stack frame is. Mark
+;  the SP in OSDispatch() and then compare it to SP in
+;  OSCtxSw(). If a task has no auto variables, OSframeP and
+;  SP will differ by 4 bytes in OSCtxSw().
+;
+; Assumes:  frameSize field in tcb is in bits[31:16] of status
+;            word. Status word is first 32-bit word in tcb.
+;           Task's tFP is second 32-bit word in tcb.
+;
+; Changes:  OSframeP, SP, PC
+;
+; Destroys: R0, R1, R2, R3
+;
+; Speed:    57 cycles, including a BL to this routine (from
+;            OSSched()) and the BX to the task.
+;
+; Notes:    Task's frame size includes the 4 bytes allocated
+;            to the push of LR that will occur in every Salvo
+;            task. Frame size is 16 bits, allowing up to 65,532
+;            buytes of local auto variables.
+;
+;           ARM7 is 32-bit. SP counts 8-bit bytes, grows
+;            downwards, points to most recently pushed element.
+;            SP can access anywhere inside 32MB address space.
+;
+;           Stack examples are for a task with a single 32-bit
+;            local/auto variable.
+;
+;           Stacks in OSSched(), just prior to call to
+;            OSDispatch():
+;
+;            [SP] [             (data)               ] 0x400003F0
+;
+;           Stack upon entering OSDispatch(), pushing R4-R7 &amp; LR
+;            and setting OSframeP:
+;
+;                 [             (data)               ] 0x400003F0
+;                 [               LR                 ] 0x400003EC
+;                 [               R7                 ] 0x400003E8
+;                 [               R6                 ] 0x400003E4
+;                 [               R5                 ] 0x400003E0
+; [OSframeP],[SP] [               R4                 ] 0x400003DC
+;
+;           Stack after adjusting SP in OSDispatch(). Same as
+;            once inside the task ...:
+;
+;                 [             (data)               ] 0x400003F0
+;                 [               LR                 ] 0x400003EC
+;                 [               R7                 ] 0x400003E8
+;                 [               R6                 ] 0x400003E4
+;                 [               R5                 ] 0x400003E0
+;      [OSframeP] [               R4                 ] 0x400003DC
+;                 [      (space for pushed LR)       ] 0x400003D8
+;            [SP] [         locals &amp; params          ] 0x400003D4
+;
+;
+;  On 20130308, added a feature to force SP alignment on 8-byte
+;  boundaries. This is required when any variables that are
+;  printed are 8 bytes long (e.g. doubles). Relatively painless,
+;  so the alignment is always applied, even if there are no
+;  such variables present. 
+;
+; **                                                       **
+; ****                                                   ****
+; **********************************************************/
+
+        RSEG      CODE:CODE:NOROOT(2)
+
+        PUBLIC    OSDispatch
+
+#if (MAKE_FOR_ARM &gt; 0)
+        CODE32                      ; ARM entry
+#else
+        CODE16                      ; Thumb entry
+#endif
+
+OSDispatch:
+        ;
+        ; Save R4-R11, and return-to address (LR);
+        ;
+
+#if (MAKE_FOR_ARM &gt; 0)
+        STMFD    SP!,{R4-R11,LR}    ; save working registers and
+#else                               ;  LR (= return address in OSSched())
+        PUSH    {R4-R7,LR}
+        MOV      R4,R8
+        MOV      R5,R9
+        MOV      R6,R10
+        MOV      R7,R11
+        PUSH    {R4-R7}
+#endif
+
+        ;
+        ; OSframeP = SP;
+        ; OSframeP now holds SP just past saved R4-R7 &amp; LR.
+        ;
+
+        MOV      R3,SP              ; save stack pointer for use
+        LDR      R1,=OSframeP       ;  as frame pointer in OSCtxSw()
+        STR      R3,[R1,#0x0]       ;  ""
+
+        ;
+        ; SP = SP - OScTcbP-&gt;status.bits.frameSize;
+        ;
+
+                                    ; R3: SP
+        LDR      R0,=OScTcbP        ; R0 -&gt; beginning of current
+        LDR      R0,[R0,#0x0]       ;  tasks's tcb
+        LDR      R1,[R0,#0x0]       ; R1[31:16] = current tasks's
+#if (MAKE_FOR_ARM &gt; 0)              ;  status.bits.frameSize
+        MOV      R1,R1,LSR #0x10    ;  ""
+        SUB      R3,R3,R1           ; R3 = SP - frameSize
+        SUBS     R3,R3,#8           ; align SP to 8-byte boundary
+        MOVS     R1,#7              ;  ""
+        BICS     R3,R3,R1           ;  ""
+#else                               
+        LSR      R1,R1,#0x10        ; R1[31:16] = current tasks's
+                                    ;  status.bits.frameSize
+        SUB      R3,R3,R1           ; R3 = SP - frameSize
+        SUBS     R3,R3,#8           ; align SP to 8-byte boundary
+        LSRS     R3,R3,#3           ;  ""
+        LSLS     R3,R3,#3           ;  ""
+#endif
+        MOV      SP,R3              ; redefine SP (atomic)
+
+        ;
+        ; OScTcbP-&gt;tFP();
+        ; This is effectively a jump-to-subroutine, as we won't be coming
+        ;  back to this function ...
+        ;
+
+                                    ; R0: -&gt; beginning of current
+                                    ;  tasks's tcb
+        LDR       R1,[R0,#0x4]      ; R1 = current tasks's tFP
+        BX        R1                ; branch to task's start/resume
+        NOP                         ;  address
+
+        ;
+        ; End of OSDispatch()
+        ;
+
+
+; /**********************************************************
+; ****                                                   ****
+; **                                                       **
+; void OSCtxSw ( OStypetFP tFP ) for Thumb mode
+;
+; Since SP can be changed atomically and LR is on the stack
+;  with the return-to address inside OSSched(), this is all
+;  pretty quick.
+;
+; Assumes:  LR is on stack that OSframeP points to.
+;
+; Changes:  current task's tFP
+;           current task's stack frameSize field
+;           SP, PC
+;
+; Destroys: R0, R1, R2, R3
+;
+; Speed:    65 cycles, including a BL to this routine (from
+;            task) and the POP {PC} back to OSSched()
+;
+; Notes:    Reloads SP from OSframeP.
+;
+;           Uses LDRB/STRH to efficiently pull status byte (only)
+;            from status word, and write back frameSize:status,
+;            without disturbing upper halfword of status word.
+;
+;           A task's minimum stack frame size is 4 bytes.
+;
+;           Stacks after entering OSCtxSw() and OSEnterCritical():
+;
+;           Stack once inside OSCtxSw():
+;
+;                 [             (data)               ] 0x400003F0
+;                 [               LR                 ] 0x400003EC
+;                 [               R7                 ] 0x400003E8
+;                 [               R6                 ] 0x400003E4
+;                 [               R5                 ] 0x400003E0
+;      [OSframeP] [               R4                 ] 0x400003DC
+;                 [      (space for pushed LR)       ] 0x400003D8
+;            [SP] [         locals &amp; params          ] 0x400003D4
+;
+;           Stack after redefining SP inside OSCtxSw():
+;
+;                 [             (data)               ] 0x400003F0
+;                 [               LR                 ] 0x400003EC
+;                 [               R7                 ] 0x400003E8
+;                 [               R6                 ] 0x400003E4
+;                 [               R5                 ] 0x400003E0
+; [OSframeP],[SP] [               R4                 ] 0x400003DC
+;
+; **                                                       **
+; ****                                                   ****
+; **********************************************************/
+
+        RSEG      CODE:CODE:NOROOT(2)
+
+        PUBLIC    OSCtxSw
+        PUBLIC    OSReturn
+
+#if (MAKE_FOR_ARM &gt; 0)
+        CODE32                      ; ARM entry
+#else
+        CODE16                      ; Thumb entry
+#endif
+
+OSCtxSw:
+
+        ;
+        ; OScTcbP-&gt;tFP = return address on stack;
+        ; Return address is in LR because OSCtxSw()
+        ;  has no arguments and no return value.
+        ;
+
+        LDR       R0,=OScTcbP       ; R0 -&gt; beginning of current
+        LDR       R0,[R0,#0x0]      ;  tasks's tcb
+        MOV       R1,LR             ; write return-to address (in
+        STR       R1,[R0,#0x4]      ;  LR) to task's tcb's tFP field
+
+        ;
+        ; OScTcbP-&gt;status.bits.frameSize = OSframeP - SP;
+        ;
+
+        LDR       R1,=OSframeP      ; R1 = R2 = OSframeP
+        LDR       R1,[R1,#0x0]      ;  (save in R2 for later
+        MOV       R2,R1             ;  use)
+#if (MAKE_FOR_ARM &gt; 0)
+        MOV       R3,SP             ; R1 = OSframeP - SP
+        SUB       R1,R1,R3          ;  ""
+                                    ; R0: -&gt; beginning of current
+                                    ;  tasks's tcb
+                                    ; R1: frameSize
+                                    ; R2: OSframeP
+        MOV       R1,R1,LSL #0x10   ; R1[31:16] = frameSize,
+        LDR       R3,[R0,#0x0]      ;  write new frameSize to tcb
+        MOV       R3,R3,LSL #0x10   ;  without affecting [15:0].
+        MOV       R3,R3,LSR #0x10   ;  Note that this clearing of the
+        ORR       R3,R3,R1          ;  frameSize in preparation for
+#else
+        MOV       R3,SP             ;  ORing in a new frameSize works
+        SUB       R1,R1,R3          ;  in big- and little-endian modes.
+        LSL       R1,R1,#0x10       ;  ""
+        LDR       R3,[R0,#0x0]      ;  ""
+        LSL       R3,R3,#0x10       ;  ""
+        LSR       R3,R3,#0x10       ;  ""
+        ORR       R3,R1             ;  ""
+#endif
+        STR       R3,[R0,#0x0]      ;  ""
+
+OSCtxSwRtn:
+
+        ;
+        ; SP = OSframeP;
+        ;
+                                    ; R2: OSframeP
+        MOV       SP,R2             ; SP = OSframeP
+
+        ;
+        ; Restore R4-R11 &amp; LR, return to OSSched();
+        ;
+
+#if (MAKE_FOR_ARM &gt; 0)
+        LDMFD     SP!,{R4-R11,LR}   ; restore R4-R11 &amp; LR and return to
+#else
+        POP      {R4-R7}            ;  OSSched() via LR that was
+        MOV       R8,R4             ;  pushed in OSDispatch(). Use
+        MOV       R9,R5             ;  BX Rn to ensure ARM/Thumb
+        MOV       R10,R6            ;  change if required. Not
+        MOV       R11,R7            ;  sure why POP {R4-R7,LR} is
+        POP      {R4-R7}            ;  invalid in Thumb mode
+        POP      {R0}               ;  ""
+        MOV       LR,R0
+#endif
+        BX        LR                ;  ""
+
+
+OSReturn:
+        LDR       R1,=OSframeP      ; R2 = OSframeP
+        LDR       R2,[R1,#0x0]      ;  ""
+        B         OSCtxSwRtn        ;  and leave
+
+        ;
+        ; End of OSCtxSw()
+        ;
+
+
+; /**********************************************************
+; ****                                                   ****
+; **                                                       **
+; **                                                       **
+; ****                                                   ****
+; **********************************************************/
+
+        ;
+        ; End of module
+        ;
+
+        END
