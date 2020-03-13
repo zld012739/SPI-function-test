@@ -1,4 +1,6 @@
 default_check1#Test data is transmitted MSB first from the UUT, Read Product ID register (0x56)#560A
+default_check1#Perform an SPI transaction (Read Product ID register (0x56)) at 500KHz clock speed#560100000A
+default_check1#Perform an SPI transaction (Read Product ID register (0x56)) at 1MHz clock speed#560200000A
 default_check#Read 0x01 register to verify that default value is 0x18#010A
 default_check#Read 0x02 register to verify that default value is 0x00#020A
 default_check#Read 0x03 register to verify that default value is 0x00#030A
@@ -33,7 +35,25 @@ read_only#0x78 register is read-only (Boot Status) test#78560A
 read_only#0x7E register is read-only (Software Version information) test#7E560A
 read_only#0x7F register is read-only (Hardware Version information) test#7F560A
 configuration_verification#Write 0x09 to the ODR(0x37) register verify that value in ODR register changes to 0x09#37090A
+default_check2#Verify when 0x09 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 500mS#000000000A
+configuration_verification#Write 0x08 to the ODR(0x37) register verify that value in ODR register changes to 0x08#37080A
+default_check2#Verify when 0x08 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 250mS#000000000A
+configuration_verification#Write 0x07 to the ODR(0x37) register verify that value in ODR register changes to 0x07#37070A
+default_check2#Verify when 0x07 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 200mS#000000000A
 configuration_verification#Write 0x06 to the ODR(0x37) register verify that value in ODR register changes to 0x06#37060A
+default_check2#Verify when 0x06 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 100mS#000000000A
+configuration_verification#Write 0x05 to the ODR(0x37) register verify that value in ODR register changes to 0x05#37050A
+default_check2#Verify when 0x05 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 50mS#000000000A
+configuration_verification#Write 0x04 to the ODR(0x37) register verify that value in ODR register changes to 0x04#37040A
+default_check2#Verify when 0x04 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 40mS#000000000A
+configuration_verification#Write 0x03 to the ODR(0x37) register verify that value in ODR register changes to 0x03#37030A
+default_check2#Verify when 0x03 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 20mS#000000000A
+configuration_verification#Write 0x02 to the ODR(0x37) register verify that value in ODR register changes to 0x02#37020A
+default_check2#Verify when 0x02 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 10mS#000000000A
+configuration_verification#Write 0x10 to the ODR(0x37) register verify that value in ODR register changes to 0x10#37100A
+default_check2#Verify when 0x10 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 1S#000000000A
+configuration_verification#Write 0x01 to the ODR(0x37) register verify that value in ODR register changes to 0x01#37010A
+default_check2#Verify when 0x01 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 5mS#000000000A
 configuration_verification#Write 0x00 to 0x1A to disable Chip1 verify that value in register is 0x00#1A000A
 configuration_verification#Write 0x00 to 0x1B to disable Chip2 verify that value in register is 0x00#1B000A
 configuration_verification#Write 0x00 to 0x1C to disable Chip3 verify that value in register is 0x00#1C000A
@@ -49,7 +69,7 @@ configuration_verification#Write 0x06 to 0x38(LPFR) register and verify#38060A
 configuration_verification#Write 0x02 to 0x39(DR) register and verify#39020A
 burst_sp#verify that sign for each axis flipped by reading Standard Burst packet by sending 0x3E command#3E0A
 configuration_verification#Write 0x09 to the ODR(0x37) register verify that value in ODR register changes to 0x09#37090A
-configuration_verification#write 0x37 to register 0x76 to save to SPI packet rate configuration permanently#76370A
+write_only#write 0x37 to register 0x76 to save to SPI packet rate configuration permanently#7637000A
 power_cycle#Reset UUT power down and power off#FF0A
 default_check#Read 0x37 register to verify that value is 0x09#370A
 configuration_verification#Write 0xFD to register 0x34 (note: do not disable DRDY)#34FD0A

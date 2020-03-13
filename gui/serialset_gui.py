@@ -54,7 +54,7 @@ def default_check(text_handel,address,descript,f_log,fv_lines,index,type,ws):
     test_steps += 1
     time.sleep(0.1)
     read = ser.readall()
-    if len(read) > 0 or type == 'power_cycle' or type == 'write_only':
+    if len(read) > 0 or type == 'power_cycle' or type == 'write_only' or type == 'default_check2':
         current_time = time.strftime('%Y_%m_%d_%H:%M:%S',time.localtime(time.time()))
         if type == 'default_check1':
             if fv_lines[index][:-1] == bytes(read).decode('gb2312'):
@@ -105,6 +105,19 @@ def default_check(text_handel,address,descript,f_log,fv_lines,index,type,ws):
             time.sleep(2)
             result_com = '------PASS'
             ws.cell(row = excel_line,column = 1,value = descript)
+            ws.cell(row = excel_line,column = 5,value = result_com)
+        elif type == 'default_check2':
+            while(len(read) == 0):
+                read = ser.readall()
+            len_receive = len(fv_lines[index][:-1])
+            len_receive = len_receive - 15
+            if re.match(fv_lines[index][0:15]+'\d{%d}'%len_receive,bytes(read).decode('gb2312')):
+                result_com = '------PASS'
+            else:
+                result_com = '------FAIL'
+            ws.cell(row = excel_line,column = 1,value = descript)
+            ws.cell(row = excel_line,column = 3,value = fv_lines[index][:-1])
+            ws.cell(row = excel_line,column = 4,value = bytes(read).decode('gb2312'))
             ws.cell(row = excel_line,column = 5,value = result_com)
         else:
             ws.cell(row = excel_line,column = 1,value = descript)

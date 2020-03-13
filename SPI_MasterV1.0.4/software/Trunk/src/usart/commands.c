@@ -124,6 +124,8 @@ void _InitDataReady( FunctionalState NewState );
 
 // Initialize 
 static uint8_t DataReadyContinueFlag = 0; // DR ISR sets this flag
+static uint8_t Edgefall_count = 0; // drdy falling sample
+static uint32_t Edgefall_interval = 0; // drdy falling sample interval
 static uint8_t ToggleCSFlag           = TOGGLE_CS; // DR ISR sets this flag
 
 volatile uint16_t DataRedayCount = 0;
@@ -131,7 +133,25 @@ extern volatile uint16_t OnePPSCount;
 volatile uint8_t OnePPSTest = 0;
 extern volatile uint16_t OnePPSCountFlag;
 extern uint16_t freqRatio;
-
+/** ***************************************************************************
+ * @name    DRDY_interval()
+ ******************************************************************************/
+void DRDY_interval()
+{
+   Edgefall_count = 0;
+   Edgefall_interval = 0;
+   _InitDataReady( ENABLE );
+   while(!Edgefall_count)
+   {
+   }
+   while( Edgefall_count == 1 )
+   {
+      Edgefall_interval = Edgefall_interval + 1;
+   }
+   _InitDataReady( DISABLE );
+   
+   DEBUG_INT("interval_count",Edgefall_interval)
+}
 /** ***************************************************************************
  * @name    _InitDataReady() LOCAL set up the DR B3 pin
  * @brief  set up the GPIO pins used by BurstRead
@@ -231,6 +251,7 @@ void EXTI9_5_IRQHandler( void )
     if(EXTI_GetITStatus(DATA_READY_EXTI_LINE) != RESET)
     {
       DataReadyContinueFlag = 1;
+      Edgefall_count = Edgefall_count + 1; 
       if(OnePPSTest == 1)
       {
          if(OnePPSCountFlag == 1)
@@ -936,7 +957,7 @@ void CmdUserSpi_BurstRead( uint32_t data )
     // Extract values from the console arguments (provide default values in case no arguments
     //   are specified)
     TotalTests = data;
-    ODR_Hz     = 200;
+    ODR_Hz     = 100;
     //CmdLineGetArgUInt( &TotalTests );
     //CmdLineGetArgUInt( &ODR_Hz );
 

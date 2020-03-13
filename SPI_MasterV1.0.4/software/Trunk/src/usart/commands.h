@@ -110,4 +110,6 @@ void CmdUser_writeAIDT(uint32_t data);
 void CmdUser_writeACDT(uint32_t data);
 void CmdUser_writeRCDT(uint32_t data);
 void CmdUser_clearFDE(uint32_t data);
+void _SetSPIClockSpeed( uint8_t clockSpeed );
+void DRDY_interval();
 #endif /* COMMANDS_H */

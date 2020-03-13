@@ -169,6 +169,23 @@ void CmdLineLookup(tCommand const *cmd_table)
         WriteToRegister( gCmdLine[0],gCmdLine[1]);
       }
       }
+    if(para_num == 4){
+      if(gCmdLine[1] == 0x01){
+          _SetSPIClockSpeed(1);
+          Read_from_register(gCmdLine[0],gCmdLine[0]);   
+      }
+      else if(gCmdLine[1] == 0x02){
+          _SetSPIClockSpeed(2);
+          Read_from_register(gCmdLine[0],gCmdLine[0]);   
+      }
+      else if(gCmdLine[1] == 0x03){
+          _SetSPIClockSpeed(3);
+          Read_from_register(gCmdLine[0],gCmdLine[0]);
+      }
+      else{
+        DRDY_interval();
+      }
+    }
     }
     
     /*
