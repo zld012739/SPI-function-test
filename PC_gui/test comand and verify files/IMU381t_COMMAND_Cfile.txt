@@ -1,0 +1,186 @@
+default_check1#Test data is transmitted MSB first from the UUT, Read Product ID register (0x56)#560A
+default_check1#Perform an SPI transaction (Read Product ID register (0x56)) at 500KHz clock speed#560100000A
+default_check1#Perform an SPI transaction (Read Product ID register (0x56)) at 1MHz clock speed#560200000A
+default_check1#Read 0x34 register to verify that self-test and DRDY default value is 0x0004#340A
+default_check1#Read 0x36 register to verify that ODR default value is 0x0101#360A
+default_check1#Read 0x38 register to verify that RS_DYNAMIC_RANGE and LOW_PASS_FILTER default value is 0x0206#380A
+default_check1#Read 0x3C register to verify that Diagnostic Status Register default value is 0x0000#3C0A
+default_check1#Read 0x70 register to verify that RS_SCALE and ACCEL_SCALE default value is 0x1F3F#700A
+default_check1#Read 0x74 register to verify that ORIENTATION_MSB and ORIENTATION_LSB default value is 0x006B#740A
+read_only#0x3C register is read-only (Status) test#3C560A
+read_only#0x3E register is read-only (Standard Burst) test#3E560A
+read_only#0x52 register is read-only (Manufacturing Code information) test#52560A
+read_only#0x54 register is read-only (Unit Code information) test#54560A
+read_only#0x56 register is read-only (Product ID Status information - High Byte) test#56560A
+read_only#0x57 register is read-only (Product ID Status information - Low Byte) test#57560A
+read_only#0x58 register is read-only (Serial Number information) test#58560A
+read_only#0x7E register is read-only (Software Version information) test#7E560A
+write_only#Write 0x09 to the ODR(0x37) register#3709000A
+default_check1#verify 0x36(ODR)0x0901#360A
+default_check2#Verify when 0x09 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 500mS#000000000A
+write_only#Write 0x08 to the ODR(0x37) register#3708000A
+default_check1#verify 0x36(ODR)0x0801#360A
+default_check2#Verify when 0x08 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 250mS#000000000A
+write_only#Write 0x07 to the ODR(0x37) register#3707000A
+default_check1#verify 0x36(ODR)0x0701#360A
+default_check2#Verify when 0x07 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 200mS#000000000A
+write_only#Write 0x06 to the ODR(0x37) register#3706000A
+default_check1#verify 0x36(ODR)0x0601#360A
+default_check2#Verify when 0x06 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 100mS#000000000A
+write_only#Write 0x05 to the ODR(0x37) register#3705000A
+default_check1#verify 0x36(ODR)0x0501#360A
+default_check2#Verify when 0x05 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 50mS#000000000A
+write_only#Write 0x04 to the ODR(0x37) register#3704000A
+default_check1#verify 0x36(ODR)0x0401#360A
+default_check2#Verify when 0x04 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 40mS#000000000A
+write_only#Write 0x03 to the ODR(0x37) register#3703000A
+default_check1#verify 0x36(ODR)0x0301#360A
+default_check2#Verify when 0x03 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 20mS#000000000A
+write_only#Write 0x02 to the ODR(0x37) register#3702000A
+default_check1#verify 0x36(ODR)0x0201#360A
+default_check2#Verify when 0x02 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 10mS#000000000A
+write_only#Write 0x0A to the ODR(0x37) register#AA370A
+default_check1#verify 0x36(ODR)0x0A01#360A
+default_check2#Verify when 0x0A is written to the ODR(0x37) register, time interval between two DRDY falling edges is 1S#000000000A
+write_only#Write 0x01 to the ODR(0x37) register#3701000A
+default_check1#verify 0x36(ODR)0x0101#360A
+default_check2#Verify when 0x01 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 5mS#000000000A
+write_only#Write 0x03 to 0x38(Digital Low-Pass Filter) register#3803000A
+write_only#Write 0x04 to 0x39(Rate-Sensor Scaling/Dynamic Range Selector) register#3904000A
+default_check1#verify 0x38(Digital Low-Pass Filter) and 0x39(Rate-Sensor Scaling/Dynamic Range Selector) 0x0403#380A
+write_only#write 0x39 to register 0x76 to save LPFR configuration permanently#7639000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#verify 0x38(Digital Low-Pass Filter) and 0x39(Rate-Sensor Scaling/Dynamic Range Selector) 0x0203#380A
+write_only#Write 0x06 to 0x38(Digital Low-Pass Filter) register#3806000A
+write_only#Write 0x02 to 0x39(Rate-Sensor Scaling/Dynamic Range Selector) register#3902000A
+default_check1#verify 0x38(Digital Low-Pass Filter) and 0x39(Rate-Sensor Scaling/Dynamic Range Selector) 0x0206#380A
+write_only#write 0x39 to register 0x76 to save LPFR configuration permanently#7639000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#verify 0x38(Digital Low-Pass Filter) and 0x39(Rate-Sensor Scaling/Dynamic Range Selector) 0x0206#380A
+write_only#Write 0x04 to 0x39(Rate-Sensor Scaling/Dynamic Range Selector) register#3904000A
+default_check1#verify 0x38(Digital Low-Pass Filter) and 0x39(Rate-Sensor Scaling/Dynamic Range Selector) 0x0406#380A
+write_only#write 0x38 to register 0x76 to save Rate-Sensor Scaling/Dynamic Range Selector configuration permanently#7638000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#verify 0x38(Digital Low-Pass Filter) and 0x39(Rate-Sensor Scaling/Dynamic Range Selector) 0x0406#380A
+write_only#Write 0x02 to 0x39(Rate-Sensor Scaling/Dynamic Range Selector) register#3902000A
+default_check1#verify 0x38(Digital Low-Pass Filter) and 0x39(Rate-Sensor Scaling/Dynamic Range Selector) 0x0206#380A
+write_only#write 0x38 to register 0x76 to save Rate-Sensor Scaling/Dynamic Range Selector configuration permanently#7638000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#verify 0x38(Digital Low-Pass Filter) and 0x39(Rate-Sensor Scaling/Dynamic Range Selector) 0x0206#380A
+burst_sp#verify that sign for each axis flipped by reading Standard Burst packet by sending 0x3E command#3E0A
+write_only#Write 0x09 to the ODR(0x37) register verify that value in ODR register changes to 0x09#3709000A
+write_only#write 0x36 to register 0x76 to save to SPI packet rate configuration permanently#7636000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#verify 0x36(ODR)0x0901#360A
+write_only#Write 0xFD to register 0x34 (note: do not disable DRDY)#34FD000A
+burst_sp#verify that sign for each axis flipped by reading Standard Burst packet by sending 0x3E command#3E0A
+write_only#Write 0xCD to register 0x75#75CD000A
+write_only#Write 0x00 to register 0x74#7400000A
+default_check1#Write 0xCD to 0x75 and write 0x00 to 0x74. Read back 0x74 to verify the value is still 0x006B#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0xCD to register 0x75 and verify#75CD000A
+default_check1#verify 0x00CD in register 0x74 and 0x75#740A
+write_only#write 0x74 to register 0x76 to save Orientation configuration permanently#7674000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#Read 0x74 register to verify that value is 0x00CD#740A
+write_only#Write 0x00 to DRDY register(0x34) and verify that DRDY is not set active#3400000A
+write_only#write 0x35 to register 0x76 to save DRDY is not set configuration permanently#7635000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#Read 0x34 register to verify that value is 0x0000#340A
+write_only#Write 0x04 to DRDY register(0x34) and verify that DRDY is set active#3404000A
+write_only#write 0x35 to register 0x76 to save DRDY is not set configuration permanently#7635000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#Read 0x34 register to verify that value is 0x0004#340A
+write_only#Write 0xFF to register 0x74 and verify#74FF000A
+write_only#Write 0xFF to register 0x75 and verify#75FF000A
+default_check1#verify 0x00CD in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x00 to register 0x75 and verify#7500000A
+default_check1#verify 0x0000 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x09 to register 0x75 and verify#7509000A
+default_check1#verify 0x0009 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x23 to register 0x75 and verify#7523000A
+default_check1#verify 0x0023 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#:Write 0x2A to register 0x75 and verify#752A000A
+default_check1#verify 0x002A in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x41 to register 0x75 and verify#7541000A
+default_check1#verify 0x0041 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x48 to register 0x75 and verify#7548000A
+default_check1#verify 0x0048 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x62 to register 0x75 and verify#7562000A
+default_check1#verify 0x0062 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x6B to register 0x75 and verify#756B000A
+default_check1#verify 0x006B in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x85 to register 0x75 and verify#7585000A
+default_check1#verify 0x0085 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x8C to register 0x75 and verify#758C000A
+default_check1#verify 0x008C in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x92 to register 0x75 and verify#7592000A
+default_check1#verify 0x0092 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x9B to register 0x75 and verify#759B000A
+default_check1#verify 0x009B in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0xC4 to register 0x75 and verify#75C4000A
+default_check1#verify 0x00C4 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0xD3 to register 0x75 and verify#75D3000A
+default_check1#verify 0x00D3 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0xDA to register 0x75 and verify#75DA000A
+default_check1#verify 0x00DA in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x11 to register 0x75 and verify#7511000A
+default_check1#verify 0x0011 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x18 to register 0x75 and verify#7518000A
+default_check1#verify 0x0018 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x24 to register 0x75 and verify#7524000A
+default_check1#verify 0x0024 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x2D to register 0x75 and verify#752D000A
+default_check1#verify 0x002D in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x50 to register 0x75 and verify#7550000A
+default_check1#verify 0x0050 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x59 to register 0x75 and verify#7559000A
+default_check1#verify 0x0059 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x65 to register 0x75 and verify#7565000A
+default_check1#verify 0x0065 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x6C to register 0x75 and verify#756C000A
+default_check1#verify 0x006C in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x00 to register 0x75 and verify#7500000A
+default_check1#verify 0x0000 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to the ODR(0x37) register verify that value in ODR register changes to 0x01#3701000A
+write_only#Write 0x04 to DRDY register(0x34) and verify that DRDY is set active#3404000A
+write_only#Write 0x06 to 0x38(LPFR) register and verify#3806000A
+write_only#Write 0x02 to 0x39(DR) register and verify#3902000A
+write_only#write 0x00 to register 0x76 to save ALL configuration permanently#7600000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#Read 0x74 register to verify that value is 0x0000#740A
+default_check1#Read 0x34 register to verify that value is 0x0004#340A
+default_check1#Read 0x38 register to verify that value is 0x0206#380A
+default_check1#Read 0x36 register to verify that value is 0x0101#360A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x6B to register 0x75 and verify#756B000A
+default_check1#verify 0x006B in register 0x74 and 0x75#740A
+write_only#write 0x00 to register 0x76 to save ALL configuration permanently#7600000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#Read 0x74 register to verify that value is 0x006B#740A
+1M data packets check with ODR 200Hz#
+end of command file#

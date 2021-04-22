@@ -1,0 +1,167 @@
+/******************************************************************************
+* File name:  main.c
+*
+* File description:  main is the center of the system universe,
+* it all starts here. And never ends.
+*
+******************************************************************************/
+
+/* Includes */
+#include <stddef.h>
+
+#include "boardDefinition.h"
+#include "salvodefs.h"
+#include "stm32f2xx.h"
+#include "bsp.h"
+#include "dmu.h"
+
+#include "debug_usart.h"
+#include "debug.h"
+#include "commandLine.h"
+
+#include "UserCommunication_SPI.h"
+
+void TaskHeartbeat( void );
+void TaskCommandLine( void );
+
+void_InitTimer_TIM5( uint32_tTimerFreq_Hz );
+
+void _InitGPIOPin_DataReady( void );
+void _InitGPIOPin_Sync( void );
+void _InitGPIOPin_A4( void );
+void _InitGPIOPin_Ex( void );
+
+void _InitGPIOPin_SharedCommunication( void );
+
+// A 32-bit counter incremented at 5 kHz will rollover after 9+ days
+static uint32_t CycleCount = 0;
+static uint32_t ElapsedTime_sec = 0;
+static uint32_t ElapsedTime_usec = 0;
+static uint32_t dt_usec = 0;
+
+static uint8_t IncrementCounter = 0;
+static uint8_t ToggleSyncPin = 0;
+
+
+//
+
+int main(void)
+{
+    // Initialize the system clock, PLL, etc
+    SystemInit();
+    SystemCoreClockUpdate();
+
+    /* board support package initialize */
+	BSP_init();
+
+    // Initialize the USART (serial) port
+    InitDebugSerialCommunication();
+    DebugPrintString("\r\nDMU380 system\r\n");
+    // FIXME: put boot cause message here
+
+    // FIXME: Initialize the SPI3 port and lines (place into its own function)
+    InitCommunication_UserSPI();
+    DebugPrintString("\r\nInitializing SPI3 as master\r\n");
+
+    // Initialize the data ready pin as an input pin
+    _InitDataReadyGPIOPin( 0 );
+//    led_on(LED3);
+
+    // Initializes the RTOS’s data structures, pointers, and counters
+    OSInit();
+
+    // Create RTOS tasks:
+    //   Col. 1: function name, Col. 2: pointer to the task control block, Col. 3: task priority
+    //OSCreateTask( TaskDataAcquisition,   DATA_ACQ_TASK,           DATA_ACQ_PRIORITY           );
+    OSCreateTask( TaskCommandLine,       COMMAND_LINE_TASK,       COMMAND_LINE_PRIORITY       );
+    //OSCreateTask( TaskUserCommunication, USER_COMMUNICATION_TASK, USER_COMMUNICATION_PRIORITY );
+    OSCreateTask( TaskHeartbeat,         HEARTBEAT_TASK,          HEARTBEAT_PRIORITY          );
+
+    // Assign an event control block (ecb) to each semaphore.  Signaling a waiting task is done
+    //   via the RTOS function, OSSignalBinSem(); semsphore reset upon call of WaitBinSem().
+    OSCreateBinSem( BINSEM_SERIAL_RX, 0 );
+    //OSCreateBinSem( BINSEM_DATA_ACQ_TIMER, 0 );
+
+    // may want to disable interrupts until here... OSTimer may be called before OS running?
+    // Create event flags
+    //OSCreateEFlag( EFLAGS_DATA_READY, EFLAGS_DATA_READY_CB_P, 0x00 );
+    //OSCreateEFlag( EFLAGS_USER,       EFLAGS_USER_CB_P,       0x00 );
+
+    // Run the tasks...
+    //
+    // Spooling data: the spool at the start of the program is due to the debug statements in
+    //   TaskDataAcquisition.  May want to stop this in order to debug why the rate-sensor doesn't
+    //   seem to initialize properly.
+    while (1) {
+        OSSched();
+        // FIXME: put watchdog here
+    }
+}
+
+// Generate an LED heartbeat to indicate that the software is running
+void TaskHeartbeat(void)
+{
+	/* board support package initialize */
+    static int heartbeat = 0;
+
+	while(1)
+	{
+        heartbeat++;  // Unused by software
+
+//        if( GPIO_ReadInputDataBit( GPIOA, GPIO_Pin_4 ) == 0 ) {
+//            led_off(LED3);
+//        } else {
+//            led_on(LED3);
+//        }
+
+		/* Toggle the LED */
+		led_on(HEARTBEAT_LED);
+        OS_Delay(OS_TICKS_PER_SECOND/3);
+		led_off(HEARTBEAT_LED);
+        OS_Delay(OS_TICKS_PER_SECOND/3);
+	}
+}
+
+// When the USART interrupt handler indicates a RX on the USART line, toggle the and compare the
+//   received message to what is in the commandTable
+void TaskCommandLine(void)
+{
+    // Place a prompt at the start of the command line
+    InitCommandLine();
+
+    while (1) {
+      // Wait for the semaphore to change state: occurs in the USART interrupt
+        OS_WaitBinSem( BINSEM_SERIAL_RX, OSNO_TIMEOUT );
+        led_toggle( LED2 );
+        CmdLineLookup( gCommands );
+    }
+}
+
+
+// Initialize the Data-Ready/UART-select GPIO pin
+//
+// Note: the pin will be pulled low at start-up to select UART communications (Nav-View) or left
+//       floating to select the SPI communications (internal pull-up will pull pin high).  Once
+//       detected, the pin will be configured as a data-ready pin if SPI is selected.
+void _InitDataReadyGPIOPin( uint8_t inputOutputSelector )
+{
+    //
+    GPIO_InitTypeDef GPIO_InitStructure;
+
+    // Initialize USER-DRDY (B3) pin as an input pin
+    if( inputOutputSelector == 0 )
+    {
+        GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_IN;       // input/output/alt func/analog
+    } else {
+        GPIO_InitStructure.GPIO_Mode  = GPIO_Mode_OUT;       // input/output/alt func/analog
+    }
+
+    GPIO_InitStructure.GPIO_OType = GPIO_OType_PP;      // push-pull or open-drain
+    GPIO_InitStructure.GPIO_PuPd  = GPIO_PuPd_UP;       // Up/Down/NoPull
+    GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;   // low/med/fast/high speed
+
+    // B3 is the temporary data-ready/UART selection pin (pin A4 is the DR on the master board)
+    GPIO_InitStructure.GPIO_Pin = GPIO_Pin_4;   // FIXME: create a pin and port definition in
+    GPIO_Init( GPIOA, &GPIO_InitStructure);     //        'boardDefinition.h'
+}
+

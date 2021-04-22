@@ -1,0 +1,209 @@
+<?xml version="1.0"?>
+<settings>
+    <Stack>
+        <FillEnabled>0</FillEnabled>
+        <OverflowWarningsEnabled>1</OverflowWarningsEnabled>
+        <WarningThreshold>90</WarningThreshold>
+        <SpWarningsEnabled>1</SpWarningsEnabled>
+        <WarnLogOnly>1</WarnLogOnly>
+        <UseTrigger>1</UseTrigger>
+        <TriggerName>main</TriggerName>
+        <LimitSize>0</LimitSize>
+        <ByteLimit>50</ByteLimit>
+    </Stack>
+    <Interrupts>
+        <Enabled>1</Enabled>
+    </Interrupts>
+    <MemoryMap>
+        <Enabled>0</Enabled>
+        <Base>0</Base>
+        <UseAuto>0</UseAuto>
+        <TypeViolation>1</TypeViolation>
+        <UnspecRange>1</UnspecRange>
+        <ActionState>1</ActionState>
+    </MemoryMap>
+    <DebugChecksum>
+        <A>======</A>
+        <Checksum>3562504340</Checksum>
+    </DebugChecksum>
+    <Exceptions>
+        <StopOnUncaught>_ 0</StopOnUncaught>
+        <StopOnThrow>_ 0</StopOnThrow>
+    </Exceptions>
+    <CallStack>
+        <ShowArgs>0</ShowArgs>
+    </CallStack>
+    <Disassembly>
+        <InstrCount>0</InstrCount>
+        <MixedMode>1</MixedMode>
+    </Disassembly>
+    <SWOTraceHWSettings>
+        <OverrideDefaultClocks>0</OverrideDefaultClocks>
+        <CpuClock>72000000</CpuClock>
+        <ClockAutoDetect>0</ClockAutoDetect>
+        <ClockWanted>2000000</ClockWanted>
+        <JtagSpeed>2000000</JtagSpeed>
+        <Prescaler>36</Prescaler>
+        <TimeStampPrescIndex>0</TimeStampPrescIndex>
+        <TimeStampPrescData>0</TimeStampPrescData>
+        <PcSampCYCTAP>1</PcSampCYCTAP>
+        <PcSampPOSTCNT>15</PcSampPOSTCNT>
+        <PcSampIndex>0</PcSampIndex>
+        <DataLogMode>0</DataLogMode>
+        <ITMportsEnable>0</ITMportsEnable>
+        <ITMportsTermIO>0</ITMportsTermIO>
+        <ITMportsLogFile>0</ITMportsLogFile>
+        <ITMlogFile>$PROJ_DIR$\ITM.log</ITMlogFile>
+    </SWOTraceHWSettings>
+    <JLinkDriver>
+        <CStepIntDis>_ 0</CStepIntDis>
+    </JLinkDriver>
+    <PowerLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <ShowTimeSum>0</ShowTimeSum>
+        <Title0>I0</Title0>
+        <Symbol0>0 4 1</Symbol0>
+        <LiveEnabled>0</LiveEnabled>
+        <LiveFile>PowerLogLive.log</LiveFile>
+    </PowerLog>
+    <PowerProbe>
+        <Frequency>10000</Frequency>
+        <Probe0>I0</Probe0>
+        <ProbeSetup0>2 1 1 2 0 0</ProbeSetup0>
+    </PowerProbe>
+    <array_types>
+        <Fmt0>char[80]	4	0</Fmt0>
+        <Fmt1>uint16_t[4]	4	0</Fmt1>
+        <Fmt2>uint16_t[65]	4	0</Fmt2>
+        <Fmt3>uint8_t[140]	3	0</Fmt3>
+    </array_types>
+    <watch_formats>
+        <Fmt0>{W}0:RegisterAddress	4	0</Fmt0>
+        <Fmt1>{W}0:RxWord[ LoopCounter ]	4	0</Fmt1>
+    </watch_formats>
+    <Log_file>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </Log_file>
+    <Disassemble_mode>
+        <mode>0</mode>
+    </Disassemble_mode>
+    <StLinkDriver>
+        <stlinkserialNo>24160243</stlinkserialNo>
+        <stlinkfoundProbes />
+        <stlinkResetStyle>0</stlinkResetStyle>
+        <stlinkResetStrategy>0</stlinkResetStrategy>
+        <CStepIntDis>_ 0</CStepIntDis>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
+    </StLinkDriver>
+    <CodeCoverage>
+        <Enabled>_ 0</Enabled>
+    </CodeCoverage>
+    <Trace2>
+        <Enabled>0</Enabled>
+        <ShowSource>0</ShowSource>
+    </Trace2>
+    <SWOTraceWindow>
+        <PcSampling>0</PcSampling>
+        <InterruptLogs>0</InterruptLogs>
+        <ForcedTimeStamps>0</ForcedTimeStamps>
+        <EventCPI>0</EventCPI>
+        <EventEXC>0</EventEXC>
+        <EventFOLD>0</EventFOLD>
+        <EventLSU>0</EventLSU>
+        <EventSLEEP>0</EventSLEEP>
+    </SWOTraceWindow>
+    <DataLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+    </DataLog>
+    <InterruptLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+        <SumSortOrder>0</SumSortOrder>
+    </InterruptLog>
+    <EventLog>
+        <Title_0>Ch3</Title_0>
+        <Symbol_0>0 0 1</Symbol_0>
+        <Title_1>Ch2</Title_1>
+        <Symbol_1>0 0 1</Symbol_1>
+        <Title_2>Ch1</Title_2>
+        <Symbol_2>0 0 1</Symbol_2>
+        <Title_3>Ch0</Title_3>
+        <Symbol_3>0 0 1</Symbol_3>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+        <SumSortOrder>0</SumSortOrder>
+    </EventLog>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
+    <LogFile>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </LogFile>
+    <DriverProfiling>
+        <Enabled>0</Enabled>
+        <Mode>3</Mode>
+        <Graph>0</Graph>
+        <Symbiont>0</Symbiont>
+        <Exclusions />
+    </DriverProfiling>
+    <CallStackLog>
+        <Enabled>0</Enabled>
+    </CallStackLog>
+    <CallStackStripe>
+        <ShowTiming>1</ShowTiming>
+    </CallStackStripe>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\usart\commands.c}.1579.25" 0 0 1 "" 0 "" 0</Bp0>
+        <Bp1>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\usart\commands.c}.2178.21" 0 0 1 "" 0 "" 0</Bp1>
+        <Bp2>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\usart\commands.c}.2981.22" 0 0 1 "" 0 "" 0</Bp2>
+        <Bp3>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\usart\commands.c}.2998.21" 0 0 1 "" 0 "" 0</Bp3>
+        <Bp4>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\src\usart\commands.c}.3170.25" 0 0 1 "" 0 "" 0</Bp4>
+        <Bp5>_ 0 "EMUL_CODE" "0x0800024E" 0 0 1 "" 0 "" 0</Bp5>
+        <Bp6>_ 0 "EMUL_CODE" "{$PROJ_DIR$}.100.6" 0 0 1 "" 0 "" 0</Bp6>
+        <Count>7</Count>
+    </Breakpoints2>
+    <Aliases>
+        <A0>_ "C:\MEMSIC\SW Development\DMU380_SPI_MASTER\software\Trunk\src\main.c" "C:\work\DMU380_SPI_MASTER\software\Trunk\src\main.c"</A0>
+        <A1>_ "C:\MEMSIC\SW Development\SPI_Master\software\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F2xx\system_stm32f2xx.c" "C:\MEMSIC\SW Development\DMU380_SPI_Master\software\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F2xx\system_stm32f2xx.c"</A1>
+        <A2>_ "C:\MEMSIC\SW Development\SPI_Master\software\Libraries\STM32F2xx_StdPeriph_Driver\src\stm32f2xx_tim.c" "C:\MEMSIC\SW Development\DMU380_SPI_Master\software\Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F2xx\startup\iar\startup_stm32f2xx.s"</A2>
+        <A3>_ "C:\MEMSIC\SW Development\SPI_Master\software\Trunk\src\main.c" "C:\MEMSIC\SW Development\DMU380_SPI_Master\software\Trunk\src\main.c"</A3>
+        <A4>_ "E:\ATP2\5010-2380-01_B FW,SRC,ATP2_SPI_Master V1.0.1\software\Trunk\src\board\ConfigureGPIOPins.c" ""</A4>
+        <A5>_ "E:\SPIMaster\DMU380_SPI_MASTER_0704M\DMU380_SPI_MASTER20181213\software\Trunk\src\board\ConfigureGPIOPins.c" ""</A5>
+        <A6>_ "E:\TestSoftWareUpdate\ATP2 SPI Master\5010-2380-01_D FW,SRC,ATP2_SPI_Master V1.0.4\software\Trunk\src\board\stm32f2xx_it.c" ""</A6>
+        <A7>_ "E:\TestSoftWareUpdate\ATP2 SPI Master\5010-2380-01_D FW,SRC,ATP2_SPI_Master V1.0.4\software\Trunk\src\main.c" ""</A7>
+        <A8>_ "E:\TestSoftWareUpdate\ATP2 SPI Master\5010-2380-01_D FW,SRC,ATP2_SPI_Master V1.0.4\software\Trunk\src\timer\timer.c" ""</A8>
+        <A9>_ "E:\TestSoftWareUpdate\SPIMaster\5010-2380-01_D FW,SRC,ATP2_SPI_Master V1.0.4\software\Trunk\src\main.c" ""</A9>
+        <A10>_ "F:\memsic\svn\DMU380\software\RtosSalvo\Src\IARARM\salvoportiararm.s79" ""</A10>
+        <A11>_ "F:\memsic\svn\DMU380\software\RtosSalvo\Src\salvobinsem.c" ""</A11>
+        <A12>_ "F:\memsic\svn\DMU380\software\RtosSalvo\Src\salvodelay.c" ""</A12>
+        <A13>_ "F:\memsic\svn\DMU380\software\RtosSalvo\Src\salvoeflag.c" "C:\Projects\DMU380_SPI_MASTER\software\RtosSalvo\Src\salvoeflag.c"</A13>
+        <A14>_ "F:\memsic\svn\DMU380\software\RtosSalvo\Src\salvoeflag2.c" ""</A14>
+        <A15>_ "F:\memsic\svn\DMU380\software\RtosSalvo\Src\salvoinit.c" ""</A15>
+        <A16>_ "F:\memsic\svn\DMU380\software\RtosSalvo\Src\salvoqdel.c" "C:\MEMSIC\SW Development\DMU380_SPI_MASTER\software\RtosSalvo\Src\salvoqdel.c"</A16>
+        <A17>_ "F:\memsic\svn\DMU380\software\RtosSalvo\Src\salvoqins.c" ""</A17>
+        <A18>_ "F:\memsic\svn\DMU380\software\RtosSalvo\Src\salvosched.c" ""</A18>
+        <A19>_ "F:\memsic\svn\DMU380\software\RtosSalvo\Src\salvotimer.c" ""</A19>
+        <Count>20</Count>
+        <SuppressDialog>1</SuppressDialog>
+    </Aliases>
+</settings>

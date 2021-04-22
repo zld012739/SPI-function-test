@@ -1,0 +1,141 @@
+/** ***************************************************************************
+ * @file   commandTable.c
+ * @Author
+ * @date   September, 2008
+ * @brief  Copyright (c) 2013, 2014 All Rights Reserved.
+ *
+ * THIS CODE AND INFORMATION ARE PROVIDED "AS IS" WITHOUT WARRANTY OF ANY
+ * KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND/OR FITNESS FOR A
+ * PARTICULAR PURPOSE.
+ *
+ * Table of serial Debug console input Commands with callback function pointers
+ * and help text
+ ******************************************************************************/
+#include "commandLine.h" // tCommand
+#include "commands.h"
+
+#define COMMAND_TABLE_END {"",0,0,""}
+
+// SPI Master Command Table
+const tCommand gCommands[] =
+{ // Command,  callback, data, help text
+  { "blink", &CmdBlinkLED, 0, "Usage: blink\r\nBlink LED4 <numBlinks, 3> <ms between blinks, 250>" },
+
+  { "output", &CmdUserUsart, 0,
+  "Usage: output which string\r\nPrint characters to the user uart <which> <character string>"},
+
+  { "boardSpeedTest", &CmdUserSpi_SpeedTest, 0, "Usage: boardSpeedTest regAddr NumOfBytes" \
+                                    "\r\n       Read from 'regAddr' the number of bytes specified by 'NumOfBytes'" \
+                                    "\r\n       <default -- regAddr: 65 (0x41), NumOfBytes: 4>" },
+
+  { "write", &CmdUserSpi_WriteRegister, 0, "Usage: write regAddr msg01 [msg02 msg 03 ...] NumOfBytes" \
+                                     "\r\n       Write to 'regAddr' the byte(s) 'msg' specified by 'NumOfBytes'" \
+                                     "\r\n       <default -- regAddr: 113 (0x71), msg01: 15 (0x0F), NumOfBytes: 1>" },
+
+
+  { "speed", &CmdSpeed, 0, "Usage: speed value" \
+                           "\r\n       Select SPI clock rate as specified by 'speed'" \
+                           "\r\n       <default -- speed: 2" \
+                            "\r\n       1: reallySlow, 2: slow, 3: faster, 4: even faster, 5: fast" },
+
+  // SPI communication commands
+  { "spiCmd01", &CmdUserSpiTestSequence01, 0, "Usage: spiCmd01\r\nWrite a test sequence to the slave and display the response" },
+
+  { "initSpi", &CmdInitSPIPeripheral, 0, "Usage: initSpi\r\nInitialize the SPI peripheral" },
+
+  { "ver",    &CmdVersion, 0, "Usage: ver \r\nDisplay firmware version of SPI Master"},
+
+  // Useful commands:
+  { "pin", &CmdGpioPin, 0, "Usage: pin port pin to state"},
+
+  // Finalized versions of SPI interface code:
+  { "whoami", &CmdUserSpi_WhoAmI, 0, "Usage: whoami" \
+                                    "\r\n       Read from register 0x54 to get the product ID" },
+
+  { "atp", &CmdUserSpi_ATP_Process, 0, "Usage: atp" \
+                                    "\r\n       Send a series of writes to configure the system followed by reads of the" \
+                                    "\r\n         register to verify that the data was written.  This is echoed to the user" \
+                                    "\r\n         to confirm the write was correct.  A 'Test Successful' statement is written" \
+                                    "\r\n         if all writes were successful." },
+
+  { "spitest", &CmdUserSpi_ATP_Process, 0, "Usage: spitest" \
+                                    "\r\n       Send a series of writes to configure the system followed by reads of the" \
+                                    "\r\n         register to verify that the data was written.  This is echoed to the user" \
+                                    "\r\n         to confirm the write was correct.  A 'Test Successful' statement is written" \
+                                    "\r\n         if all writes were successful." },
+
+  { "jdInit", &CmdUserSpi_jdInitProcess, 0, "Usage: jdInit" \
+                                    "\r\n       Send a series of writes to configure the system followed by reads of the" \
+                                    "\r\n         register to verify that the data was written.  This is echoed to the user" \
+                                    "\r\n         to confirm the write was correct.  A 'Test Successful' statement is written" \
+                                    "\r\n         if all writes were successful." },
+
+  { "j", &CmdUserSpi_jdInitProcess, 0, "Usage: j" \
+                                    "\r\n       Send a series of writes to configure the system followed by reads of the" \
+                                    "\r\n         register to verify that the data was written.  This is echoed to the user" \
+                                    "\r\n         to confirm the write was correct.  A 'Test Successful' statement is written" \
+                                    "\r\n         if all writes were successful." },
+
+  { "burstHex", &CmdUserSpi_BurstReadHex, 0, "Usage: burstHex numberOfSamples delayBetweenSamples" \
+                                    "\r\n       Perform a burst-read to get sensor information (status/rates/accels/temp)" \
+                                    "\r\n       <default -- numberOfSamples: 10, delayBetweenSamples: 500 msec>" },
+
+  { "burst", &CmdUserSpi_BurstRead, 0, "Usage: burst numberOfSamples delayBetweenSamples" \
+                                    "\r\n       Perform a burst-read to get sensor information (status/rates/accels/temp)" \
+                                    "\r\n       <default -- numberOfSamples: 10, delayBetweenSamples: 500 msec>" },
+
+//  { "adiBurst", &CmdUserSpi_ADIBurstRead, 0, "Usage: adiBurst numberOfSamples delayBetweenSamples" \
+//                                    "\r\n       Perform a burst-read to get sensor information (status/rates/accels/temp)" \
+//                                    "\r\n       <default -- numberOfSamples: 10, delayBetweenSamples: 500 msec>" },
+
+  { "temp", &CmdUserSpi_GetBoardTemp, 0, "Usage: temp numberOfSamples delayBetweenSamples" \
+                                    "\r\n       Perform a read of temperature-sensor information" \
+                                    "\r\n       <default -- numberOfSamples: 10, delayBetweenSamples: 500 msec>" },
+
+  { "rates", &CmdUserSpi_GetRates, 0, "Usage: rates numberOfSamples delayBetweenSamples" \
+                                    "\r\n       Perform a read of rate-sensor information" \
+                                    "\r\n       <default -- numberOfSamples: 10, delayBetweenSamples: 500 msec>" },
+
+  { "accels", &CmdUserSpi_GetAccels, 0, "Usage: accels numberOfSamples delayBetweenSamples" \
+                                    "\r\n       Perform a read of accelerometer information" \
+                                    "\r\n       <default -- numberOfSamples: 10, delayBetweenSamples: 500 msec>" },
+
+  { "sensors", &CmdUserSpi_GetSensorValues, 0, "Usage: sensors numberOfSamples delayBetweenSamples" \
+                                    "\r\n       Perform a non-burst-mode read of sensor information (rates/accels/temp)" \
+                                    "\r\n       <default -- numberOfSamples: 10, delayBetweenSamples: 500 msec>" },
+
+  { "read", &CmdUserSpi_ReadRegister, 0, "Usage: read regAddr NumOfBytes" \
+                                    "\r\n       Read from 'regAddr' the number of bytes specified by 'NumOfBytes'" \
+                                    "\r\n       <default -- regAddr: 65 (0x41), NumOfBytes: 4>" },
+
+  { "r", &CmdUserSpi_ReadRegister, 0, "Usage: r regAddr NumOfBytes" \
+                                    "\r\n       Read from 'regAddr' the number of bytes specified by 'NumOfBytes'" \
+                                    "\r\n       <default -- regAddr: 65 (0x41), NumOfBytes: 4>" },
+
+  { "readHex", &CmdUserSpi_ReadRegisterHex, 0, "Usage: readHex regAddr NumOfBytes" \
+                                    "\r\n       Read from 'regAddr' the number of bytes specified by 'NumOfBytes'" \
+                                    "\r\n       <default -- regAddr: 65 (0x41), NumOfBytes: 4>" },
+
+  { "rHex", &CmdUserSpi_ReadRegisterHex, 0, "Usage: rHex regAddr NumOfBytes" \
+                                    "\r\n       Read from 'regAddr' the number of bytes specified by 'NumOfBytes'" \
+                                    "\r\n       <default -- regAddr: 65 (0x41), NumOfBytes: 4>" },
+
+  { "selfTest", &CmdUserSpi_SelfTest, 0, "Usage: selfTest numberOfTests rngSeed" \
+                                    "\r\n       Perform a self-test of the system" \
+                                    "\r\n       <default -- numberOfTests: 10, delay: 1>" },
+  { "spiTest", &CmdUserSpi_ATP_Process, 0, "Usage: atp" \
+                                    "\r\n       Send a series of writes to configure the system followed by reads of the" \
+                                    "\r\n         register to verify that the data was written.  This is echoed to the user" \
+                                    "\r\n         to confirm the write was correct.  A 'Test Successful' statement is written" \
+                                    "\r\n         if all writes were successful." },
+
+//  { "sync", &CmdUserSpi_GenerateSyncSignal, 0, "Usage: sync" \
+//                                    "\r\n       Send a series of writes to configure the system followed by reads of the" \
+//                                    "\r\n         register to verify that the data was written.  This is echoed to the user" \
+//                                    "\r\n         to confirm the write was correct.  A 'Test Successful' statement is written" \
+//                                    "\r\n         if all writes were successful." },
+
+  COMMAND_TABLE_END  //MUST BE LAST!!!
+};
+

@@ -1,0 +1,209 @@
+power_cycle#Close CS toggle between bytes#4E0A
+default_check1#Test data is transmitted MSB first from the UUT, Read Product ID register (0x56)#560A
+default_check1#SERIAL_NUMBER low two byte check (0x60)#600A
+default_check1#SERIAL_NUMBER High two byte check (0x62)#620A
+default_check1#Perform an SPI transaction (Read Product ID register (0x56)) at 500KHz clock speed#560100000A
+default_check1#Perform an SPI transaction (Read Product ID register (0x56)) at 1MHz clock speed#560200000A
+default_check1#FW REVISION low two byte check (0x64)#640A
+default_check1#FW REVISION High two byte check (0x66)#660A
+default_check1#Read 0x37 verify ODR default value is 0x01 and 0x38 ACCELEROMETER SENSOR LOW_PASS_FILTER value is 0x40#370A
+default_check1#Read 0x3C register to verify that Diagnostic Status Register default value is 0x0000#3C0A
+default_check1#Read 0x74 register to verify that ORIENTATION_MSB and ORIENTATION_LSB default value is 0x006B#740A
+default_check1#Read 0x78 register to verify RATE SENSOR LOW_PASS_FILTER default value is 0x40#780A
+read_only#0x3C register is read-only (Status) test#3C560A
+read_only#0x3E register is read-only (Standard Burst) test#3E560A
+read_only#0x3F register is read-only (Extended Burst) test#3F560A
+read_only#0x56 register is read-only (Product ID Status information - High Byte) test#56560A
+read_only#0x57 register is read-only (Product ID Status information - Low Byte) test#57560A
+read_only#0x60 register is read-only (Serial Number information) test#60560A
+read_only#0x61 register is read-only (Serial Number information) test#61560A
+read_only#0x62 register is read-only (Serial Number information) test#62560A
+read_only#0x63 register is read-only (Serial Number information) test#63560A
+read_only#0x64 register is read-only (FW REVISION) test#64560A
+read_only#0x65 register is read-only (FW REVISION) test#65560A
+read_only#0x66 register is read-only (FW REVISION) test#66560A
+read_only#0x67 register is read-only (FW REVISION) test#67560A
+read_only#0x7E register is read-only (HW_VERSION) test#7E560A
+write_only#Write 0x00 to the ODR(0x37) register#3700000A
+default_check1#verify 0x36(ODR)0x0000#360A
+default_check2#Verify when 0x00 is written to the ODR(0x37) register, Data Ready signal suppressed#000000000A
+write_only#Write 0x01 to the ODR(0x37) register#3701000A
+default_check1#verify 0x36(ODR)0x0001#360A
+default_check2#Verify when 0x01 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 5mS#000000000A
+write_only#Write 0x02 to the ODR(0x37) register#3702000A
+default_check1#verify 0x36(ODR)0x0002#360A
+default_check2#Verify when 0x02 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 10mS#000000000A
+write_only#Write 0x03 to the ODR(0x37) register#3703000A
+default_check1#verify 0x36(ODR)0x0003#360A
+default_check2#Verify when 0x03 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 20mS#000000000A
+write_only#Write 0x04 to the ODR(0x37) register#3704000A
+default_check1#verify 0x36(ODR)0x0004#360A
+default_check2#Verify when 0x04 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 40mS#000000000A
+write_only#Write 0x05 to the ODR(0x37) register#3705000A
+default_check1#verify 0x36(ODR)0x0005#360A
+default_check2#Verify when 0x05 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 50mS#000000000A
+write_only#Write 0x06 to the ODR(0x37) register#3706000A
+default_check1#verify 0x36(ODR)0x0006#360A
+default_check2#Verify when 0x06 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 100mS#000000000A
+write_only#Write 0x07 to the ODR(0x37) register#3707000A
+default_check1#verify 0x36(ODR)0x0007#360A
+default_check2#Verify when 0x07 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 200mS#000000000A
+write_only#Write 0x08 to the ODR(0x37) register#3708000A
+default_check1#verify 0x36(ODR)0x0008#360A
+default_check2#Verify when 0x08 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 250mS#000000000A
+write_only#Write 0x09 to the ODR(0x37) register#3709000A
+default_check1#verify 0x36(ODR)0x0009#360A
+default_check2#Verify when 0x09 is written to the ODR(0x37) register, time interval between two DRDY falling edges is 500ms#000000000A
+write_only#write 0x37 to register 0x76 to save to SPI packet rate configuration permanently#7637000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#verify 0x36(ODR)0x0009#360A
+write_only#Write 0x01 to the ODR(0x37) register#3701000A
+default_check1#verify 0x36(ODR)0x0001#360A
+write_only#Write 0x55 to the ODR(0x03) register#0355000A
+write_only#Write 0xAA to the ODR(0x02) register#02AA000A
+default_check1#Resets unit upon writing value 0x55 and 0xAA into registers 3 and 2 sequentially verify 0x37 is 0x09#360A
+write_only#Write 0x00 to 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER) register#3800000A
+write_only#Write 0x00 to 0x78(RATE SENSOR LOW_PASS_FILTER) register#7800000A
+default_check1#verify 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER)0x0000#380A
+default_check1#verify 0x78(RATE SENSOR LOW_PASS_FILTER)0x0000#780A
+write_only#write 0x38 to register 0x76 to save ACCELEROMETER SENSOR LOW_PASS_FILTER configuration permanently#7638000A
+write_only#write 0x78 to register 0x76 to save RATE SENSOR LOW_PASS_FILTER configuration permanently#7678000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#verify 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER)0x0000#380A
+default_check1#verify 0x78(RATE SENSOR LOW_PASS_FILTER)0x0000#780A
+write_only#Write 0x03 to 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER) register#3803000A
+write_only#Write 0x03 to 0x78(RATE SENSOR LOW_PASS_FILTER) register#7803000A
+default_check1#verify 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER)0x0300#380A
+default_check1#verify 0x78(RATE SENSOR LOW_PASS_FILTER)0x0300#780A
+write_only#Write 0x04 to 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER) register#3804000A
+write_only#Write 0x04 to 0x78(RATE SENSOR LOW_PASS_FILTER) register#7804000A
+default_check1#verify 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER)0x0400#380A
+default_check1#verify 0x78(RATE SENSOR LOW_PASS_FILTER)0x0400#780A
+write_only#Write 0x05 to 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER) register#3805000A
+write_only#Write 0x05 to 0x78(RATE SENSOR LOW_PASS_FILTER) register#7805000A
+default_check1#verify 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER)0x0500#380A
+default_check1#verify 0x78(RATE SENSOR LOW_PASS_FILTER)0x0500#780A
+write_only#Write 0x06 to 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER) register#3806000A
+write_only#Write 0x06 to 0x78(RATE SENSOR LOW_PASS_FILTER) register#7806000A
+default_check1#verify 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER)0x0600#380A
+default_check1#verify 0x78(RATE SENSOR LOW_PASS_FILTER)0x0600#780A
+write_only#Write 0x30 to 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER) register#3830000A
+write_only#Write 0x30 to 0x78(RATE SENSOR LOW_PASS_FILTER) register#7830000A
+default_check1#verify 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER)0x3000#380A
+default_check1#verify 0x78(RATE SENSOR LOW_PASS_FILTER)0x3000#780A
+write_only#Write 0x40 to 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER) register#3840000A
+write_only#Write 0x40 to 0x78(RATE SENSOR LOW_PASS_FILTER) register#7840000A
+default_check1#verify 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER)0x4000#380A
+default_check1#verify 0x78(RATE SENSOR LOW_PASS_FILTER)0x4000#780A
+write_only#Write 0x50 to 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER) register#3850000A
+write_only#Write 0x50 to 0x78(RATE SENSOR LOW_PASS_FILTER) register#7850000A
+default_check1#verify 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER)0x5000#380A
+default_check1#verify 0x78(RATE SENSOR LOW_PASS_FILTER)0x5000#780A
+write_only#Write 0x60 to 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER) register#3860000A
+write_only#Write 0x60 to 0x78(RATE SENSOR LOW_PASS_FILTER) register#7860000A
+default_check1#verify 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER)0x6000#380A
+default_check1#verify 0x78(RATE SENSOR LOW_PASS_FILTER)0x6000#780A
+write_only#Write 0x55 to the ODR(0x03) register#0355000A
+write_only#Write 0xAA to the ODR(0x02) register#02AA000A
+default_check1#verify 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER)0x0000#380A
+default_check1#verify 0x78(RATE SENSOR LOW_PASS_FILTER)0x0000#780A
+burst_sp#verify that sign for each axis flipped by reading Standard Burst packet by sending 0x3E command#3E0A
+write_only#Write 0xCD to register 0x75#75CD000A
+write_only#Write 0x00 to register 0x74#7400000A
+default_check1#Write 0xCD to 0x75 and write 0x00 to 0x74. Read back 0x74 to verify the value is still 0x006B#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0xCD to register 0x75 and verify#75CD000A
+default_check1#verify 0x00CD in register 0x74 and 0x75#740A
+write_only#write 0x74 to register 0x76 to save Orientation configuration permanently#7674000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#Read 0x74 register to verify that value is 0x00CD#740A
+write_only#Write 0xFF to register 0x74 and verify#74FF000A
+write_only#Write 0xFF to register 0x75 and verify#75FF000A
+default_check1#verify 0x00CD in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x00 to register 0x75 and verify#7500000A
+default_check1#verify 0x0000 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x09 to register 0x75 and verify#7509000A
+default_check1#verify 0x0009 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x23 to register 0x75 and verify#7523000A
+default_check1#verify 0x0023 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#:Write 0x2A to register 0x75 and verify#752A000A
+default_check1#verify 0x002A in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x41 to register 0x75 and verify#7541000A
+default_check1#verify 0x0041 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x48 to register 0x75 and verify#7548000A
+default_check1#verify 0x0048 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x62 to register 0x75 and verify#7562000A
+default_check1#verify 0x0062 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x6B to register 0x75 and verify#756B000A
+default_check1#verify 0x006B in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x85 to register 0x75 and verify#7585000A
+default_check1#verify 0x0085 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x8C to register 0x75 and verify#758C000A
+default_check1#verify 0x008C in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x92 to register 0x75 and verify#7592000A
+default_check1#verify 0x0092 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x9B to register 0x75 and verify#759B000A
+default_check1#verify 0x009B in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0xC4 to register 0x75 and verify#75C4000A
+default_check1#verify 0x00C4 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0xD3 to register 0x75 and verify#75D3000A
+default_check1#verify 0x00D3 in register 0x74 and 0x75#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0xDA to register 0x75 and verify#75DA000A
+default_check1#verify 0x00DA in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x11 to register 0x75 and verify#7511000A
+default_check1#verify 0x0011 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x18 to register 0x75 and verify#7518000A
+default_check1#verify 0x0018 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x24 to register 0x75 and verify#7524000A
+default_check1#verify 0x0024 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x2D to register 0x75 and verify#752D000A
+default_check1#verify 0x012D in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x50 to register 0x75 and verify#7550000A
+default_check1#verify 0x0150 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x59 to register 0x75 and verify#7559000A
+default_check1#verify 0x0159 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x65 to register 0x75 and verify#7565000A
+default_check1#verify 0x0165 in register 0x74 and 0x75#740A
+write_only#Write 0x01 to register 0x74 and verify#7401000A
+write_only#Write 0x6C to register 0x75 and verify#756C000A
+default_check1#verify 0x016C in register 0x74 and 0x75#740A
+write_only#Write 0x55 to the ODR(0x03) register#0355000A
+write_only#Write 0xAA to the ODR(0x02) register#02AA000A
+default_check1#Read 0x74 register to verify that value is 0x00CD#740A
+write_only#Write 0x00 to register 0x74 and verify#7400000A
+write_only#Write 0x6B to register 0x75 and verify#756B000A
+default_check1#verify 0x006B in register 0x74 and 0x75#740A
+write_only#Write 0x01 to the ODR(0x37) register#3701000A
+write_only#Write 0x40 to 0x38(ACCELEROMETER SENSOR LOW_PASS_FILTER) register#3840000A
+write_only#Write 0x40 to 0x78(RATE SENSOR LOW_PASS_FILTER) register#7840000A
+write_only#write 0x00 to register 0x76 to save ALL configuration permanently#7600000A
+power_cycle#Reset UUT power down and power off#FF0A
+default_check1#Read 0x74 register to verify that value is 0x006B#740A
+default_check1#Read 0x38 register to verify that value is 0x4000#380A
+default_check1#Read 0x78 register to verify that value is 0x4000#780A
+default_check1#Read 0x36 register to verify that value is 0x0001#360A
+burst_sp#Read accel and Rate-Sensor data in Extand Data packet#3F0A
+1M data packets check with ODR 200Hz#
+end of command file#

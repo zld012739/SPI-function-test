@@ -1,0 +1,1595 @@
+###############################################################################
+#                                                                             #
+# IAR ELF Linker V6.30.6.53336/W32 for ARM              25/Jun/2013  11:21:27 #
+# Copyright 2007-2012 IAR Systems AB.                                         #
+#                                                                             #
+#    Output file  =  F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Exe\DMU380 #
+#                    .out                                                     #
+#    Map file     =  F:\memsic\svn\DMU380\software\Trunk\iar\Debug\List\DMU38 #
+#                    0.map                                                    #
+#    Command line =  F:\memsic\svn\DMU380\software\RtosSalvo\Iar\Debug\Exe\sa #
+#                    lvo.a F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\ #
+#                    accelMMA8451Q.o F:\memsic\svn\DMU380\software\Trunk\iar\ #
+#                    Debug\Obj\algorithm.o F:\memsic\svn\DMU380\software\Trun #
+#                    k\iar\Debug\Obj\bsp.o F:\memsic\svn\DMU380\software\Trun #
+#                    k\iar\Debug\Obj\c33_cast.o F:\memsic\svn\DMU380\software #
+#                    \Trunk\iar\Debug\Obj\calibrate.o                         #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\calibr #
+#                    ate_mag.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug\ #
+#                    Obj\circbuf.o F:\memsic\svn\DMU380\software\Trunk\iar\De #
+#                    bug\Obj\comm_buffers.o F:\memsic\svn\DMU380\software\Tru #
+#                    nk\iar\Debug\Obj\commandLine.o                           #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\comman #
+#                    dTable.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug\O #
+#                    bj\commands.o F:\memsic\svn\DMU380\software\Trunk\iar\De #
+#                    bug\Obj\convert.o F:\memsic\svn\DMU380\software\Trunk\ia #
+#                    r\Debug\Obj\crc.o F:\memsic\svn\DMU380\software\Trunk\ia #
+#                    r\Debug\Obj\crm_packet.o F:\memsic\svn\DMU380\software\T #
+#                    runk\iar\Debug\Obj\debug.o F:\memsic\svn\DMU380\software #
+#                    \Trunk\iar\Debug\Obj\debug_usart.o                       #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\extern #
+#                    _port.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Ob #
+#                    j\gyroMAX21000.o F:\memsic\svn\DMU380\software\Trunk\iar #
+#                    \Debug\Obj\gyroMPU3300.o F:\memsic\svn\DMU380\software\T #
+#                    runk\iar\Debug\Obj\handle_packet.o                       #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\i2c.o  #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\iar_st #
+#                    m32f207zg_sk.o F:\memsic\svn\DMU380\software\Trunk\iar\D #
+#                    ebug\Obj\magHMC5883L.o F:\memsic\svn\DMU380\software\Tru #
+#                    nk\iar\Debug\Obj\main.o F:\memsic\svn\DMU380\software\Tr #
+#                    unk\iar\Debug\Obj\matrix.o F:\memsic\svn\DMU380\software #
+#                    \Trunk\iar\Debug\Obj\misc.o                              #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\s_eepr #
+#                    om.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\s #
+#                    alvohook_idle.o F:\memsic\svn\DMU380\software\Trunk\iar\ #
+#                    Debug\Obj\salvohook_interrupt.o                          #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\salvoh #
+#                    ook_wdt.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug\ #
+#                    Obj\send_packet.o F:\memsic\svn\DMU380\software\Trunk\ia #
+#                    r\Debug\Obj\spi.o F:\memsic\svn\DMU380\software\Trunk\ia #
+#                    r\Debug\Obj\startup_stm32f2xx.o                          #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\stm32f #
+#                    2xx_adc.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug\ #
+#                    Obj\stm32f2xx_can.o F:\memsic\svn\DMU380\software\Trunk\ #
+#                    iar\Debug\Obj\stm32f2xx_crc.o                            #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\stm32f #
+#                    2xx_cryp.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug #
+#                    \Obj\stm32f2xx_cryp_aes.o F:\memsic\svn\DMU380\software\ #
+#                    Trunk\iar\Debug\Obj\stm32f2xx_cryp_des.o                 #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\stm32f #
+#                    2xx_cryp_tdes.o F:\memsic\svn\DMU380\software\Trunk\iar\ #
+#                    Debug\Obj\stm32f2xx_dac.o F:\memsic\svn\DMU380\software\ #
+#                    Trunk\iar\Debug\Obj\stm32f2xx_dbgmcu.o                   #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\stm32f #
+#                    2xx_dcmi.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug #
+#                    \Obj\stm32f2xx_dma.o F:\memsic\svn\DMU380\software\Trunk #
+#                    \iar\Debug\Obj\stm32f2xx_exti.o                          #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\stm32f #
+#                    2xx_flash.o F:\memsic\svn\DMU380\software\Trunk\iar\Debu #
+#                    g\Obj\stm32f2xx_fsmc.o F:\memsic\svn\DMU380\software\Tru #
+#                    nk\iar\Debug\Obj\stm32f2xx_gpio.o                        #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\stm32f #
+#                    2xx_hash.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug #
+#                    \Obj\stm32f2xx_hash_md5.o F:\memsic\svn\DMU380\software\ #
+#                    Trunk\iar\Debug\Obj\stm32f2xx_hash_sha1.o                #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\stm32f #
+#                    2xx_i2c.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug\ #
+#                    Obj\stm32f2xx_it.o F:\memsic\svn\DMU380\software\Trunk\i #
+#                    ar\Debug\Obj\stm32f2xx_iwdg.o                            #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\stm32f #
+#                    2xx_pwr.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug\ #
+#                    Obj\stm32f2xx_rcc.o F:\memsic\svn\DMU380\software\Trunk\ #
+#                    iar\Debug\Obj\stm32f2xx_rng.o                            #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\stm32f #
+#                    2xx_rtc.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug\ #
+#                    Obj\stm32f2xx_sdio.o F:\memsic\svn\DMU380\software\Trunk #
+#                    \iar\Debug\Obj\stm32f2xx_spi.o                           #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\stm32f #
+#                    2xx_syscfg.o F:\memsic\svn\DMU380\software\Trunk\iar\Deb #
+#                    ug\Obj\stm32f2xx_tim.o F:\memsic\svn\DMU380\software\Tru #
+#                    nk\iar\Debug\Obj\stm32f2xx_usart.o                       #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\stm32f #
+#                    2xx_wwdg.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug #
+#                    \Obj\system_stm32f2xx.o F:\memsic\svn\DMU380\software\Tr #
+#                    unk\iar\Debug\Obj\taskDataAcquisition.o                  #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\taskUs #
+#                    erCommunication.o F:\memsic\svn\DMU380\software\Trunk\ia #
+#                    r\Debug\Obj\tempTMP102.o F:\memsic\svn\DMU380\software\T #
+#                    runk\iar\Debug\Obj\timer.o F:\memsic\svn\DMU380\software #
+#                    \Trunk\iar\Debug\Obj\uart.o                              #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\ucb_pa #
+#                    cket.o F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj #
+#                    \utilities.o F:\memsic\svn\DMU380\software\Trunk\iar\Deb #
+#                    ug\Obj\xbowsp_bit.o F:\memsic\svn\DMU380\software\Trunk\ #
+#                    iar\Debug\Obj\xbowsp_fields.o                            #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj\xbowsp #
+#                    _init.o -o F:\memsic\svn\DMU380\software\Trunk\iar\Debug #
+#                    \Exe\DMU380.out --map F:\memsic\svn\DMU380\software\Trun #
+#                    k\iar\Debug\List\DMU380.map --config                     #
+#                    F:\memsic\svn\DMU380\software\Trunk\iar\..\src\board\stm #
+#                    32f2xx_flash.icf --semihosting --entry                   #
+#                    __iar_program_start --redirect                           #
+#                    __iar_sh_stdout=__iar_sh_stdout_swo --no_exceptions      #
+#                    --vfe                                                    #
+#                                                                             #
+#                                                                             #
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor                     = *
+__SystemLibrary               = DLib
+__dlib_dynamic_initialization = normal
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x080e0000 to 0x080fffff] { block FLASH_EEPROM_block };
+"P2":  place in [from 0x08000000 to 0x080fffff] { ro };
+"P3":  place in [from 0x20000000 to 0x20020000] { rw, block CSTACK, block HEAP };
+
+  Section               Kind        Address    Size  Object
+  -------               ----        -------    ----  ------
+"A1":                                         0x184
+  .intvec               ro code  0x08000000   0x184  startup_stm32f2xx.o [1]
+                               - 0x08000184   0x184
+
+"P2":                                        0xd4cc
+  .text                 ro code  0x08000184  0x185e  send_packet.o [1]
+  .text                 ro code  0x080019e2    0x2e  copy_init3.o [5]
+  .text                 ro code  0x08001a10    0x76  ABImemcpy.o [5]
+  .text                 ro code  0x08001a86    0x22  zero_init3.o [5]
+  .text                 ro code  0x08001aa8   0xe4c  extern_port.o [1]
+  .text                 ro code  0x080028f4   0xd5c  xbowsp_fields.o [1]
+  .text                 ro code  0x08003650   0x144  xbowsp_bit.o [1]
+  .text                 ro code  0x08003794   0x1a2  DblMul.o [4]
+  .rodata               const    0x08003936     0x2  commandTable.o [1]
+  .text                 ro code  0x08003938    0x58  DblToI32.o [4]
+  .text                 ro code  0x08003990   0x198  crc.o [1]
+  .text                 ro code  0x08003b28   0x166  comm_buffers.o [1]
+  .rodata               const    0x08003c8e     0x2  commandTable.o [1]
+  .text                 ro code  0x08003c90   0x1c8  uart.o [1]
+  .text                 ro code  0x08003e58   0x192  ucb_packet.o [1]
+  .text                 ro code  0x08003fea    0x6a  crm_packet.o [1]
+  .text                 ro code  0x08004054    0x18  extern_port.o [1]
+  .text                 ro code  0x0800406c    0x10  c33_cast.o [1]
+  .text                 ro code  0x0800407c   0x122  s_eeprom.o [1]
+  .rodata               const    0x0800419e     0x2  commandTable.o [1]
+  .text                 ro code  0x080041a0    0xe8  DblAdd.o [4]
+  .text                 ro code  0x08004288   0x1d0  stm32f2xx_rcc.o [1]
+  .text                 ro code  0x08004458   0x118  stm32f2xx_gpio.o [1]
+  .text                 ro code  0x08004570   0x15e  stm32f2xx_usart.o [1]
+  .rodata               const    0x080046ce     0x2  commandTable.o [1]
+  .text                 ro code  0x080046d0    0x78  misc.o [1]
+  .text                 ro code  0x08004748    0x2c  salvohook_interrupt.o [1]
+  .text                 ro code  0x08004774     0xe  s_eeprom.o [1]
+  .rodata               const    0x08004782     0x2  crc.o [1]
+  .text                 ro code  0x08004784   0x1b4  stm32f2xx_flash.o [1]
+  .text                 ro code  0x08004938   0x180  DblSub.o [4]
+  .text                 ro code  0x08004ab8   0xfbc  commands.o [1]
+  .text                 ro code  0x08005a74   0x17e  debug.o [1]
+  .rodata               const    0x08005bf2     0x2  extern_port.o [1]
+  .text                 ro code  0x08005bf4   0x164  commandLine.o [1]
+  .text                 ro code  0x08005d58   0x45c  accelMMA8451Q.o [1]
+  .text                 ro code  0x080061b4   0x4d0  magHMC5883L.o [1]
+  .text                 ro code  0x08006684   0x5d0  gyroMPU3300.o [1]
+  .text                 ro code  0x08006c54   0x51c  gyroMAX21000.o [1]
+  .text                 ro code  0x08007170    0xd8  timer.o [1]
+  .text                 ro code  0x08007248   0x158  salvoeflag.o [6]
+  .text                 ro code  0x080073a0    0x32  I32ToFlt.o [4]
+  .rodata               const    0x080073d2     0x2  extern_port.o [1]
+  .text                 ro code  0x080073d4    0xfc  FltDiv.o [4]
+  .text                 ro code  0x080074d0   0x20a  tempTMP102.o [1]
+  .rodata               const    0x080076da     0x2  extern_port.o [1]
+  .text                 ro code  0x080076dc    0xd8  FltMul.o [4]
+  .text                 ro code  0x080077b4    0x4e  FltToDbl.o [4]
+  .rodata               const    0x08007802     0x2  taskUserCommunication.o [1]
+  .text                 ro code  0x08007804    0xf0  sqrt.o [4]
+  .text                 ro code  0x080078f4    0x90  DblToFlt.o [4]
+  .text                 ro code  0x08007984     0x6  ABImemclr4.o [5]
+  .rodata               const    0x0800798a     0x2  taskUserCommunication.o [1]
+  .text                 ro code  0x0800798c   0x388  taskDataAcquisition.o [1]
+  .text                 ro code  0x08007d14    0x36  strlen.o [5]
+  .rodata               const    0x08007d4a     0x2  ucb_packet.o [1]
+  .text                 ro code  0x08007d4c   0x25c  debug_usart.o [1]
+  .text                 ro code  0x08007fa8    0x44  FltToS32.o [4]
+  .text                 ro code  0x08007fec    0x24  FltCmpLe.o [4]
+  .text                 ro code  0x08008010    0xe6  FltSub.o [4]
+  .text                 ro code  0x080080f6    0xca  utilities.o [1]
+  .text                 ro code  0x080081c0     0x8  atoi.o [3]
+  .text                 ro code  0x080081c8   0x8a8  i2c.o [1]
+  .text                 ro code  0x08008a70    0x16  salvoeflag2.o [6]
+  .rodata               const    0x08008a86     0x1  commandTable.o [1]
+  .text                 ro code  0x08008a88    0xd8  stm32f2xx_exti.o [1]
+  .text                 ro code  0x08008b60    0x54  stm32f2xx_syscfg.o [1]
+  .text                 ro code  0x08008bb4   0x290  spi.o [1]
+  .text                 ro code  0x08008e44    0x2c  salvotimer.o [6]
+  .text                 ro code  0x08008e70   0x12c  salvoevent.o [6]
+  .text                 ro code  0x08008f9c     0xc  iarEdom.o [5]
+  .text                 ro code  0x08008fa8    0x32  ABImemset48.o [5]
+  .text                 ro code  0x08008fdc    0xf8  stm32f2xx_tim.o [1]
+  .text                 ro code  0x080090d4   0x5b8  calibrate.o [1]
+  CODE                  ro code  0x0800968c    0x6c  salvoportiararm.o [6]
+  .text                 ro code  0x080096f8    0x8e  circbuf.o [1]
+  .text                 ro code  0x08009788    0xd0  salvobinsem.o [6]
+  .text                 ro code  0x08009858    0x74  FltAdd.o [4]
+  .text                 ro code  0x080098cc   0x174  xstoul.o [3]
+  .text                 ro code  0x08009a40   0x26e  stm32f2xx_i2c.o [1]
+  .text                 ro code  0x08009cb0   0x112  stm32f2xx_spi.o [1]
+  .text                 ro code  0x08009dc4   0x1b0  stm32f2xx_dma.o [1]
+  .text                 ro code  0x08009f74    0xa0  salvoqdel.o [6]
+  .text                 ro code  0x0800a014    0xac  salvoqins.o [6]
+  .text                 ro code  0x0800a0c0     0xc  errno.o [3]
+  .text                 ro code  0x0800a0cc    0x30  I32ToDbl.o [4]
+  .text                 ro code  0x0800a0fc   0x246  DblDiv.o [4]
+  .text                 ro code  0x0800a342    0x14  isxxx.o [3]
+  .text                 ro code  0x0800a356    0x14  tolower.o [3]
+  .text                 ro code  0x0800a36c    0x58  memchr.o [5]
+  .text                 ro code  0x0800a3c4     0x2  xtls.o [3]
+  .text                 ro code  0x0800a3c8    0x18  setlocale.o [3]
+  .text                 ro code  0x0800a3e0    0x14  xlocale_c.o [3]
+  .text                 ro code  0x0800a3f4     0xc  xlocale_c.o [3]
+  .text                 ro code  0x0800a400   0xbe8  handle_packet.o [1]
+  .text                 ro code  0x0800afe8     0x4  algorithm.o [1]
+  .text                 ro code  0x0800afec   0x4f4  xbowsp_init.o [1]
+  .text                 ro code  0x0800b4e0    0x86  convert.o [1]
+  .text                 ro code  0x0800b568   0x218  salvosched.o [6]
+  .text                 ro code  0x0800b780     0x2  salvohook_wdt.o [1]
+  .text                 ro code  0x0800b782     0x2  salvohook_idle.o [1]
+  .rodata               const    0x0800b784   0x1e0  commandTable.o [1]
+  .text                 ro code  0x0800b964   0x1c8  taskUserCommunication.o [1]
+  .text                 ro code  0x0800bb2c   0x124  system_stm32f2xx.o [1]
+  .text                 ro code  0x0800bc50   0x118  main.o [1]
+  .text                 ro code  0x0800bd68    0x46  bsp.o [1]
+  .text                 ro code  0x0800bdb0    0x48  salvoinit.o [6]
+  .text                 ro code  0x0800bdf8    0x7a  salvoinit2.o [6]
+  .text                 ro code  0x0800be74    0x84  salvodelay.o [6]
+  .text                 ro code  0x0800bef8    0x98  iar_stm32f207zg_sk.o [1]
+  .rodata               const    0x0800bf90   0x110  commandTable.o [1]
+  .rodata               const    0x0800c0a0    0xbc  commandTable.o [1]
+  .rodata               const    0x0800c15c    0xbc  commandTable.o [1]
+  .rodata               const    0x0800c218    0xb8  commandTable.o [1]
+  .rodata               const    0x0800c2d0    0xb0  xbowsp_bit.o [1]
+  .text                 ro code  0x0800c380    0xae  stm32f2xx_it.o [1]
+  .rodata               const    0x0800c430    0x60  commandTable.o [1]
+  .rodata               const    0x0800c490    0x58  uart.o [1]
+  .rodata               const    0x0800c4e8    0x54  commandTable.o [1]
+  .rodata               const    0x0800c53c    0x4c  commandTable.o [1]
+  .rodata               const    0x0800c588    0x48  commandTable.o [1]
+  .rodata               const    0x0800c5d0    0x44  commandTable.o [1]
+  .rodata               const    0x0800c614    0x44  ucb_packet.o [1]
+  .rodata               const    0x0800c658    0x40  commandTable.o [1]
+  .rodata               const    0x0800c698    0x40  commandTable.o [1]
+  .rodata               const    0x0800c6d8    0x40  commandTable.o [1]
+  .rodata               const    0x0800c718    0x40  commandTable.o [1]
+  .rodata               const    0x0800c758    0x40  commandTable.o [1]
+  .rodata               const    0x0800c798    0x40  commandTable.o [1]
+  .rodata               const    0x0800c7d8    0x3c  commandTable.o [1]
+  .rodata               const    0x0800c814    0x3c  commands.o [1]
+  .rodata               const    0x0800c850    0x38  commandTable.o [1]
+  .rodata               const    0x0800c888    0x38  commands.o [1]
+  .rodata               const    0x0800c8c0    0x34  commandTable.o [1]
+  .rodata               const    0x0800c8f4    0x34  commands.o [1]
+  .rodata               const    0x0800c928    0x30  commandTable.o [1]
+  .rodata               const    0x0800c958    0x30  tempTMP102.o [1]
+  .rodata               const    0x0800c988    0x2c  commandTable.o [1]
+  .rodata               const    0x0800c9b4    0x2c  commandTable.o [1]
+  .rodata               const    0x0800c9e0    0x2c  commands.o [1]
+  .rodata               const    0x0800ca0c    0x2c  tempTMP102.o [1]
+  .text                 ro code  0x0800ca38    0x2c  data_init3.o [5]
+  .rodata               const    0x0800ca64    0x28  accelMMA8451Q.o [1]
+  .rodata               const    0x0800ca8c    0x28  commands.o [1]
+  .rodata               const    0x0800cab4    0x28  commands.o [1]
+  .rodata               const    0x0800cadc    0x28  commands.o [1]
+  .rodata               const    0x0800cb04    0x28  commands.o [1]
+  .rodata               const    0x0800cb2c    0x24  gyroMAX21000.o [1]
+  .rodata               const    0x0800cb50    0x24  gyroMPU3300.o [1]
+  .iar.init_table       const    0x0800cb74    0x24  - Linker created -
+  .rodata               const    0x0800cb98    0x20  commandTable.o [1]
+  .rodata               const    0x0800cbb8    0x20  commands.o [1]
+  .rodata               const    0x0800cbd8    0x20  commands.o [1]
+  .rodata               const    0x0800cbf8    0x20  commands.o [1]
+  .rodata               const    0x0800cc18    0x20  gyroMPU3300.o [1]
+  .rodata               const    0x0800cc38    0x20  magHMC5883L.o [1]
+  .rodata               const    0x0800cc58    0x20  taskDataAcquisition.o [1]
+  .rodata               const    0x0800cc78    0x1c  commandLine.o [1]
+  .rodata               const    0x0800cc94    0x1c  commandTable.o [1]
+  .rodata               const    0x0800ccb0    0x1c  commands.o [1]
+  .rodata               const    0x0800cccc    0x1c  commands.o [1]
+  .rodata               const    0x0800cce8    0x1c  commands.o [1]
+  .rodata               const    0x0800cd04    0x1c  commands.o [1]
+  .rodata               const    0x0800cd20    0x1c  commands.o [1]
+  .rodata               const    0x0800cd3c    0x1c  gyroMAX21000.o [1]
+  .rodata               const    0x0800cd58    0x1c  magHMC5883L.o [1]
+  .rodata               const    0x0800cd74    0x1c  tempTMP102.o [1]
+  .rodata               const    0x0800cd90    0x18  commands.o [1]
+  .rodata               const    0x0800cda8    0x18  commands.o [1]
+  .rodata               const    0x0800cdc0    0x18  commands.o [1]
+  .rodata               const    0x0800cdd8    0x18  commands.o [1]
+  .rodata               const    0x0800cdf0    0x18  commands.o [1]
+  .rodata               const    0x0800ce08    0x18  gyroMAX21000.o [1]
+  .rodata               const    0x0800ce20    0x18  handle_packet.o [1]
+  .rodata               const    0x0800ce38    0x18  handle_packet.o [1]
+  .rodata               const    0x0800ce50    0x18  taskDataAcquisition.o [1]
+  .rodata               const    0x0800ce68    0x18  taskDataAcquisition.o [1]
+  .rodata               const    0x0800ce80    0x18  taskDataAcquisition.o [1]
+  .rodata               const    0x0800ce98    0x18  taskDataAcquisition.o [1]
+  .text                 ro code  0x0800ceb0    0x16  cmain.o [5]
+  .text                 ro code  0x0800cec6     0x4  low_level_init.o [3]
+  .text                 ro code  0x0800ceca     0x4  exit.o [3]
+  .text                 ro code  0x0800ced0     0xa  cexit.o [5]
+  .text                 ro code  0x0800cedc    0x14  exit.o [7]
+  .rodata               const    0x0800cef0    0x14  commandLine.o [1]
+  .rodata               const    0x0800cf04    0x14  commands.o [1]
+  .rodata               const    0x0800cf18    0x14  commands.o [1]
+  .rodata               const    0x0800cf2c    0x14  commands.o [1]
+  .rodata               const    0x0800cf40    0x14  commands.o [1]
+  .rodata               const    0x0800cf54    0x14  commands.o [1]
+  .rodata               const    0x0800cf68    0x14  commands.o [1]
+  .rodata               const    0x0800cf7c    0x14  commands.o [1]
+  .rodata               const    0x0800cf90    0x14  commands.o [1]
+  .rodata               const    0x0800cfa4    0x14  commands.o [1]
+  .rodata               const    0x0800cfb8    0x14  commands.o [1]
+  .rodata               const    0x0800cfcc    0x14  handle_packet.o [1]
+  .rodata               const    0x0800cfe0    0x14  handle_packet.o [1]
+  .rodata               const    0x0800cff4    0x14  main.o [1]
+  .rodata               const    0x0800d008    0x10  commands.o [1]
+  .rodata               const    0x0800d018    0x10  commands.o [1]
+  .rodata               const    0x0800d028    0x10  commands.o [1]
+  .rodata               const    0x0800d038    0x10  commands.o [1]
+  .rodata               const    0x0800d048    0x10  commands.o [1]
+  .rodata               const    0x0800d058    0x10  commands.o [1]
+  .rodata               const    0x0800d068    0x10  commands.o [1]
+  .rodata               const    0x0800d078    0x10  gyroMPU3300.o [1]
+  .rodata               const    0x0800d088    0x10  gyroMPU3300.o [1]
+  .rodata               const    0x0800d098    0x10  gyroMPU3300.o [1]
+  .rodata               const    0x0800d0a8    0x10  gyroMPU3300.o [1]
+  .rodata               const    0x0800d0b8    0x10  gyroMPU3300.o [1]
+  .rodata               const    0x0800d0c8    0x10  handle_packet.o [1]
+  .rodata               const    0x0800d0d8    0x10  handle_packet.o [1]
+  .rodata               const    0x0800d0e8    0x10  handle_packet.o [1]
+  .rodata               const    0x0800d0f8    0x10  handle_packet.o [1]
+  .rodata               const    0x0800d108    0x10  handle_packet.o [1]
+  .rodata               const    0x0800d118    0x10  handle_packet.o [1]
+  .rodata               const    0x0800d128    0x10  iar_stm32f207zg_sk.o [1]
+  .rodata               const    0x0800d138    0x10  magHMC5883L.o [1]
+  .rodata               const    0x0800d148    0x10  send_packet.o [1]
+  .text                 ro code  0x0800d158    0x10  startup_stm32f2xx.o [1]
+  .rodata               const    0x0800d168     0xc  commands.o [1]
+  .rodata               const    0x0800d174     0xc  commands.o [1]
+  .rodata               const    0x0800d180     0xc  commands.o [1]
+  .rodata               const    0x0800d18c     0xc  commands.o [1]
+  .rodata               const    0x0800d198     0xc  commands.o [1]
+  .rodata               const    0x0800d1a4     0xc  commands.o [1]
+  .rodata               const    0x0800d1b0     0xc  commands.o [1]
+  .rodata               const    0x0800d1bc     0xc  gyroMPU3300.o [1]
+  .rodata               const    0x0800d1c8     0xc  handle_packet.o [1]
+  .rodata               const    0x0800d1d4     0xc  taskDataAcquisition.o [1]
+  .rodata               const    0x0800d1e0     0xc  taskDataAcquisition.o [1]
+  .rodata               const    0x0800d1ec     0xc  taskDataAcquisition.o [1]
+  .text                 ro code  0x0800d1f8     0xc  cstartup_M.o [5]
+  .rodata               const    0x0800d204     0x8  commandLine.o [1]
+  .rodata               const    0x0800d20c     0x8  commandTable.o [1]
+  .rodata               const    0x0800d214     0x8  commandTable.o [1]
+  .rodata               const    0x0800d21c     0x8  commandTable.o [1]
+  .rodata               const    0x0800d224     0x8  commandTable.o [1]
+  .rodata               const    0x0800d22c     0x8  commandTable.o [1]
+  .rodata               const    0x0800d234     0x8  commandTable.o [1]
+  .rodata               const    0x0800d23c     0x8  commandTable.o [1]
+  .rodata               const    0x0800d244     0x8  commandTable.o [1]
+  .rodata               const    0x0800d24c     0x8  commandTable.o [1]
+  .rodata               const    0x0800d254     0x8  commandTable.o [1]
+  .rodata               const    0x0800d25c     0x8  commandTable.o [1]
+  .rodata               const    0x0800d264     0x8  commandTable.o [1]
+  .rodata               const    0x0800d26c     0x8  commands.o [1]
+  .rodata               const    0x0800d274     0x8  commands.o [1]
+  .rodata               const    0x0800d27c     0x8  commands.o [1]
+  .rodata               const    0x0800d284     0x8  commands.o [1]
+  .rodata               const    0x0800d28c     0x8  commands.o [1]
+  .rodata               const    0x0800d294     0x8  commands.o [1]
+  .rodata               const    0x0800d29c     0x8  commands.o [1]
+  .rodata               const    0x0800d2a4     0x8  commands.o [1]
+  .rodata               const    0x0800d2ac     0x8  commands.o [1]
+  .rodata               const    0x0800d2b4     0x8  commands.o [1]
+  .rodata               const    0x0800d2bc     0x8  commands.o [1]
+  .rodata               const    0x0800d2c4     0x8  commands.o [1]
+  .rodata               const    0x0800d2cc     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d2d4     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d2dc     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d2e4     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d2ec     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d2f4     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d2fc     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d304     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d30c     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d314     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d31c     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d324     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d32c     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d334     0x8  handle_packet.o [1]
+  .rodata               const    0x0800d33c     0x8  iar_stm32f207zg_sk.o [1]
+  .rodata               const    0x0800d344     0x8  magHMC5883L.o [1]
+  .rodata               const    0x0800d34c     0x8  magHMC5883L.o [1]
+  .rodata               const    0x0800d354     0x8  taskDataAcquisition.o [1]
+  .rodata               const    0x0800d35c     0x8  taskDataAcquisition.o [1]
+  .rodata               const    0x0800d364     0x8  taskUserCommunication.o [1]
+  .rodata               const    0x0800d36c     0x4  commandTable.o [1]
+  .rodata               const    0x0800d370     0x4  commandTable.o [1]
+  .rodata               const    0x0800d374     0x4  commandTable.o [1]
+  .rodata               const    0x0800d378     0x4  commandTable.o [1]
+  .rodata               const    0x0800d37c     0x4  commandTable.o [1]
+  .rodata               const    0x0800d380     0x4  commandTable.o [1]
+  .rodata               const    0x0800d384     0x4  commandTable.o [1]
+  .rodata               const    0x0800d388     0x4  commandTable.o [1]
+  .rodata               const    0x0800d38c     0x4  commandTable.o [1]
+  .rodata               const    0x0800d390     0x4  commandTable.o [1]
+  .rodata               const    0x0800d394     0x4  commandTable.o [1]
+  .rodata               const    0x0800d398     0x4  commandTable.o [1]
+  .rodata               const    0x0800d39c     0x4  commandTable.o [1]
+  .rodata               const    0x0800d3a0     0x4  crc.o [1]
+  .text                 ro code  0x0800d3a4     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3a8     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3ac     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3b0     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3b4     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3b8     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3bc     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3c0     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3c4     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3c8     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3cc     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3d0     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3d4     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3d8     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3dc     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3e0     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3e4     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3e8     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3ec     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3f0     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3f4     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3f8     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d3fc     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d400     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d404     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d408     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d40c     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d410     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d414     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d418     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d41c     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d420     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d424     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d428     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d42c     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d430     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d434     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d438     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d43c     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d440     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d444     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d448     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d44c     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d450     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d454     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d458     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d45c     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d460     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d464     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d468     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d46c     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d470     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d474     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d478     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d47c     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d480     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d484     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d488     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d48c     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d490     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d494     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d498     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d49c     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4a0     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4a4     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4a8     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4ac     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4b0     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4b4     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4b8     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4bc     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4c0     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4c4     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4c8     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4cc     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4d0     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4d4     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4d8     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4dc     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4e0     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4e4     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4e8     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4ec     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4f0     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4f4     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4f8     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d4fc     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d500     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d504     0x4  startup_stm32f2xx.o [1]
+  .text                 ro code  0x0800d508     0x4  startup_stm32f2xx.o [1]
+  .rodata               const    0x0800d50c     0x0  bwt_init3c.o [5]
+  Initializer bytes     ro data  0x0800d50c   0x144  <for P3 s0>
+                               - 0x0800d650  0xd4cc
+
+"P1":                                        0x153c
+  FLASH_EEPROM_block             0x080e0000  0x153c  <Block>
+    FLASH_BASED_EEPROM  const    0x080e0000  0x153c  s_eeprom.o [1]
+                               - 0x080e153c  0x153c
+
+"P3", part 1 of 3:                            0x144
+  P3 s0                          0x20000000   0x144  <Init block>
+    .data               inited   0x20000000    0x90  xbowsp_bit.o [1]
+    .data               inited   0x20000090    0x70  xbowsp_bit.o [1]
+    .data               inited   0x20000100    0x14  taskDataAcquisition.o [1]
+    .data               inited   0x20000114    0x10  iar_stm32f207zg_sk.o [1]
+    .data               inited   0x20000124    0x10  stm32f2xx_rcc.o [1]
+    .data               inited   0x20000134     0x4  s_eeprom.o [1]
+    .data               inited   0x20000138     0x4  system_stm32f2xx.o [1]
+    .data               inited   0x2000013c     0x4  timer.o [1]
+    .data               inited   0x20000140     0x1  taskUserCommunication.o [1]
+                               - 0x20000144   0x144
+
+"P3", part 2 of 3:                           0x4e7c
+  .bss                  zero     0x20000144  0x153c  s_eeprom.o [1]
+  .bss                  zero     0x20001680  0x143c  xbowsp_init.o [1]
+  .bss                  zero     0x20002abc   0x200  debug_usart.o [1]
+  .bss                  zero     0x20002cbc   0x200  extern_port.o [1]
+  .bss                  zero     0x20002ebc   0x200  extern_port.o [1]
+  .bss                  zero     0x200030bc   0x200  extern_port.o [1]
+  .bss                  zero     0x200032bc   0x200  extern_port.o [1]
+  .bss                  zero     0x200034bc   0x200  extern_port.o [1]
+  .bss                  zero     0x200036bc   0x200  extern_port.o [1]
+  .bss                  zero     0x200038bc   0x200  extern_port.o [1]
+  .bss                  zero     0x20003abc   0x200  extern_port.o [1]
+  .bss                  zero     0x20003cbc   0x200  extern_port.o [1]
+  .bss                  zero     0x20003ec0   0x1a0  xbowsp_init.o [1]
+  .bss                  zero     0x20004060   0x12c  salvomem.o [6]
+  .bss                  zero     0x2000418c   0x104  taskUserCommunication.o [1]
+  .bss                  zero     0x20004290   0x104  taskUserCommunication.o [1]
+  .bss                  zero     0x20004394   0x104  taskUserCommunication.o [1]
+  .bss                  zero     0x20004498   0x104  taskUserCommunication.o [1]
+  .bss                  zero     0x2000459c   0x104  taskUserCommunication.o [1]
+  .bss                  zero     0x200046a0    0xf0  salvomem.o [6]
+  .bss                  zero     0x20004790    0xe4  algorithm.o [1]
+  .bss                  zero     0x20004874    0x80  debug_usart.o [1]
+  .bss                  zero     0x200048f4    0x80  extern_port.o [1]
+  __DLIB_PERTHREAD      zero     0x20004974    0x74  setlocale.o [3]
+  .bss                  zero     0x200049e8    0x60  i2c.o [1]
+  .bss                  zero     0x20004a48    0x58  taskDataAcquisition.o [1]
+  .bss                  zero     0x20004aa0    0x58  xbowsp_fields.o [1]
+  .bss                  zero     0x20004af8    0x58  xbowsp_fields.o [1]
+  .bss                  zero     0x20004b50    0x58  xbowsp_init.o [1]
+  .bss                  zero     0x20004ba8    0x50  commandLine.o [1]
+  .bss                  zero     0x20004bf8    0x3c  algorithm.o [1]
+  .bss                  zero     0x20004c34    0x30  extern_port.o [1]
+  .bss                  zero     0x20004c64    0x30  extern_port.o [1]
+  .bss                  zero     0x20004c94    0x30  extern_port.o [1]
+  .bss                  zero     0x20004cc4    0x30  extern_port.o [1]
+  .bss                  zero     0x20004cf4    0x20  algorithm.o [1]
+  .bss                  zero     0x20004d14    0x20  algorithm.o [1]
+  .bss                  zero     0x20004d34    0x20  algorithm.o [1]
+  .bss                  zero     0x20004d54    0x20  calibrate.o [1]
+  .bss                  zero     0x20004d74    0x20  stm32f2xx_it.o [1]
+  .bss                  zero     0x20004d94    0x20  xbowsp_bit.o [1]
+  .bss                  zero     0x20004db4    0x18  accelMMA8451Q.o [1]
+  .bss                  zero     0x20004dcc    0x18  taskDataAcquisition.o [1]
+  .bss                  zero     0x20004de4    0x14  taskUserCommunication.o [1]
+  .bss                  zero     0x20004df8    0x14  xbowsp_init.o [1]
+  .bss                  zero     0x20004e0c    0x14  xbowsp_init.o [1]
+  .bss                  zero     0x20004e20    0x14  xbowsp_init.o [1]
+  .bss                  zero     0x20004e34    0x10  algorithm.o [1]
+  .bss                  zero     0x20004e44    0x10  algorithm.o [1]
+  .bss                  zero     0x20004e54    0x10  debug_usart.o [1]
+  .bss                  zero     0x20004e64    0x10  debug_usart.o [1]
+  .bss                  zero     0x20004e74    0x10  extern_port.o [1]
+  .bss                  zero     0x20004e84    0x10  extern_port.o [1]
+  .bss                  zero     0x20004e94    0x10  extern_port.o [1]
+  .bss                  zero     0x20004ea4     0xc  gyroMAX21000.o [1]
+  .bss                  zero     0x20004eb0     0xc  gyroMPU3300.o [1]
+  .bss                  zero     0x20004ebc     0xc  xbowsp_bit.o [1]
+  .bss                  zero     0x20004ec8     0xc  salvomem.o [6]
+  .bss                  zero     0x20004ed4     0x8  extern_port.o [1]
+  .bss                  zero     0x20004edc     0x8  extern_port.o [1]
+  .bss                  zero     0x20004ee4     0x8  extern_port.o [1]
+  .bss                  zero     0x20004eec     0x8  extern_port.o [1]
+  .bss                  zero     0x20004ef4     0x8  extern_port.o [1]
+  .bss                  zero     0x20004efc     0x8  extern_port.o [1]
+  .bss                  zero     0x20004f04     0x8  gyroMPU3300.o [1]
+  .bss                  zero     0x20004f0c     0x8  magHMC5883L.o [1]
+  .bss                  zero     0x20004f14     0x8  taskDataAcquisition.o [1]
+  .bss                  zero     0x20004f1c     0x4  algorithm.o [1]
+  .bss                  zero     0x20004f20     0x4  commandLine.o [1]
+  .bss                  zero     0x20004f24     0x4  commandLine.o [1]
+  .bss                  zero     0x20004f28     0x4  extern_port.o [1]
+  .bss                  zero     0x20004f2c     0x4  extern_port.o [1]
+  .bss                  zero     0x20004f30     0x4  extern_port.o [1]
+  .bss                  zero     0x20004f34     0x4  extern_port.o [1]
+  .bss                  zero     0x20004f38     0x4  handle_packet.o [1]
+  .bss                  zero     0x20004f3c     0x4  handle_packet.o [1]
+  .bss                  zero     0x20004f40     0x4  main.o [1]
+  .bss                  zero     0x20004f44     0x4  salvohook_interrupt.o [1]
+  .bss                  zero     0x20004f48     0x4  spi.o [1]
+  .bss                  zero     0x20004f4c     0x4  spi.o [1]
+  .bss                  zero     0x20004f50     0x4  taskDataAcquisition.o [1]
+  .bss                  zero     0x20004f54     0x4  taskDataAcquisition.o [1]
+  .bss                  zero     0x20004f58     0x4  taskUserCommunication.o [1]
+  .bss                  zero     0x20004f5c     0x4  taskUserCommunication.o [1]
+  .bss                  zero     0x20004f60     0x4  taskUserCommunication.o [1]
+  .bss                  zero     0x20004f64     0x4  taskUserCommunication.o [1]
+  .bss                  zero     0x20004f68     0x4  taskUserCommunication.o [1]
+  .bss                  zero     0x20004f6c     0x4  taskUserCommunication.o [1]
+  .bss                  zero     0x20004f70     0x4  tempTMP102.o [1]
+  .bss                  zero     0x20004f74     0x4  timer.o [1]
+  .bss                  zero     0x20004f78     0x4  xbowsp_fields.o [1]
+  .bss                  zero     0x20004f7c     0x4  salvomem.o [6]
+  .bss                  zero     0x20004f80     0x4  salvomem.o [6]
+  .bss                  zero     0x20004f84     0x4  salvomem.o [6]
+  .bss                  zero     0x20004f88     0x4  salvomem.o [6]
+  .bss                  zero     0x20004f8c     0x4  salvomem.o [6]
+  .bss                  zero     0x20004f90     0x4  salvomem.o [6]
+  .bss                  zero     0x20004f94     0x4  salvomem.o [6]
+  __DLIB_PERTHREAD      zero     0x20004f98     0x4  errno.o [3]
+  .bss                  zero     0x20004f9c     0x2  accelMMA8451Q.o [1]
+  .bss                  zero     0x20004f9e     0x2  calibrate_mag.o [1]
+  .bss                  zero     0x20004fa0     0x2  calibrate_mag.o [1]
+  .bss                  zero     0x20004fa2     0x2  commandLine.o [1]
+  .bss                  zero     0x20004fa4     0x2  extern_port.o [1]
+  .bss                  zero     0x20004fa6     0x2  extern_port.o [1]
+  .bss                  zero     0x20004fa8     0x2  extern_port.o [1]
+  .bss                  zero     0x20004faa     0x2  extern_port.o [1]
+  .bss                  zero     0x20004fac     0x2  gyroMPU3300.o [1]
+  .bss                  zero     0x20004fae     0x2  gyroMPU3300.o [1]
+  .bss                  zero     0x20004fb0     0x2  magHMC5883L.o [1]
+  .bss                  zero     0x20004fb2     0x2  taskUserCommunication.o [1]
+  .bss                  zero     0x20004fb4     0x1  algorithm.o [1]
+  .bss                  zero     0x20004fb5     0x1  algorithm.o [1]
+  .bss                  zero     0x20004fb6     0x1  extern_port.o [1]
+  .bss                  zero     0x20004fb7     0x1  handle_packet.o [1]
+  .bss                  zero     0x20004fb8     0x1  taskUserCommunication.o [1]
+  .bss                  zero     0x20004fb9     0x1  salvomem.o [6]
+                               - 0x20004fba  0x4e76
+
+"P3", part 3 of 3:                            0x400
+  CSTACK                         0x20004fc0   0x400  <Block>
+    CSTACK              uninit   0x20004fc0   0x400  <Block tail>
+                               - 0x200053c0   0x400
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x4e76:
+          0x20000144  0x4e76
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x144 (100% of destination):
+          0x0800d50c   0x144
+    1 destination range, total size 0x141:
+          0x20000000   0x141
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                   ro code  ro data  rw data
+    ------                   -------  -------  -------
+F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj: [1]
+    accelMMA8451Q.o            1 116       40       26
+    algorithm.o                    4               422
+    bsp.o                         70
+    c33_cast.o                    16
+    calibrate.o                1 464                32
+    calibrate_mag.o                                  4
+    circbuf.o                    142
+    comm_buffers.o               358
+    commandLine.o                356       56       90
+    commandTable.o                      2 613
+    commands.o                 4 028    1 220
+    convert.o                    134
+    crc.o                        408        6
+    crm_packet.o                 106
+    debug.o                      382
+    debug_usart.o                604               672
+    extern_port.o              3 684        6    5 049
+    gyroMAX21000.o             1 308       88       12
+    gyroMPU3300.o              1 488      160       24
+    handle_packet.o            3 048      308        9
+    i2c.o                      2 216                96
+    iar_stm32f207zg_sk.o         152       40       16
+    magHMC5883L.o              1 232       92       10
+    main.o                       280       20        4
+    misc.o                       120
+    s_eeprom.o                   304    5 440    5 440
+    salvohook_idle.o               2
+    salvohook_interrupt.o         44                 4
+    salvohook_wdt.o                2
+    send_packet.o              6 238       16
+    spi.o                        656                 8
+    startup_stm32f2xx.o          764
+    stm32f2xx_dma.o              432
+    stm32f2xx_exti.o             216
+    stm32f2xx_flash.o            436
+    stm32f2xx_gpio.o             280
+    stm32f2xx_i2c.o              622
+    stm32f2xx_it.o               174                32
+    stm32f2xx_rcc.o              464       16       16
+    stm32f2xx_spi.o              274
+    stm32f2xx_syscfg.o            84
+    stm32f2xx_tim.o              248
+    stm32f2xx_usart.o            350
+    system_stm32f2xx.o           292        4        4
+    taskDataAcquisition.o        904      200      148
+    taskUserCommunication.o      456       13    1 348
+    tempTMP102.o                 522      120        4
+    timer.o                      216        4        8
+    uart.o                       456       88
+    ucb_packet.o                 402       70
+    utilities.o                  202
+    xbowsp_bit.o                 324      432      300
+    xbowsp_fields.o            3 420               180
+    xbowsp_init.o              1 268             5 744
+    --------------------------------------------------
+    Total:                    42 768   11 052   19 702
+
+command line: [2]
+    --------------------------------------------------
+    Total:
+
+dl7M_tlf.a: [3]
+    atoi.o                         8
+    errno.o                       12                 4
+    exit.o                         4
+    isxxx.o                       20
+    low_level_init.o               4
+    setlocale.o                   24               116
+    tolower.o                     20
+    xlocale_c.o                   32
+    xstoul.o                     372
+    xtls.o                         2
+    --------------------------------------------------
+    Total:                       498               120
+
+m7M_tl.a: [4]
+    DblAdd.o                     232
+    DblDiv.o                     582
+    DblMul.o                     418
+    DblSub.o                     384
+    DblToFlt.o                   144
+    DblToI32.o                    88
+    FltAdd.o                     116
+    FltCmpLe.o                    36
+    FltDiv.o                     252
+    FltMul.o                     216
+    FltSub.o                     230
+    FltToDbl.o                    78
+    FltToS32.o                    68
+    I32ToDbl.o                    48
+    I32ToFlt.o                    50
+    sqrt.o                       240
+    --------------------------------------------------
+    Total:                     3 182
+
+rt7M_tl.a: [5]
+    ABImemclr4.o                   6
+    ABImemcpy.o                  118
+    ABImemset48.o                 50
+    bwt_init3c.o
+    cexit.o                       10
+    cmain.o                       22
+    copy_init3.o                  46
+    cstartup_M.o                  12
+    data_init3.o                  44
+    iarEdom.o                     12
+    memchr.o                      88
+    strlen.o                      54
+    zero_init3.o                  34
+    --------------------------------------------------
+    Total:                       496
+
+salvo.a: [6]
+    salvobinsem.o                208
+    salvodelay.o                 132
+    salvoeflag.o                 344
+    salvoeflag2.o                 22
+    salvoevent.o                 300
+    salvoinit.o                   72
+    salvoinit2.o                 122
+    salvomem.o                                     581
+    salvoportiararm.o            108
+    salvoqdel.o                  160
+    salvoqins.o                  172
+    salvosched.o                 536
+    salvotimer.o                  44
+    --------------------------------------------------
+    Total:                     2 220               581
+
+shb_l.a: [7]
+    exit.o                        20
+    --------------------------------------------------
+    Total:                        20
+
+    Gaps                          23        2        4
+    Linker created                         39    1 024
+------------------------------------------------------
+    Grand Total:              49 207   11 093   21 431
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+?main                   0x0800ceb1          Code  Gb  cmain.o [5]
+ADC_IRQHandler          0x0800d411          Code  Wk  startup_stm32f2xx.o [1]
+APBAHBPrescTable        0x20000124    0x10  Data  Lc  stm32f2xx_rcc.o [1]
+AccelerometerConfig     0x0800607f    0x6c  Code  Gb  accelMMA8451Q.o [1]
+AccelerometerDataReadyIRQ
+                        0x08005eb9    0x46  Code  Gb  accelMMA8451Q.o [1]
+AccelerometerGetGain    0x08006037    0x48  Code  Gb  accelMMA8451Q.o [1]
+AccelerometerGetLastReading
+                        0x08005fb9    0x5e  Code  Gb  accelMMA8451Q.o [1]
+AccelerometerStartReading
+                        0x08005eff    0x38  Code  Gb  accelMMA8451Q.o [1]
+AccelerometerWhoAmI     0x08006017    0x20  Code  Gb  accelMMA8451Q.o [1]
+BAUD_TABLE              0x20004ed4     0x8  Data  Lc  extern_port.o [1]
+BSP_init                0x0800bd87    0x1c  Code  Gb  bsp.o [1]
+BusFault_Handler        0x0800c3dd     0x2  Code  Gb  stm32f2xx_it.o [1]
+BytesToCrc32Type        0x08003ab5    0x16  Code  Gb  crc.o [1]
+BytesToCrcCcittType     0x08003a99     0xc  Code  Gb  crc.o [1]
+CAN1_RX0_IRQHandler     0x0800d419          Code  Wk  startup_stm32f2xx.o [1]
+CAN1_RX1_IRQHandler     0x0800d41d          Code  Wk  startup_stm32f2xx.o [1]
+CAN1_SCE_IRQHandler     0x0800d421          Code  Wk  startup_stm32f2xx.o [1]
+CAN1_TX_IRQHandler      0x0800d415          Code  Wk  startup_stm32f2xx.o [1]
+CAN2_RX0_IRQHandler     0x0800d4c9          Code  Wk  startup_stm32f2xx.o [1]
+CAN2_RX1_IRQHandler     0x0800d4cd          Code  Wk  startup_stm32f2xx.o [1]
+CAN2_SCE_IRQHandler     0x0800d4d1          Code  Wk  startup_stm32f2xx.o [1]
+CAN2_TX_IRQHandler      0x0800d4c5          Code  Wk  startup_stm32f2xx.o [1]
+COM_buf_in              0x08003bc7    0x52  Code  Gb  comm_buffers.o [1]
+COM_buf_init            0x08003c6b    0x24  Code  Gb  comm_buffers.o [1]
+COM_buf_out             0x08003c19    0x52  Code  Gb  comm_buffers.o [1]
+COM_buf_pop             0x08003b53    0x28  Code  Gb  comm_buffers.o [1]
+COM_buf_read            0x08003b7b    0x4c  Code  Gb  comm_buffers.o [1]
+COM_buf_space           0x08003b3d    0x16  Code  Gb  comm_buffers.o [1]
+COM_buffer_bytes        0x08003b29    0x14  Code  Gb  comm_buffers.o [1]
+CRC_32_POLY             0x0800d3a0     0x4  Data  Lc  crc.o [1]
+CRC_CCITT_POLY          0x08004782     0x2  Data  Lc  crc.o [1]
+CRM_PORT_COMM_TIMEOUT   0x08007802     0x2  Data  Lc  taskUserCommunication.o [1]
+CRM_SYNC                0x080073d2     0x2  Data  Lc  extern_port.o [1]
+CRYP_IRQHandler         0x0800d505          Code  Wk  startup_stm32f2xx.o [1]
+CSTACK$$Base            0x20004fc0           --   Gb  - Linker created -
+CSTACK$$Limit           0x200053c0           --   Gb  - Linker created -
+CalibrateSensors        0x080094c1   0x1c4  Code  Gb  calibrate.o [1]
+CheckBaroCorrection     0x08002bef    0x16  Code  Gb  xbowsp_fields.o [1]
+CheckCalibrationCrc     0x0800b17b    0x42  Code  Lc  xbowsp_init.o [1]
+CheckContPacketRate     0x0800297f    0xf2  Code  Gb  xbowsp_fields.o [1]
+CheckEepromFieldData    0x080030b5    0x2a  Code  Gb  xbowsp_fields.o [1]
+CheckFieldData          0x08002c05   0x484  Code  Lc  xbowsp_fields.o [1]
+CheckOrientation        0x08002b85    0x6a  Code  Gb  xbowsp_fields.o [1]
+CheckPacketRateDivider  0x08002959    0x26  Code  Gb  xbowsp_fields.o [1]
+CheckPortBaudRate       0x08002aa7     0xe  Code  Gb  xbowsp_fields.o [1]
+CheckPortUsage          0x08002a71    0x36  Code  Gb  xbowsp_fields.o [1]
+CheckRamFieldData       0x08003089    0x2c  Code  Gb  xbowsp_fields.o [1]
+CircBufEmpty            0x08009775    0x12  Code  Gb  circbuf.o [1]
+CircBufGet              0x08009745    0x30  Code  Gb  circbuf.o [1]
+CircBufInit             0x080096f9    0x20  Code  Gb  circbuf.o [1]
+CircBufPut              0x08009719    0x2c  Code  Gb  circbuf.o [1]
+CmdAccelInit            0x0800575d    0x3c  Code  Gb  commands.o [1]
+CmdAutoDataAquisitionMode
+                        0x0800586d    0x1e  Code  Gb  commands.o [1]
+CmdGpioPin              0x0800590d    0x9e  Code  Gb  commands.o [1]
+CmdGyro2Init            0x080057ef    0x3e  Code  Gb  commands.o [1]
+CmdGyroInit             0x08005799    0x56  Code  Gb  commands.o [1]
+CmdInertialCalib        0x080052d5   0x2d2  Code  Gb  commands.o [1]
+CmdLineGetArgString     0x08005c69    0x20  Code  Gb  commandLine.o [1]
+CmdLineGetArgUInt       0x08005c89    0x24  Code  Gb  commandLine.o [1]
+CmdLineLookup           0x08005c1b    0x38  Code  Gb  commandLine.o [1]
+CmdMagnetometerInit     0x08005831    0x34  Code  Gb  commands.o [1]
+CmdPrintPrompt          0x08005bf5    0x1e  Code  Lc  commandLine.o [1]
+CmdReadAccelerometer    0x08004cc5    0xf8  Code  Gb  commands.o [1]
+CmdReadGyro             0x08004fbf    0xd8  Code  Gb  commands.o [1]
+CmdReadGyro2            0x0800509d    0xea  Code  Gb  commands.o [1]
+CmdReadGyro2Temp        0x0800523b    0x92  Code  Gb  commands.o [1]
+CmdReadGyroTemp         0x08005187    0xb4  Code  Gb  commands.o [1]
+CmdReadMagnetometer     0x08004eb9   0x106  Code  Gb  commands.o [1]
+CmdReadSensors          0x08004ae1   0x1e4  Code  Gb  commands.o [1]
+CmdReadTemperature      0x08004dc5    0xf0  Code  Gb  commands.o [1]
+CmdSelfTest             0x080055d1   0x186  Code  Gb  commands.o [1]
+CmdUserUsart            0x0800588b    0x6c  Code  Gb  commands.o [1]
+CmdVersion              0x08004ab9    0x28  Code  Gb  commands.o [1]
+Crc                     0x08003991    0xfe  Code  Lc  crc.o [1]
+Crc32                   0x08003af7    0x2a  Code  Gb  crc.o [1]
+Crc32TypeToBytes        0x08003aa5    0x10  Code  Gb  crc.o [1]
+CrcCcitt                0x08003acb    0x2c  Code  Gb  crc.o [1]
+CrcCcittTypeToBytes     0x08003a8f     0xa  Code  Gb  crc.o [1]
+CrmPacketBytesToAccel   0x08003feb    0x14  Code  Gb  crm_packet.o [1]
+CrmPacketBytesToBit     0x0800401f     0xc  Code  Gb  crm_packet.o [1]
+CrmPacketBytesToChecksum
+                        0x0800402b     0xc  Code  Gb  crm_packet.o [1]
+CrmPacketBytesToMag     0x08003fff    0x14  Code  Gb  crm_packet.o [1]
+CrmPacketBytesToModelNo
+                        0x08004013     0xc  Code  Gb  crm_packet.o [1]
+CrmPacketCalculateChecksum
+                        0x08004037    0x1e  Code  Gb  crm_packet.o [1]
+DCMI_IRQHandler         0x0800d501          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream0_IRQHandler
+                        0x0800d3f5          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream1_IRQHandler
+                        0x0800d3f9          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream2_IRQHandler
+                        0x0800d3fd          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream3_IRQHandler
+                        0x0800d401          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream4_IRQHandler
+                        0x0800d405          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream5_IRQHandler
+                        0x0800d409          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream6_IRQHandler
+                        0x0800d40d          Code  Wk  startup_stm32f2xx.o [1]
+DMA1_Stream7_IRQHandler
+                        0x0800d485          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream0_IRQHandler
+                        0x08008d19    0x4a  Code  Gb  spi.o [1]
+DMA2_Stream1_IRQHandler
+                        0x0800d4ad          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream2_IRQHandler
+                        0x0800d4b1          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream3_IRQHandler
+                        0x0800d4b5          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream4_IRQHandler
+                        0x0800d4b9          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream5_IRQHandler
+                        0x0800d4d9          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream6_IRQHandler
+                        0x0800d4dd          Code  Wk  startup_stm32f2xx.o [1]
+DMA2_Stream7_IRQHandler
+                        0x0800d4e1          Code  Wk  startup_stm32f2xx.o [1]
+DMA_ClearFlag           0x08009e85    0x20  Code  Gb  stm32f2xx_dma.o [1]
+DMA_ClearITPendingBit   0x08009f39    0x20  Code  Gb  stm32f2xx_dma.o [1]
+DMA_Cmd                 0x08009e59    0x1a  Code  Gb  stm32f2xx_dma.o [1]
+DMA_GetITStatus         0x08009ee7    0x52  Code  Gb  stm32f2xx_dma.o [1]
+DMA_ITConfig            0x08009ea5    0x42  Code  Gb  stm32f2xx_dma.o [1]
+DMA_Init                0x08009dc5    0x56  Code  Gb  stm32f2xx_dma.o [1]
+DMA_MemoryTargetConfig  0x08009e79     0xc  Code  Gb  stm32f2xx_dma.o [1]
+DMA_SetCurrDataCounter  0x08009e73     0x6  Code  Gb  stm32f2xx_dma.o [1]
+DMA_StructInit          0x08009e1b    0x3e  Code  Gb  stm32f2xx_dma.o [1]
+DataAquisitionStart     0x08007a4f    0x58  Code  Gb  taskDataAcquisition.o [1]
+DataAquisitionStop      0x08007aa7    0x16  Code  Gb  taskDataAcquisition.o [1]
+DebugMon_Handler        0x0800c3e1     0x2  Code  Gb  stm32f2xx_it.o [1]
+DebugPrintEndline       0x08005b59     0xa  Code  Gb  debug.o [1]
+DebugPrintFloat         0x08005acd    0x8c  Code  Gb  debug.o [1]
+DebugPrintHex           0x08005ab1    0x1c  Code  Gb  debug.o [1]
+DebugPrintInt           0x08005a95    0x1c  Code  Gb  debug.o [1]
+DebugPrintString        0x08005a75    0x20  Code  Gb  debug.o [1]
+DebugSerialPutChar      0x08007e1b    0x26  Code  Gb  debug_usart.o [1]
+DebugSerialReadLine     0x08007d4d    0xc4  Code  Gb  debug_usart.o [1]
+DefaultPortConfiguration
+                        0x080028f5    0x64  Code  Gb  xbowsp_fields.o [1]
+DelayMs                 0x080071ed    0x10  Code  Gb  timer.o [1]
+ETH_IRQHandler          0x0800d4bd          Code  Wk  startup_stm32f2xx.o [1]
+ETH_WKUP_IRQHandler     0x0800d4c1          Code  Wk  startup_stm32f2xx.o [1]
+EXTI0_IRQHandler        0x0800d3e1          Code  Wk  startup_stm32f2xx.o [1]
+EXTI15_10_IRQHandler    0x0800d469          Code  Wk  startup_stm32f2xx.o [1]
+EXTI1_IRQHandler        0x08006d2f    0x16  Code  Gb  gyroMAX21000.o [1]
+EXTI2_IRQHandler        0x0800d3e9          Code  Wk  startup_stm32f2xx.o [1]
+EXTI3_IRQHandler        0x0800d3ed          Code  Wk  startup_stm32f2xx.o [1]
+EXTI4_IRQHandler        0x0800d3f1          Code  Wk  startup_stm32f2xx.o [1]
+EXTI9_5_IRQHandler      0x0800c3e3    0x4c  Code  Gb  stm32f2xx_it.o [1]
+EXTI_ClearITPendingBit  0x08008b47     0x6  Code  Gb  stm32f2xx_exti.o [1]
+EXTI_GetITStatus        0x08008b23    0x24  Code  Gb  stm32f2xx_exti.o [1]
+EXTI_Init               0x08008a89    0x88  Code  Gb  stm32f2xx_exti.o [1]
+EXTI_StructInit         0x08008b11    0x12  Code  Gb  stm32f2xx_exti.o [1]
+ExternPortEnabled       0x08004055    0x18  Code  Gb  extern_port.o [1]
+ExternPortInit          0x08001aa9   0x1cc  Code  Gb  extern_port.o [1]
+ExternPortRx            0x08002701    0x42  Code  Gb  extern_port.o [1]
+ExternPortTx            0x08002805    0x36  Code  Gb  extern_port.o [1]
+ExternPortWaitOnTxIdle  0x0800283b    0x48  Code  Gb  extern_port.o [1]
+FLASH_ClearFlag         0x080048bb     0x6  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_EEPROM_block$$Base
+                        0x080e0000           --   Gb  - Linker created -
+FLASH_EEPROM_block$$Limit
+                        0x080e153c           --   Gb  - Linker created -
+FLASH_EraseSector       0x080047b7    0xb0  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_GetStatus         0x080048c1    0x3c  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_IRQHandler        0x0800d3d9          Code  Wk  startup_stm32f2xx.o [1]
+FLASH_Lock              0x080047a5    0x12  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_ProgramWord       0x08004867    0x54  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_Unlock            0x08004785    0x20  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_WaitForLastOperation
+                        0x08004911    0x28  Code  Gb  stm32f2xx_flash.o [1]
+FSMC_IRQHandler         0x0800d489          Code  Wk  startup_stm32f2xx.o [1]
+GPIO_CLK                0x0800d128    0x10  Data  Gb  iar_stm32f207zg_sk.o [1]
+GPIO_Init               0x08004459    0xa6  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_PIN                0x0800d33c     0x8  Data  Gb  iar_stm32f207zg_sk.o [1]
+GPIO_PORT               0x20000114    0x10  Data  Gb  iar_stm32f207zg_sk.o [1]
+GPIO_PinAFConfig        0x0800451f    0x52  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_ResetBits          0x0800451b     0x4  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_SetBits            0x08004517     0x4  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_StructInit         0x080044ff    0x18  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_config             0x0800bda3     0xa  Code  Gb  bsp.o [1]
+Gyro2Config             0x08006a25    0x9e  Code  Gb  gyroMPU3300.o [1]
+Gyro2DataReadyIRQ       0x0800671b    0x72  Code  Gb  gyroMPU3300.o [1]
+Gyro2GetGain            0x080068b1    0x28  Code  Gb  gyroMPU3300.o [1]
+Gyro2GetLastReading     0x08006811    0x58  Code  Gb  gyroMPU3300.o [1]
+Gyro2SelfTest           0x080068d9    0x98  Code  Gb  gyroMPU3300.o [1]
+Gyro2StartReading       0x080067b1    0x4c  Code  Gb  gyroMPU3300.o [1]
+Gyro2TempGetLastReading
+                        0x08006971    0x8e  Code  Gb  gyroMPU3300.o [1]
+Gyro2TempGetTemperature
+                        0x080069ff    0x26  Code  Gb  gyroMPU3300.o [1]
+Gyro2WhoAmI             0x08006869    0x48  Code  Gb  gyroMPU3300.o [1]
+GyroConfig              0x08006f77   0x104  Code  Gb  gyroMAX21000.o [1]
+GyroDataReadyIRQ        0x08006d07    0x28  Code  Lc  gyroMAX21000.o [1]
+GyroGetGain             0x08006e27    0x50  Code  Gb  gyroMAX21000.o [1]
+GyroGetLastReading      0x08006d99    0x4a  Code  Gb  gyroMAX21000.o [1]
+GyroSelfTest            0x08006e77    0x62  Code  Gb  gyroMAX21000.o [1]
+GyroStartReading        0x08006d45    0x2a  Code  Gb  gyroMAX21000.o [1]
+GyroTempGetLastReading  0x08006ed9    0x1e  Code  Gb  gyroMAX21000.o [1]
+GyroTempGetTemperature  0x08006ef7    0x18  Code  Gb  gyroMAX21000.o [1]
+GyroWhoAmI              0x08006de3    0x44  Code  Gb  gyroMAX21000.o [1]
+HASH_RNG_IRQHandler     0x0800d509          Code  Wk  startup_stm32f2xx.o [1]
+HandleCrm               0x0800ae07     0xa  Code  Lc  handle_packet.o [1]
+HandleCrmErrorChecksumFail
+                        0x0800ae1b     0xa  Code  Lc  handle_packet.o [1]
+HandleCrmErrorTimeout   0x0800ae11     0xa  Code  Lc  handle_packet.o [1]
+HandleCrmRx             0x080021bd   0x538  Code  Lc  extern_port.o [1]
+HandlePacket            0x0800aec9   0x120  Code  Gb  handle_packet.o [1]
+HandleUcbAlgorithmReset
+                        0x0800abfb    0x18  Code  Lc  handle_packet.o [1]
+HandleUcbEcho           0x0800a41f    0x1a  Code  Lc  handle_packet.o [1]
+HandleUcbErrorCrcFail   0x0800ade7    0x20  Code  Lc  handle_packet.o [1]
+HandleUcbErrorInvalidType
+                        0x0800ada7    0x20  Code  Lc  handle_packet.o [1]
+HandleUcbErrorTimeout   0x0800adc7    0x20  Code  Lc  handle_packet.o [1]
+HandleUcbGenAirDataAiding
+                        0x0800ad93     0xa  Code  Lc  handle_packet.o [1]
+HandleUcbGenHeadingAiding
+                        0x0800ad9d     0xa  Code  Lc  handle_packet.o [1]
+HandleUcbGetFields      0x0800a5af   0x192  Code  Lc  handle_packet.o [1]
+HandleUcbGetPacket      0x0800a439    0x64  Code  Lc  handle_packet.o [1]
+HandleUcbPing           0x0800a401    0x1e  Code  Lc  handle_packet.o [1]
+HandleUcbProgramReset   0x0800abbf    0x1c  Code  Lc  handle_packet.o [1]
+HandleUcbReadEeprom     0x0800aaef    0x52  Code  Lc  handle_packet.o [1]
+HandleUcbReadFields     0x0800a741   0x1c4  Code  Lc  handle_packet.o [1]
+HandleUcbRx             0x08001c93   0x52a  Code  Lc  extern_port.o [1]
+HandleUcbSetFields      0x0800a49d   0x112  Code  Lc  handle_packet.o [1]
+HandleUcbSoftwareReset  0x0800abdb    0x20  Code  Lc  handle_packet.o [1]
+HandleUcbTx             0x08002743    0x92  Code  Lc  extern_port.o [1]
+HandleUcbUnlockEeprom   0x0800aa31    0xbe  Code  Lc  handle_packet.o [1]
+HandleUcbWriteCal       0x0800ac13   0x180  Code  Lc  handle_packet.o [1]
+HandleUcbWriteEeprom    0x0800ab41    0x7e  Code  Lc  handle_packet.o [1]
+HandleUcbWriteFields    0x0800a905   0x12c  Code  Lc  handle_packet.o [1]
+HardFault               0x20004d74    0x20  Data  Gb  stm32f2xx_it.o [1]
+HardFault_Handler       0x0800c3b9    0x22  Code  Gb  stm32f2xx_it.o [1]
+HwPortRx                0x08001c75     0x2  Code  Lc  extern_port.o [1]
+HwPortTx                0x08001c77    0x1c  Code  Lc  extern_port.o [1]
+I2C1_ER_IRQHandler      0x08008239    0x12  Code  Gb  i2c.o [1]
+I2C1_EV_IRQHandler      0x08008651    0x12  Code  Gb  i2c.o [1]
+I2C2_ER_IRQHandler      0x0800d451          Code  Wk  startup_stm32f2xx.o [1]
+I2C2_EV_IRQHandler      0x0800d44d          Code  Wk  startup_stm32f2xx.o [1]
+I2C3_ER_IRQHandler      0x0800824b    0x12  Code  Gb  i2c.o [1]
+I2C3_EV_IRQHandler      0x08008663    0x12  Code  Gb  i2c.o [1]
+I2C_AcknowledgeConfig   0x08009c27    0x1c  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_ClearFlag           0x08009ca1     0xe  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_Cmd                 0x08009bb9    0x1c  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_DeInit              0x08009a41    0x56  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_GenerateSTART       0x08009bd5    0x1e  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_GenerateSTOP        0x08009bf3    0x1e  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_GetLastEvent        0x08009c7f    0x22  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_ITConfig            0x08009c67    0x18  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_Init                0x08009a97    0xea  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_ReadRegister        0x08009c4f    0x18  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_ReceiveData         0x08009c49     0x6  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_Send7bitAddress     0x08009c11    0x16  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_SendData            0x08009c43     0x6  Code  Gb  stm32f2xx_i2c.o [1]
+I2C_StructInit          0x08009b99    0x20  Code  Gb  stm32f2xx_i2c.o [1]
+IQ27toF                 0x0800b555    0x12  Code  Gb  convert.o [1]
+InitAccelerometer       0x0800616b    0x28  Code  Gb  accelMMA8451Q.o [1]
+InitCalibration         0x08009307   0x1ba  Code  Gb  calibrate.o [1]
+InitCommandLine         0x08005c13     0x8  Code  Gb  commandLine.o [1]
+InitDataAcquisitionTimer
+                        0x0800798d    0x6e  Code  Gb  taskDataAcquisition.o [1]
+InitDebugSerialCommunication
+                        0x08007e41    0xe6  Code  Gb  debug_usart.o [1]
+InitGyro                0x0800707b    0xc6  Code  Gb  gyroMAX21000.o [1]
+InitGyro2               0x08006b49    0xb6  Code  Gb  gyroMPU3300.o [1]
+InitMagnetometer        0x08006625    0x2a  Code  Gb  magHMC5883L.o [1]
+InitSystemTimer         0x08007213    0x14  Code  Gb  timer.o [1]
+InitTemperatureSensor   0x080074d1    0xf2  Code  Gb  tempTMP102.o [1]
+Int16ToInt32            0x0800406d    0x10  Code  Gb  c33_cast.o [1]
+IsAccelerometerDoneReading
+                        0x08005f37     0xe  Code  Gb  accelMMA8451Q.o [1]
+IsDebugSerialIdle       0x08007e11     0xa  Code  Gb  debug_usart.o [1]
+IsGyro2DoneReading      0x080067fd    0x14  Code  Gb  gyroMPU3300.o [1]
+IsGyroDoneReading       0x08006d6f    0x10  Code  Gb  gyroMAX21000.o [1]
+IsMagnetometerDoneReading
+                        0x080062dd    0x10  Code  Gb  magHMC5883L.o [1]
+IsTemperatureDoneReading
+                        0x08007637    0x1c  Code  Gb  tempTMP102.o [1]
+MAIN_LOOP_PERIOD        0x0800798a     0x2  Data  Gb  taskUserCommunication.o [1]
+MagnetometerConfig      0x08006501    0xa0  Code  Gb  magHMC5883L.o [1]
+MagnetometerGetGain     0x080063b1    0x2a  Code  Gb  magHMC5883L.o [1]
+MagnetometerGetLastReading
+                        0x080062ed    0x36  Code  Gb  magHMC5883L.o [1]
+MagnetometerSelfTest    0x08006405    0xfc  Code  Gb  magHMC5883L.o [1]
+MagnetometerStartReading
+                        0x080062a5    0x38  Code  Gb  magHMC5883L.o [1]
+MagnetometerWhoAmI      0x08006323    0x8e  Code  Gb  magHMC5883L.o [1]
+MagnetomterDataReadyIRQ
+                        0x08006281    0x24  Code  Gb  magHMC5883L.o [1]
+MemManage_Handler       0x0800c3db     0x2  Code  Gb  stm32f2xx_it.o [1]
+NMI_Handler             0x0800c381     0x2  Code  Gb  stm32f2xx_it.o [1]
+NUM_PACKET_CODES        0x08007d4a     0x2  Data  Lc  ucb_packet.o [1]
+NVIC_Init               0x080046d1    0x68  Code  Gb  misc.o [1]
+NVIC_SetPriority        0x08007171    0x22  Code  Lc  timer.o [1]
+OSClrWDTHook            0x0800b781     0x2  Code  Gb  salvohook_wdt.o [1]
+OSCreateBinSem          0x08009789    0x20  Code  Gb  salvobinsem.o [6]
+OSCreateEFlag           0x08007249    0x22  Code  Gb  salvoeflag.o [6]
+OSCreateTask            0x0800bdf9    0x54  Code  Gb  salvoinit2.o [6]
+OSCtxSw                 0x080096b9          Code  Gb  salvoportiararm.o [6]
+OSDelDelayQ             0x08009fbf    0x50  Code  Gb  salvoqdel.o [6]
+OSDelPrioQ              0x08009f75    0x4a  Code  Gb  salvoqdel.o [6]
+OSDelay                 0x0800be75    0x84  Code  Gb  salvodelay.o [6]
+OSDisableHook           0x08004749     0xe  Code  Gb  salvohook_interrupt.o [1]
+OSDispatch              0x0800968d          Code  Gb  salvoportiararm.o [6]
+OSEnableHook            0x08004759    0x16  Code  Gb  salvohook_interrupt.o [1]
+OSIdlingHook            0x0800b783     0x2  Code  Gb  salvohook_idle.o [1]
+OSInit                  0x0800bdb1    0x48  Code  Gb  salvoinit.o [6]
+OSInitPrioTask          0x0800be55    0x1e  Code  Gb  salvoinit2.o [6]
+OSInsDelayQ             0x0800a059    0x62  Code  Gb  salvoqins.o [6]
+OSInsPrioQ              0x0800a015    0x44  Code  Gb  salvoqins.o [6]
+OSReturn                0x080096eb          Code  Gb  salvoportiararm.o [6]
+OSReturnEFlag           0x08008a71    0x16  Code  Gb  salvoeflag2.o [6]
+OSSched                 0x0800b569   0x218  Code  Gb  salvosched.o [6]
+OSSignalBinSem          0x080097e1    0x6e  Code  Gb  salvobinsem.o [6]
+OSSignalEFlag           0x080072f3    0xa6  Code  Gb  salvoeflag.o [6]
+OSTimer                 0x08008e45    0x2c  Code  Gb  salvotimer.o [6]
+OSWaitBinSem            0x080097a9    0x38  Code  Gb  salvobinsem.o [6]
+OSWaitEFlag             0x0800726b    0x88  Code  Gb  salvoeflag.o [6]
+OSWaitEvent             0x08008e71   0x12c  Code  Gb  salvoevent.o [6]
+OScTcbP                 0x20004f7c     0x4  Data  Gb  salvomem.o [6]
+OSdelayQP               0x20004f8c     0x4  Data  Gb  salvomem.o [6]
+OSecbArea               0x20004060   0x12c  Data  Gb  salvomem.o [6]
+OSefcbArea              0x20004ec8     0xc  Data  Gb  salvomem.o [6]
+OSeligQP                0x20004f80     0x4  Data  Gb  salvomem.o [6]
+OSframeP                0x20004f94     0x4  Data  Gb  salvomem.o [6]
+OSlostTicks             0x20004fb9     0x1  Data  Gb  salvomem.o [6]
+OSsigQinP               0x20004f84     0x4  Data  Gb  salvomem.o [6]
+OSsigQoutP              0x20004f88     0x4  Data  Gb  salvomem.o [6]
+OStcbArea               0x200046a0    0xf0  Data  Gb  salvomem.o [6]
+OStimerTicks            0x20004f90     0x4  Data  Gb  salvomem.o [6]
+OTG_FS_IRQHandler       0x0800d4d5          Code  Wk  startup_stm32f2xx.o [1]
+OTG_FS_WKUP_IRQHandler  0x0800d471          Code  Wk  startup_stm32f2xx.o [1]
+OTG_HS_EP1_IN_IRQHandler
+                        0x0800d4f5          Code  Wk  startup_stm32f2xx.o [1]
+OTG_HS_EP1_OUT_IRQHandler
+                        0x0800d4f1          Code  Wk  startup_stm32f2xx.o [1]
+OTG_HS_IRQHandler       0x0800d4fd          Code  Wk  startup_stm32f2xx.o [1]
+OTG_HS_WKUP_IRQHandler  0x0800d4f9          Code  Wk  startup_stm32f2xx.o [1]
+PVD_IRQHandler          0x0800d3cd          Code  Wk  startup_stm32f2xx.o [1]
+PendSV_Handler          0x0800d3c1          Code  Wk  startup_stm32f2xx.o [1]
+ProcessCalibrationData  0x0800b1bd   0x26e  Code  Lc  xbowsp_init.o [1]
+ProcessContUcbPkt       0x0800ba3f    0x52  Code  Lc  taskUserCommunication.o [1]
+ProcessCrmPort          0x0800b9e1    0x5e  Code  Lc  taskUserCommunication.o [1]
+ProcessDiagOutput       0x0800ba91    0x46  Code  Lc  taskUserCommunication.o [1]
+ProcessUcbCommands      0x0800b9c5    0x1c  Code  Lc  taskUserCommunication.o [1]
+RCC_AHB1PeriphClockCmd  0x0800436b    0x20  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_AHB2PeriphClockCmd  0x0800438b    0x20  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_APB1PeriphClockCmd  0x080043ab    0x20  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_APB1PeriphResetCmd  0x080043eb    0x20  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_APB2PeriphClockCmd  0x080043cb    0x20  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_APB2PeriphResetCmd  0x0800440b    0x20  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_GetClocksFreq       0x08004289    0xe2  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_IRQHandler          0x0800d3dd          Code  Wk  startup_stm32f2xx.o [1]
+RCC_config              0x0800bdad     0x2  Code  Gb  bsp.o [1]
+RTC_Alarm_IRQHandler    0x0800d46d          Code  Wk  startup_stm32f2xx.o [1]
+RTC_WKUP_IRQHandler     0x0800d3d5          Code  Wk  startup_stm32f2xx.o [1]
+Region$$Table$$Base     0x0800cb74           --   Gb  - Linker created -
+Region$$Table$$Limit    0x0800cb98           --   Gb  - Linker created -
+Reset_Handler           0x0800d159          Code  Wk  startup_stm32f2xx.o [1]
+SDIO_IRQHandler         0x0800d48d          Code  Wk  startup_stm32f2xx.o [1]
+SPI1_IRQHandler         0x0800d455          Code  Wk  startup_stm32f2xx.o [1]
+SPI2_IRQHandler         0x0800d459          Code  Wk  startup_stm32f2xx.o [1]
+SPI3_IRQHandler         0x0800d495          Code  Wk  startup_stm32f2xx.o [1]
+SPI_Cmd                 0x08009d7b    0x1c  Code  Gb  stm32f2xx_spi.o [1]
+SPI_I2S_DMACmd          0x08009d97    0x18  Code  Gb  stm32f2xx_spi.o [1]
+SPI_I2S_DeInit          0x08009cb1    0x56  Code  Gb  stm32f2xx_spi.o [1]
+SPI_I2S_GetFlagStatus   0x08009daf    0x14  Code  Gb  stm32f2xx_spi.o [1]
+SPI_Init                0x08009d07    0x40  Code  Gb  stm32f2xx_spi.o [1]
+SPI_StructInit          0x08009d55    0x26  Code  Gb  stm32f2xx_spi.o [1]
+STM_EVAL_LEDInit        0x0800bef9    0x44  Code  Gb  iar_stm32f207zg_sk.o [1]
+STM_EVAL_LEDOff         0x0800bf51    0x14  Code  Gb  iar_stm32f207zg_sk.o [1]
+STM_EVAL_LEDOn          0x0800bf3d    0x14  Code  Gb  iar_stm32f207zg_sk.o [1]
+STM_EVAL_LEDToggle      0x0800bf65    0x20  Code  Gb  iar_stm32f207zg_sk.o [1]
+SVC_Handler             0x0800d3b9          Code  Wk  startup_stm32f2xx.o [1]
+SYSCFG_EXTILineConfig   0x08008b61    0x50  Code  Gb  stm32f2xx_syscfg.o [1]
+SendPacket              0x0800191d    0xc6  Code  Gb  send_packet.o [1]
+SendUcbAngle3           0x08000359    0xd4  Code  Lc  send_packet.o [1]
+SendUcbAngle5           0x0800042d     0x2  Code  Lc  send_packet.o [1]
+SendUcbAngleU           0x0800042f   0x114  Code  Lc  send_packet.o [1]
+SendUcbFactory1         0x08000965    0x4c  Code  Lc  send_packet.o [1]
+SendUcbFactory2         0x080009b1    0x58  Code  Lc  send_packet.o [1]
+SendUcbFactory5         0x08000a09   0x3a4  Code  Lc  send_packet.o [1]
+SendUcbFactory6         0x08000db5   0x374  Code  Lc  send_packet.o [1]
+SendUcbFactory7         0x08001181   0x6ac  Code  Lc  send_packet.o [1]
+SendUcbIdentification   0x08000185    0xbe  Code  Lc  send_packet.o [1]
+SendUcbMagCal1Complete  0x0800182d    0x48  Code  Lc  send_packet.o [1]
+SendUcbMagCal3Complete  0x08001875    0x94  Code  Lc  send_packet.o [1]
+SendUcbScaled3          0x08000543     0x2  Code  Lc  send_packet.o [1]
+SendUcbTest0            0x08000545   0x1ee  Code  Lc  send_packet.o [1]
+SendUcbTest1            0x08000733   0x232  Code  Lc  send_packet.o [1]
+SendUcbVersionAllData   0x08000279    0xe0  Code  Lc  send_packet.o [1]
+SendUcbVersionData      0x08000243    0x36  Code  Lc  send_packet.o [1]
+SetFieldData            0x080030df    0x4c  Code  Gb  xbowsp_fields.o [1]
+SetSysClock             0x0800bb73    0xb6  Code  Lc  system_stm32f2xx.o [1]
+SysTick_Config          0x08007193    0x30  Code  Lc  timer.o [1]
+SysTick_Handler         0x080071c3    0x2a  Code  Gb  timer.o [1]
+SystemCoreClock         0x20000138     0x4  Data  Gb  system_stm32f2xx.o [1]
+SystemInit              0x0800bb2d    0x46  Code  Gb  system_stm32f2xx.o [1]
+TAMP_STAMP_IRQHandler   0x0800d3d1          Code  Wk  startup_stm32f2xx.o [1]
+TIM1_BRK_TIM9_IRQHandler
+                        0x0800d429          Code  Wk  startup_stm32f2xx.o [1]
+TIM1_CC_IRQHandler      0x0800d435          Code  Wk  startup_stm32f2xx.o [1]
+TIM1_TRG_COM_TIM11_IRQHandler
+                        0x0800d431          Code  Wk  startup_stm32f2xx.o [1]
+TIM1_UP_TIM10_IRQHandler
+                        0x0800d42d          Code  Wk  startup_stm32f2xx.o [1]
+TIM2_IRQHandler         0x0800d439          Code  Wk  startup_stm32f2xx.o [1]
+TIM3_IRQHandler         0x0800d43d          Code  Wk  startup_stm32f2xx.o [1]
+TIM4_IRQHandler         0x0800d441          Code  Wk  startup_stm32f2xx.o [1]
+TIM5_IRQHandler         0x080079fb    0x54  Code  Gb  taskDataAcquisition.o [1]
+TIM6_DAC_IRQHandler     0x0800d4a1          Code  Wk  startup_stm32f2xx.o [1]
+TIM7_IRQHandler         0x0800d4a5          Code  Wk  startup_stm32f2xx.o [1]
+TIM8_BRK_TIM12_IRQHandler
+                        0x0800d475          Code  Wk  startup_stm32f2xx.o [1]
+TIM8_CC_IRQHandler      0x0800d481          Code  Wk  startup_stm32f2xx.o [1]
+TIM8_TRG_COM_TIM14_IRQHandler
+                        0x0800d47d          Code  Wk  startup_stm32f2xx.o [1]
+TIM8_UP_TIM13_IRQHandler
+                        0x0800d479          Code  Wk  startup_stm32f2xx.o [1]
+TIM_ARRPreloadConfig    0x0800905f    0x1c  Code  Gb  stm32f2xx_tim.o [1]
+TIM_ClearITPendingBit   0x080090cd     0x8  Code  Gb  stm32f2xx_tim.o [1]
+TIM_Cmd                 0x0800907b    0x1c  Code  Gb  stm32f2xx_tim.o [1]
+TIM_ITConfig            0x080090b5    0x18  Code  Gb  stm32f2xx_tim.o [1]
+TIM_TimeBaseInit        0x08008fdd    0x6a  Code  Gb  stm32f2xx_tim.o [1]
+TIM_TimeBaseStructInit  0x08009047    0x18  Code  Gb  stm32f2xx_tim.o [1]
+TaskCommandLine         0x0800bcfd    0x26  Code  Gb  main.o [1]
+TaskDataAcquisition     0x08007abd   0x1f6  Code  Gb  taskDataAcquisition.o [1]
+TaskHeartbeat           0x0800bcc9    0x32  Code  Gb  main.o [1]
+TaskUserCommunication   0x0800b965    0x60  Code  Gb  taskUserCommunication.o [1]
+TemperatureGetGain      0x080076d5     0x6  Code  Gb  tempTMP102.o [1]
+TemperatureGetLastReading
+                        0x08007653    0x6a  Code  Gb  tempTMP102.o [1]
+TemperatureStartReading
+                        0x080075cd    0x6a  Code  Gb  tempTMP102.o [1]
+TimeNow                 0x080071fd     0x6  Code  Gb  timer.o [1]
+TimePassed              0x08007203    0x10  Code  Gb  timer.o [1]
+UART4_IRQHandler        0x08003e17    0x14  Code  Gb  uart.o [1]
+UART5_IRQHandler        0x08003e2b    0x14  Code  Gb  uart.o [1]
+UCB_PACKET_CODE         0x0800c614    0x44  Data  Lc  ucb_packet.o [1]
+UCB_PACKET_CRC_INITIAL_SEED
+                        0x080076da     0x2  Data  Lc  extern_port.o [1]
+UCB_SYNC                0x08005bf2     0x2  Data  Lc  extern_port.o [1]
+USART1_IRQHandler       0x08007f27    0x60  Code  Gb  debug_usart.o [1]
+USART2_IRQHandler       0x0800d461          Code  Wk  startup_stm32f2xx.o [1]
+USART3_IRQHandler       0x0800d465          Code  Wk  startup_stm32f2xx.o [1]
+USART6_IRQHandler       0x0800d4e5          Code  Wk  startup_stm32f2xx.o [1]
+USART_Cmd               0x08004635    0x1c  Code  Gb  stm32f2xx_usart.o [1]
+USART_GetFlagStatus     0x080046b3    0x1c  Code  Gb  stm32f2xx_usart.o [1]
+USART_ITConfig          0x08004661    0x52  Code  Gb  stm32f2xx_usart.o [1]
+USART_Init              0x08004571    0xb6  Code  Gb  stm32f2xx_usart.o [1]
+USART_ReceiveData       0x08004659     0x8  Code  Gb  stm32f2xx_usart.o [1]
+USART_SendData          0x08004651     0x8  Code  Gb  stm32f2xx_usart.o [1]
+UcbPacketBytesToPacketType
+                        0x08003e59    0x4a  Code  Gb  ucb_packet.o [1]
+UcbPacketBytesToPayloadLength
+                        0x08003ee5     0x4  Code  Gb  ucb_packet.o [1]
+UcbPacketCalculateCrc   0x08003ef7     0xc  Code  Gb  ucb_packet.o [1]
+UcbPacketCrcToBytes     0x08003eed     0xa  Code  Gb  ucb_packet.o [1]
+UcbPacketIsAnInputPacket
+                        0x08003f03    0x7a  Code  Gb  ucb_packet.o [1]
+UcbPacketIsAnOutputPacket
+                        0x08003f7d    0x6e  Code  Gb  ucb_packet.o [1]
+UcbPacketPacketTypeToBytes
+                        0x08003ea3    0x38  Code  Gb  ucb_packet.o [1]
+UcbPacketPayloadLengthToBytes
+                        0x08003ee9     0x4  Code  Gb  ucb_packet.o [1]
+UsageFault_Handler      0x0800c3df     0x2  Code  Gb  stm32f2xx_it.o [1]
+ValidPortConfiguration  0x08002ab5    0xd0  Code  Gb  xbowsp_fields.o [1]
+WWDG_IRQHandler         0x0800d3c9          Code  Wk  startup_stm32f2xx.o [1]
+WriteFieldData          0x0800312b    0x1a  Code  Gb  xbowsp_fields.o [1]
+_AccReadReg             0x08005d59    0x50  Code  Lc  accelMMA8451Q.o [1]
+_AccWriteReg            0x08005da9    0x6c  Code  Lc  accelMMA8451Q.o [1]
+_AccelComputeAverages   0x08005f45    0x74  Code  Gb  accelMMA8451Q.o [1]
+_AccelerometerDataReceivedCallback
+                        0x08005e49    0x70  Code  Gb  accelMMA8451Q.o [1]
+_CmdHelp                0x08005cf7    0x34  Code  Lc  commandLine.o [1]
+_Dispatch               0x08005cad    0x4a  Code  Lc  commandLine.o [1]
+_ExecLine               0x08005c53    0x16  Code  Lc  commandLine.o [1]
+_Gyro2DMACallback       0x0800678d    0x24  Code  Gb  gyroMPU3300.o [1]
+_GyroDMADoneCallback    0x08006d7f    0x1a  Code  Lc  gyroMAX21000.o [1]
+_GyroDataReadyInt       0x08006ce7    0x20  Code  Gb  gyroMAX21000.o [1]
+_InitAccelDataReadyInt  0x080060eb    0x80  Code  Gb  accelMMA8451Q.o [1]
+_InitGyro2DataReadyInt  0x08006ac3    0x86  Code  Gb  gyroMPU3300.o [1]
+_InitGyroDataReadyInt   0x08006f0f    0x68  Code  Gb  gyroMAX21000.o [1]
+_InitMagDataReadyInt    0x080065a1    0x84  Code  Gb  magHMC5883L.o [1]
+_IsdstStr               0x20004978     0x4  Data  Gb  setlocale.o [3]
+_LocaleC_isspace        0x0800a3e1    0x14  Code  Gb  xlocale_c.o [3]
+_LocaleC_tolower        0x0800a3f5     0xc  Code  Gb  xlocale_c.o [3]
+_LocaleForCat           0x0800a3c9    0x12  Code  Gb  setlocale.o [3]
+_LocaleReturnString     0x20004998    0x50  Data  Lc  setlocale.o [3]
+_Locale_Profile         0x2000497c    0x1c  Data  Gb  setlocale.o [3]
+_MagReadReg             0x0800620d    0x5c  Code  Lc  magHMC5883L.o [1]
+_MagWriteReg            0x080061b5    0x58  Code  Lc  magHMC5883L.o [1]
+_MagnetometerClearBuffer
+                        0x080063db    0x2a  Code  Lc  magHMC5883L.o [1]
+_MagnetometerDataReceivedCallback
+                        0x08006269    0x18  Code  Lc  magHMC5883L.o [1]
+_ReadMAX21000Register   0x08006c55    0x50  Code  Lc  gyroMAX21000.o [1]
+_ReadMPU3300Register    0x08006685    0x54  Code  Lc  gyroMPU3300.o [1]
+_SPI1_Init              0x08008bb5   0x14a  Code  Gb  spi.o [1]
+_SetActive              0x08005e2f    0x1a  Code  Lc  accelMMA8451Q.o [1]
+_SetStandby             0x08005e15    0x1a  Code  Lc  accelMMA8451Q.o [1]
+_TemperatureRegWriteDoneCallback
+                        0x080075c3     0xa  Code  Lc  tempTMP102.o [1]
+_TzoneStr               0x20004974     0x4  Data  Gb  setlocale.o [3]
+_WriteMAX21000Register  0x08006ca5    0x42  Code  Lc  gyroMAX21000.o [1]
+_WriteMPU3300Register   0x080066d9    0x42  Code  Lc  gyroMPU3300.o [1]
+__aeabi_cfcmple         0x08007fed          Code  Gb  FltCmpLe.o [4]
+__aeabi_d2f             0x080078f5          Code  Gb  DblToFlt.o [4]
+__aeabi_d2iz            0x08003939          Code  Gb  DblToI32.o [4]
+__aeabi_d2uiz           0x08003965          Code  Gb  DblToI32.o [4]
+__aeabi_dadd            0x080041a1          Code  Gb  DblAdd.o [4]
+__aeabi_ddiv            0x0800a0fd          Code  Gb  DblDiv.o [4]
+__aeabi_dmul            0x08003795          Code  Gb  DblMul.o [4]
+__aeabi_dsub            0x08004939          Code  Gb  DblSub.o [4]
+__aeabi_errno_addr      0x0800a0c1     0x6  Code  Gb  errno.o [3]
+__aeabi_f2d             0x080077b5          Code  Gb  FltToDbl.o [4]
+__aeabi_f2iz            0x08007fa9          Code  Gb  FltToS32.o [4]
+__aeabi_fdiv            0x080073d5          Code  Gb  FltDiv.o [4]
+__aeabi_fmul            0x080076dd          Code  Gb  FltMul.o [4]
+__aeabi_fsub            0x08008011          Code  Gb  FltSub.o [4]
+__aeabi_i2d             0x0800a0cd          Code  Gb  I32ToDbl.o [4]
+__aeabi_i2f             0x080073a1          Code  Gb  I32ToFlt.o [4]
+__aeabi_memclr4         0x08007985          Code  Gb  ABImemclr4.o [5]
+__aeabi_memcpy          0x08001a11          Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy4         0x08001a31          Code  Gb  ABImemcpy.o [5]
+__aeabi_memcpy8         0x08001a31          Code  Gb  ABImemcpy.o [5]
+__aeabi_ui2d            0x0800a0e1          Code  Gb  I32ToDbl.o [4]
+__aeabi_ui2f            0x080073b5          Code  Gb  I32ToFlt.o [4]
+__cmain                 0x0800ceb1          Code  Gb  cmain.o [5]
+__exit                  0x0800cedd    0x14  Code  Gb  exit.o [7]
+__iar_Errno             0x20004f98     0x4  Data  Gb  errno.o [3]
+__iar_Memchr            0x0800a36d          Code  Gb  memchr.o [5]
+__iar_Memset4_word      0x08008fa9          Code  Gb  ABImemset48.o [5]
+__iar_Memset8_word      0x08008fa9          Code  Gb  ABImemset48.o [5]
+__iar_SB                0x0800d50c          Data  Gb  bwt_init3c.o [5]
+__iar_Stoul             0x080099eb     0x4  Code  Gb  xstoul.o [3]
+__iar_Stoulx            0x080098cd   0x11e  Code  Gb  xstoul.o [3]
+__iar_copy_init3        0x080019e3    0x2e  Code  Gb  copy_init3.o [5]
+__iar_d2uiz             0x08003971          Code  Gb  DblToI32.o [4]
+__iar_dadd              0x080041b5          Code  Gb  DblAdd.o [4]
+__iar_data_init3        0x0800ca39    0x2c  Code  Gb  data_init3.o [5]
+__iar_dlib_perthread_access
+                        0x0800a3c5     0x2  Code  Gb  xtls.o [3]
+__iar_dsub              0x0800494d          Code  Gb  DblSub.o [4]
+__iar_dsubStart         0x0800495f          Code  Gb  DblSub.o [4]
+__iar_edom              0x08008f9d          Code  Gb  iarEdom.o [5]
+__iar_fadd              0x08009859          Code  Gb  FltAdd.o [4]
+__iar_fsub              0x08008021          Code  Gb  FltSub.o [4]
+__iar_fsubStart         0x08008031          Code  Gb  FltSub.o [4]
+__iar_program_start     0x0800d1f9          Code  Gb  cstartup_M.o [5]
+__iar_sqrt              0x08007805          Code  Gb  sqrt.o [4]
+__iar_ui2d              0x0800a0e5          Code  Gb  I32ToDbl.o [4]
+__iar_ui2f              0x080073b9          Code  Gb  I32ToFlt.o [4]
+__iar_zero_init3        0x08001a87    0x22  Code  Gb  zero_init3.o [5]
+__low_level_init        0x0800cec7     0x4  Code  Gb  low_level_init.o [3]
+__vector_table          0x08000000          Data  Gb  startup_stm32f2xx.o [1]
+_call_main              0x0800cebd          Code  Gb  cmain.o [5]
+_exit                   0x0800ced1          Code  Gb  cexit.o [5]
+_i2c1_init              0x08008705    0xb2  Code  Lc  i2c.o [1]
+_i2c3_init              0x080087b7    0xbe  Code  Lc  i2c.o [1]
+_i2c_error_irq          0x080081e5    0x54  Code  Lc  i2c.o [1]
+_i2c_event_irq          0x0800825d   0x3f4  Code  Lc  i2c.o [1]
+_i2cx_to_index          0x080081c9    0x1c  Code  Lc  i2c.o [1]
+_main                   0x0800cec3          Code  Gb  cmain.o [5]
+_searchScaleTable       0x080091eb   0x11c  Code  Gb  calibrate.o [1]
+_searchTempTable        0x080090d5   0x116  Code  Lc  calibrate.o [1]
+_spi_set_baud           0x08008ddd    0x2a  Code  Gb  spi.o [1]
+adahrsBitRawSensors     0x20004cf4    0x20  Data  Gb  algorithm.o [1]
+algorithmAirData        0x20004790    0xe4  Data  Gb  algorithm.o [1]
+appendAccels            0x080031f7    0x3e  Code  Gb  xbowsp_fields.o [1]
+appendAirDataSensorCounts
+                        0x0800356f    0x46  Code  Gb  xbowsp_fields.o [1]
+appendAirDataSolution   0x080032ef   0x178  Code  Gb  xbowsp_fields.o [1]
+appendAirSpeedRate      0x080035b5    0x30  Code  Gb  xbowsp_fields.o [1]
+appendAllTempCounts     0x08003501    0x6e  Code  Gb  xbowsp_fields.o [1]
+appendAttitudeTrue      0x080032af    0x40  Code  Gb  xbowsp_fields.o [1]
+appendBaroCorrection    0x080035e5    0x1a  Code  Gb  xbowsp_fields.o [1]
+appendCorrectedRates    0x08003145    0x40  Code  Gb  xbowsp_fields.o [1]
+appendDownRate          0x08003185    0x32  Code  Gb  xbowsp_fields.o [1]
+appendInertialCounts    0x08003467    0x46  Code  Gb  xbowsp_fields.o [1]
+appendMagnetometerCounts
+                        0x080034b1    0x50  Code  Gb  xbowsp_fields.o [1]
+appendTangentAccels     0x08003235    0x7a  Code  Gb  xbowsp_fields.o [1]
+appendTangentRates      0x080031b7    0x40  Code  Gb  xbowsp_fields.o [1]
+atoi                    0x080081c1     0x8  Code  Gb  atoi.o [3]
+bitCategory             0x08003651    0x2a  Code  Gb  xbowsp_bit.o [1]
+bitCategoryTab          0x0800c2d0    0xb0  Data  Gb  xbowsp_bit.o [1]
+bitError                0x20004d94    0x20  Data  Lc  xbowsp_bit.o [1]
+bitStatus               0x20004ebc     0xc  Data  Lc  xbowsp_bit.o [1]
+bootFMversion           0x20004e20    0x14  Data  Gb  xbowsp_init.o [1]
+bytes_remaining         0x08003e4d     0xc  Code  Gb  uart.o [1]
+calRequestPacketPtr     0x20004f3c     0x4  Data  Gb  handle_packet.o [1]
+calRequestPort          0x20004fb7     0x1  Data  Gb  handle_packet.o [1]
+continuousUcbPacket     0x2000418c   0x104  Data  Lc  taskUserCommunication.o [1]
+continuousUcbPacketPtr  0x20004f58     0x4  Data  Lc  taskUserCommunication.o [1]
+convert_ieee_float_to_c33
+                        0x0800b4e1    0x6e  Code  Gb  convert.o [1]
+currentMagSerialNumber  0x20004f38     0x4  Data  Gb  handle_packet.o [1]
+diagUcbPacket           0x20004394   0x104  Data  Lc  taskUserCommunication.o [1]
+diagUcbPacketPtr        0x20004f64     0x4  Data  Lc  taskUserCommunication.o [1]
+digits                  0x080099f0    0x28  Data  Lc  xstoul.o [3]
+divideCount             0x20000140     0x1  Data  Gb  taskUserCommunication.o [1]
+dupFMversion            0x20004df8    0x14  Data  Gb  xbowsp_init.o [1]
+exit                    0x0800cecb     0x4  Code  Gb  exit.o [3]
+gAccel                  0x20004db4    0x18  Data  Lc  accelMMA8451Q.o [1]
+gAlgorithm              0x20003ec0   0x1a0  Data  Gb  xbowsp_init.o [1]
+gCalibration            0x20001680  0x143c  Data  Gb  xbowsp_init.o [1]
+gCircRxBufMemory        0x20004874    0x80  Data  Lc  debug_usart.o [1]
+gCircTxBufMemory        0x20002abc   0x200  Data  Lc  debug_usart.o [1]
+gCmdLine                0x20004ba8    0x50  Data  Lc  commandLine.o [1]
+gCmdLineIndex           0x20004f20     0x4  Data  Lc  commandLine.o [1]
+gCommands               0x0800b784   0x1e0  Data  Gb  commandTable.o [1]
+gConfiguration          0x20004b50    0x58  Data  Gb  xbowsp_init.o [1]
+gCurrentTableLookupIndex
+                        0x20004d54    0x20  Data  Gb  calibrate.o [1]
+gDebugUsartRxCircBuf    0x20004e54    0x10  Data  Lc  debug_usart.o [1]
+gDebugUsartTxCircBuf    0x20004e64    0x10  Data  Lc  debug_usart.o [1]
+gEepromInFlash          0x080e0000  0x153c  Data  Gb  s_eeprom.o [1]
+gEepromShadow           0x20000144  0x153c  Data  Lc  s_eeprom.o [1]
+gGyro2AccumulationBuffer
+                        0x20004eb0     0xc  Data  Lc  gyroMPU3300.o [1]
+gGyro2AccumulationCount
+                        0x20004fac     0x2  Data  Lc  gyroMPU3300.o [1]
+gGyro2DataBuffer        0x20004f04     0x8  Data  Lc  gyroMPU3300.o [1]
+gGyro2DataGathering     0x20004fae     0x2  Data  Lc  gyroMPU3300.o [1]
+gGyroDataBuffer         0x20004ea4     0xc  Data  Lc  gyroMAX21000.o [1]
+gI2C                    0x200049e8    0x60  Data  Lc  i2c.o [1]
+gIOUPSync               0x20004fb5     0x1  Data  Gb  algorithm.o [1]
+gIsrDisableCount        0x20004f44     0x4  Data  Lc  salvohook_interrupt.o [1]
+gMagnetometerDataBuffer
+                        0x20004f0c     0x8  Data  Lc  magHMC5883L.o [1]
+gOsSysTicks             0x2000013c     0x4  Data  Lc  timer.o [1]
+gPort0                  0x20004c34    0x30  Data  Gb  extern_port.o [1]
+gPort1                  0x20004c64    0x30  Data  Gb  extern_port.o [1]
+gPort2                  0x20004c94    0x30  Data  Gb  extern_port.o [1]
+gPort3                  0x20004cc4    0x30  Data  Gb  extern_port.o [1]
+gSPICallbackOnDMAComplete
+                        0x20004f48     0x4  Data  Gb  spi.o [1]
+gSPIComplete            0x20004f4c     0x4  Data  Gb  spi.o [1]
+gSysTicks               0x20004f74     0x4  Data  Lc  timer.o [1]
+gSystemConfiguration    0x20000100    0x14  Data  Gb  taskDataAcquisition.o [1]
+gTemperatureSensorConvStart
+                        0x20004f70     0x4  Data  Gb  tempTMP102.o [1]
+gUartConfig             0x0800c490    0x58  Data  Gb  uart.o [1]
+getBITflag              0x080036cf    0x1e  Code  Gb  xbowsp_bit.o [1]
+getBITflags             0x080036b3    0x1c  Code  Gb  xbowsp_bit.o [1]
+getTopERROR             0x08003769    0x18  Code  Gb  xbowsp_bit.o [1]
+i2c_close               0x080086db    0x2a  Code  Gb  i2c.o [1]
+i2c_configure           0x08008875    0x9c  Code  Gb  i2c.o [1]
+i2c_data_request        0x08008911    0x92  Code  Gb  i2c.o [1]
+i2c_data_send           0x080089a3    0x6a  Code  Gb  i2c.o [1]
+i2c_has_error           0x08008a2b    0x12  Code  Gb  i2c.o [1]
+i2c_is_done             0x08008a0d    0x1e  Code  Gb  i2c.o [1]
+i2c_open                0x08008675    0x66  Code  Gb  i2c.o [1]
+initCRC_16bit           0x0800afed    0x1c  Code  Lc  xbowsp_init.o [1]
+initConfigureUnit       0x0800b42b    0x4e  Code  Gb  xbowsp_init.o [1]
+initRPYAlignOffsetMat   0x0800afeb     0x2  Code  Gb  algorithm.o [1]
+ioupDataStart           0x20004fb4     0x1  Data  Gb  algorithm.o [1]
+ioupFMversion           0x20004e0c    0x14  Data  Gb  xbowsp_init.o [1]
+isspace                 0x0800a343    0x14  Code  Gb  isxxx.o [3]
+itoa                    0x08005b79    0x7a  Code  Lc  debug.o [1]
+lastLUTRstIndexA        0x20004d34    0x20  Data  Gb  algorithm.o [1]
+lastLUTRstIndexB        0x20004e44    0x10  Data  Gb  algorithm.o [1]
+lastLUTRstIndexC        0x20004e34    0x10  Data  Gb  algorithm.o [1]
+led_off                 0x0800bd73     0xa  Code  Gb  bsp.o [1]
+led_on                  0x0800bd69     0xa  Code  Gb  bsp.o [1]
+led_toggle              0x0800bd7d     0xa  Code  Gb  bsp.o [1]
+limits16                0x20000000    0x90  Data  Gb  xbowsp_bit.o [1]
+limits32                0x20000090    0x70  Data  Gb  xbowsp_bit.o [1]
+loadBITlimits           0x080036ed    0x60  Code  Gb  xbowsp_bit.o [1]
+logUARTerrorBIT         0x0800374d    0x1c  Code  Gb  xbowsp_bit.o [1]
+magCalTerminateRequested
+                        0x20004f1c     0x4  Data  Gb  algorithm.o [1]
+magCrmPacket            0x20004de4    0x14  Data  Lc  taskUserCommunication.o [1]
+magCrmPacketPtr         0x20004f60     0x4  Data  Lc  taskUserCommunication.o [1]
+main                    0x0800bc51    0x78  Code  Gb  main.o [1]
+memchr                  0x0800a36d          Code  Gb  memchr.o [5]
+memcpy                  0x08004775     0xe  Code  Gb  s_eeprom.o [1]
+ndigs                   0x08009a18    0x28  Data  Lc  xstoul.o [3]
+physicalPort            0x20004e74    0x10  Data  Lc  extern_port.o [1]
+portConfigurationChanged
+                        0x20004f78     0x4  Data  Lc  xbowsp_fields.o [1]
+portMap                 0x20004e84    0x10  Data  Lc  extern_port.o [1]
+portNumMap              0x20004edc     0x8  Data  Lc  extern_port.o [1]
+primaryUcbPacket        0x20004290   0x104  Data  Lc  taskUserCommunication.o [1]
+primaryUcbPacketPtr     0x20004f5c     0x4  Data  Lc  taskUserCommunication.o [1]
+proposedEepromConfiguration
+                        0x20004af8    0x58  Data  Lc  xbowsp_fields.o [1]
+proposedRamConfiguration
+                        0x20004aa0    0x58  Data  Lc  xbowsp_fields.o [1]
+rawAirDataSensors       0x20004d14    0x20  Data  Gb  algorithm.o [1]
+rawInertialSensors      0x20004bf8    0x3c  Data  Gb  algorithm.o [1]
+read8BitsBytesFromSeprom
+                        0x0800412f    0x2a  Code  Gb  s_eeprom.o [1]
+readConfigAndCalIntoMem
+                        0x0800b009   0x172  Code  Lc  xbowsp_init.o [1]
+readEEPROMTwoWords      0x0800418d    0x12  Code  Gb  s_eeprom.o [1]
+readEEPROMWords         0x0800417b    0x12  Code  Gb  s_eeprom.o [1]
+save_fault_cpu_state    0x0800c383    0x32  Code  Lc  stm32f2xx_it.o [1]
+secondaryUcbPacket0     0x20004498   0x104  Data  Lc  taskUserCommunication.o [1]
+secondaryUcbPacket0Ptr  0x20004f68     0x4  Data  Lc  taskUserCommunication.o [1]
+secondaryUcbPacket1     0x2000459c   0x104  Data  Lc  taskUserCommunication.o [1]
+secondaryUcbPacket1Ptr  0x20004f6c     0x4  Data  Lc  taskUserCommunication.o [1]
+setBITflag              0x08003687    0x2c  Code  Gb  xbowsp_bit.o [1]
+setBITflags             0x0800367b     0xc  Code  Gb  xbowsp_bit.o [1]
+softIronAngle           0x20004fa0     0x2  Data  Gb  calibrate_mag.o [1]
+softIronScaleRatio      0x20004f9e     0x2  Data  Gb  calibrate_mag.o [1]
+softwareReset           0x0800afe9     0x2  Code  Gb  algorithm.o [1]
+spi_configure           0x08008cff    0x1a  Code  Gb  spi.o [1]
+spi_done                0x08008d63     0x8  Code  Gb  spi.o [1]
+spi_go_fast             0x08008e31     0xa  Code  Gb  spi.o [1]
+spi_go_slow             0x08008e3b     0xa  Code  Gb  spi.o [1]
+spi_transfer            0x08008d6b    0x72  Code  Gb  spi.o [1]
+sqrt                    0x08007805          Code  Gb  sqrt.o [4]
+sqrtl                   0x08007805          Code  Gb  sqrt.o [4]
+stateReset              0x20004f28     0x4  Data  Lc  extern_port.o [1]
+strcmpi                 0x0800810b    0x4a  Code  Gb  utilities.o [1]
+strlen                  0x08007d15          Code  Gb  strlen.o [5]
+strrep                  0x08008155    0x16  Code  Gb  utilities.o [1]
+strtok_r                0x0800816b    0x56  Code  Gb  utilities.o [1]
+tolower                 0x080080f7    0x14  Code  Lc  utilities.o [1]
+tolower                 0x0800a357    0x14  Code  Gb  tolower.o [3]
+uart_init               0x08003c91    0xe2  Code  Gb  uart.o [1]
+uart_isr                0x08003d91    0x86  Code  Gb  uart.o [1]
+uart_write              0x08003d73    0x1e  Code  Gb  uart.o [1]
+write8BitsBytes2seprom  0x0800407d    0xb2  Code  Gb  s_eeprom.o [1]
+writeEEPROMWords        0x08004169    0x12  Code  Gb  s_eeprom.o [1]
+
+
+[1] = F:\memsic\svn\DMU380\software\Trunk\iar\Debug\Obj
+[2] = command line
+[3] = dl7M_tlf.a
+[4] = m7M_tl.a
+[5] = rt7M_tl.a
+[6] = salvo.a
+[7] = shb_l.a
+
+  49 207 bytes of readonly  code memory
+  11 093 bytes of readonly  data memory
+  21 431 bytes of readwrite data memory
+
+Errors: none
+Warnings: none

@@ -1,0 +1,1296 @@
+###############################################################################
+#
+# IAR ELF Linker V8.32.1.169/W32 for ARM                  18/Jan/2021  12:37:26
+# Copyright 2007-2018 IAR Systems AB.
+#
+#    Output file  =  
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Exe\DMU380.out
+#    Map file     =  
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\List\DMU380.map
+#    Command line =  
+#        -f C:\Users\ZHANGL~1\AppData\Local\Temp\EW5437.tmp
+#        (E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\bsp.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\circbuf.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\commandLine.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\commands.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\commandTable.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\ConfigureGPIOPins.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\debug.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\debug_usart.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\iar_stm32f207zg_sk.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\main.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\misc.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\RtosSalvo\Iar\Debug\Exe\salvo.a
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\salvohook_idle.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\salvohook_interrupt.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\salvohook_wdt.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\spi.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\startup_stm32f2xx.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_adc.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_can.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_crc.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_cryp.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_cryp_aes.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_cryp_des.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_cryp_tdes.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_dac.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_dbgmcu.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_dcmi.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_dma.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_exti.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_flash.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_fsmc.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_gpio.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_hash.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_hash_md5.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_hash_sha1.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_i2c.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_it.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_iwdg.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_pwr.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_rcc.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_rng.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_rtc.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_sdio.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_spi.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_syscfg.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_tim.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_usart.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\stm32f2xx_wwdg.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\SyncTimer.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\system_stm32f2xx.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\timer.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\UserCommunication_SPI.o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj\utilities.o
+#        --no_out_extension -o
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Exe\DMU380.out
+#        --map
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\List\DMU380.map
+#        --log initialization,modules,redirects,sections,unused_fragments
+#        --log_file
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\List\DMU380.log
+#        --config
+#        E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\..\src\board\stm32f2xx_flash.icf
+#        --semihosting --entry __iar_program_start --redirect
+#        __iar_sh_stdout=__iar_sh_stdout_swo --no_exceptions "D:\Program Files
+#        (x86)\IAR Systems\Embedded Workbench
+#        8.2\arm\CMSIS\Lib\IAR\iar_cortexM3l_math.a" --vfe --text_out locale)
+#
+###############################################################################
+
+*******************************************************************************
+*** MESSAGES
+***
+
+Warning[Lt009]: Inconsistent wchar_t size
+            utilities.o and 10 other objects, some of them in salvo.a have
+                      wchar_t size 16 bits
+            bsp.o and 76 other objects, some of them in m7M_tl.a and 25 other
+                      libraries have wchar_t size 32 bits
+
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+__dlib_version  = 6
+
+
+*******************************************************************************
+*** HEAP SELECTION
+***
+
+The basic heap was selected because some modules are built with
+size limitations (and not runtime checking), and --advanced_heap
+was not specified.
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x800'0000 { ro section .intvec };
+"P2":  place in [from 0x800'0000 to 0x80d'ffff] { ro };
+define block CSTACK with size = 1K, alignment = 8 { };
+define block HEAP with size = 512, alignment = 8 { };
+"P3":  place in [from 0x2000'0000 to 0x2002'0000] {
+          rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+
+No sections matched the following patterns:
+
+  section FLASH_BASED_EEPROM  in block FLASH_EEPROM_block
+
+
+  Section            Kind         Address    Size  Object
+  -------            ----         -------    ----  ------
+"A0":                                       0x184
+  .intvec            ro code   0x800'0000   0x184  startup_stm32f2xx.o [1]
+                             - 0x800'0184   0x184
+
+"P2":                                      0xd413
+  .text              ro code   0x800'0184  0x4f20  commands.o [1]
+  .text              ro code   0x800'50a4   0x19a  debug.o [1]
+  .text              ro code   0x800'523e    0x7a  lz77_init_single.o [4]
+  .text              ro code   0x800'52b8   0x324  stm32f2xx_rcc.o [1]
+  .text              ro code   0x800'55dc   0x15c  stm32f2xx_gpio.o [1]
+  .text              ro code   0x800'5738    0x58  stm32f2xx_syscfg.o [1]
+  .text              ro code   0x800'5790    0xd0  stm32f2xx_exti.o [1]
+  .text              ro code   0x800'5860    0x78  misc.o [1]
+  .text              ro code   0x800'58d8    0x24  salvohook_interrupt.o [1]
+  .text              ro code   0x800'58fc   0x280  commandLine.o [1]
+  .text              ro code   0x800'5b7c   0x42c  spi.o [1]
+  .text              ro code   0x800'5fa8    0xc4  timer.o [1]
+  .text              ro code   0x800'606c     0x6  ABImemclr4.o [4]
+  .text              ro code   0x800'6072    0x3a  zero_init3.o [4]
+  .text              ro code   0x800'60ac    0x24  S32ToFlt.o [3]
+  .text              ro code   0x800'60d0    0x48  FltToDbl.o [3]
+  .text              ro code   0x800'6118   0x1a2  DblMul.o [3]
+  .rodata            const     0x800'62ba     0x2  commandTable.o [1]
+  .text              ro code   0x800'62bc    0x68  DblToFlt.o [3]
+  .text              ro code   0x800'6324    0x24  FltCmpGe.o [3]
+  .text              ro code   0x800'6348    0x2a  FltToS32.o [3]
+  .text              ro code   0x800'6372     0x8  abs.o [2]
+  .rodata            const     0x800'637a     0x2  commandTable.o [1]
+  .text              ro code   0x800'637c   0x17a  DblAdd.o [3]
+  .text              ro code   0x800'64f6    0x78  utilities.o [1]
+  .rodata            const     0x800'656e     0x2  commandTable.o [1]
+  .text              ro code   0x800'6570    0x1c  U32ToFlt.o [3]
+  .text              ro code   0x800'658c   0x246  DblDiv.o [3]
+  .rodata            const     0x800'67d2     0x1  commandTable.o [1]
+  .text              ro code   0x800'67d4    0x3a  DblToS32.o [3]
+  .text              ro code   0x800'6810    0x12  strcmp.o [4]
+  .text              ro code   0x800'6824   0x112  bsp.o [1]
+  .text              ro code   0x800'6938    0x8c  UserCommunication_SPI.o [1]
+  .text              ro code   0x800'69c4    0x22  S32ToDbl.o [3]
+  .text              ro code   0x800'69e8    0x2e  DblCmpGe.o [3]
+  .text              ro code   0x800'6a18    0x2e  DblCmpLe.o [3]
+  .text              ro code   0x800'6a48   0x714  pow64.o [3]
+  .text              ro code   0x800'715c    0x24  FltCmpLe.o [3]
+  .text              ro code   0x800'7180    0xc8  ConfigureGPIOPins.o [1]
+  .text              ro code   0x800'7248   0x1f4  debug_usart.o [1]
+  .text              ro code   0x800'743c    0x80  FltSub.o [3]
+  .text              ro code   0x800'74bc    0xd8  FltMul.o [3]
+  .text              ro code   0x800'7594   0x14c  iar_Stoulx.o [2]
+  .text              ro code   0x800'76e0   0x404  strto64.o [3]
+  .text              ro code   0x800'7ae4    0xfc  stm32f2xx_spi.o [1]
+  .text              ro code   0x800'7be0    0x2c  salvotimer.o [5]
+  .text              ro code   0x800'7c0c    0x32  ABImemset48.o [4]
+  .text              ro code   0x800'7c40    0xe2  DblSub.o [3]
+  .text              ro code   0x800'7d24    0x64  iar_stm32f207zg_sk.o [1]
+  .text              ro code   0x800'7d88    0x78  stm32f2xx_flash.o [1]
+  .text              ro code   0x800'7e00   0x1a8  system_stm32f2xx.o [1]
+  .text              ro code   0x800'7fa8    0x20  DblCmpEq.o [3]
+  .text              ro code   0x800'7fc8    0x70  frexp.o [3]
+  .text              ro code   0x800'8038   0x13a  ldexp.o [3]
+  .text              ro code   0x800'8174   0x374  iar_Exp64.o [3]
+  .text              ro code   0x800'84e8    0x9a  circbuf.o [1]
+  .text              ro code   0x800'8584   0x19e  stm32f2xx_usart.o [1]
+  .text              ro code   0x800'8724    0xd0  salvobinsem.o [5]
+  .text              ro code   0x800'87f4    0xd6  FltAdd.o [3]
+  .text              ro code   0x800'88ca    0x14  isspace.o [2]
+  .text              ro code   0x800'88de    0x14  tolower.o [2]
+  .text              ro code   0x800'88f4    0x58  memchr.o [4]
+  .text              ro code   0x800'894c   0x122  iar_Stopfx.o [2]
+  .text              ro code   0x800'8a70   0x1c4  iar_Stoflt.o [2]
+  .text              ro code   0x800'8c34   0x21c  iar_Stoxflt.o [2]
+  .text              ro code   0x800'8e50   0x12c  salvoevent.o [5]
+  .text              ro code   0x800'8f7c    0x4c  xlocale_c.o [2]
+  .text              ro code   0x800'8fc8    0x14  isalpha.o [2]
+  .text              ro code   0x800'8fdc    0xa0  salvoqdel.o [5]
+  .text              ro code   0x800'907c    0xac  salvoqins.o [5]
+  .rodata            const     0x800'9128   0x4c0  commandTable.o [1]
+  .rodata            const     0x800'95e8    0x7c  commandTable.o [1]
+  .rodata            const     0x800'9668   0x420  pow64.o [3]
+  .text              ro code   0x800'9a88   0x218  salvosched.o [5]
+  .text              ro code   0x800'9ca0     0x2  salvohook_wdt.o [1]
+  CODE               ro code   0x800'9ca4    0x6c  salvoportiararm.o [5]
+  .text              ro code   0x800'9d10     0x2  salvohook_idle.o [1]
+  .rodata            const     0x800'9d14   0x17c  commandTable.o [1]
+  .rodata            const     0x800'9e90   0x178  commandTable.o [1]
+  .rodata            const     0x800'a008   0x174  commandTable.o [1]
+  .rodata            const     0x800'a17c   0x174  commandTable.o [1]
+  .rodata            const     0x800'a2f0   0x134  commandTable.o [1]
+  .text              ro code   0x800'a424   0x134  SyncTimer.o [1]
+  .text              ro code   0x800'a558    0xd4  stm32f2xx_tim.o [1]
+  .rodata            const     0x800'a62c   0x130  commandTable.o [1]
+  .rodata            const     0x800'a75c    0xf0  commandTable.o [1]
+  .text              ro code   0x800'a84c    0xe0  main.o [1]
+  .text              ro code   0x800'a92c    0x48  salvoinit.o [5]
+  .text              ro code   0x800'a974    0x7a  salvoinit2.o [5]
+  .rodata            const     0x800'a9f0    0xdc  commandTable.o [1]
+  .rodata            const     0x800'aacc    0xd4  commandTable.o [1]
+  .rodata            const     0x800'aba0    0xd0  commandTable.o [1]
+  .rodata            const     0x800'ac70    0xd0  commandTable.o [1]
+  .rodata            const     0x800'ad40    0xd0  commandTable.o [1]
+  .rodata            const     0x800'ae10    0xcc  commandTable.o [1]
+  .rodata            const     0x800'aedc    0xc0  commandTable.o [1]
+  .rodata            const     0x800'af9c    0xc0  commandTable.o [1]
+  .rodata            const     0x800'b05c    0xb4  commandTable.o [1]
+  .rodata            const     0x800'b110    0xb0  commandTable.o [1]
+  .rodata            const     0x800'b1c0    0xac  commandTable.o [1]
+  .rodata            const     0x800'b26c    0xa4  commandTable.o [1]
+  .rodata            const     0x800'b310    0xa0  commandTable.o [1]
+  .rodata            const     0x800'b3b0    0xa0  commandTable.o [1]
+  .rodata            const     0x800'b450    0xa0  commandTable.o [1]
+  .rodata            const     0x800'b4f0    0x9c  commandTable.o [1]
+  .rodata            const     0x800'b58c    0x9c  commandTable.o [1]
+  .rodata            const     0x800'b628    0x94  commandTable.o [1]
+  .rodata            const     0x800'b6bc    0x90  commandTable.o [1]
+  .rodata            const     0x800'b74c    0x84  commandTable.o [1]
+  .rodata            const     0x800'b7d0    0x80  commandTable.o [1]
+  .rodata            const     0x800'b850    0x70  commandTable.o [1]
+  .rodata            const     0x800'b8c0    0x64  commandTable.o [1]
+  .rodata            const     0x800'b924    0x64  commandTable.o [1]
+  .rodata            const     0x800'b988    0x5c  commandTable.o [1]
+  .rodata            const     0x800'b9e4    0x5c  commandTable.o [1]
+  .rodata            const     0x800'ba40    0x5c  commandTable.o [1]
+  .text              ro code   0x800'ba9c    0x56  stm32f2xx_it.o [1]
+  .rodata            const     0x800'baf4    0x50  commandTable.o [1]
+  .rodata            const     0x800'bb44    0x50  iar_Stoulx.o [2]
+  .rodata            const     0x800'bb94    0x48  commands.o [1]
+  .rodata            const     0x800'bbdc    0x44  commandTable.o [1]
+  .rodata            const     0x800'bc20    0x48  strto64.o [3]
+  .rodata            const     0x800'bc68    0x44  commandTable.o [1]
+  .rodata            const     0x800'bcac    0x34  commands.o [1]
+  .rodata            const     0x800'bce0    0x34  commandTable.o [1]
+  .rodata            const     0x800'bd14    0x30  commands.o [1]
+  .rodata            const     0x800'bd44    0x30  commands.o [1]
+  .rodata            const     0x800'bd74    0x30  commands.o [1]
+  .rodata            const     0x800'bda4    0x30  commandTable.o [1]
+  .rodata            const     0x800'bdd4    0x30  commandTable.o [1]
+  .rodata            const     0x800'be04    0x30  commandTable.o [1]
+  .rodata            const     0x800'be34    0x30  commandTable.o [1]
+  .rodata            const     0x800'be64    0x30  commandTable.o [1]
+  .rodata            const     0x800'be94    0x2c  commands.o [1]
+  .rodata            const     0x800'bec0    0x2c  commands.o [1]
+  .rodata            const     0x800'beec    0x2c  commands.o [1]
+  .rodata            const     0x800'bf18    0x2c  commands.o [1]
+  .rodata            const     0x800'bf44    0x2c  commands.o [1]
+  .rodata            const     0x800'bf70    0x2c  commandTable.o [1]
+  .rodata            const     0x800'bf9c    0x2c  commandTable.o [1]
+  .rodata            const     0x800'bfc8    0x2c  commandTable.o [1]
+  .rodata            const     0x800'bff4    0x2c  commandTable.o [1]
+  .rodata            const     0x800'c020    0x2c  commandTable.o [1]
+  .rodata            const     0x800'c04c    0x2c  commandTable.o [1]
+  .rodata            const     0x800'c078    0x2c  commandTable.o [1]
+  .rodata            const     0x800'c0a4    0x28  commands.o [1]
+  .rodata            const     0x800'c0cc    0x28  commands.o [1]
+  .rodata            const     0x800'c0f4    0x28  commands.o [1]
+  .rodata            const     0x800'c11c    0x28  commands.o [1]
+  .rodata            const     0x800'c144    0x28  commands.o [1]
+  .rodata            const     0x800'c16c    0x28  commands.o [1]
+  .rodata            const     0x800'c194    0x28  commands.o [1]
+  .rodata            const     0x800'c1bc    0x28  commands.o [1]
+  .rodata            const     0x800'c1e4    0x28  commands.o [1]
+  .rodata            const     0x800'c20c    0x28  commands.o [1]
+  .rodata            const     0x800'c234    0x28  commands.o [1]
+  .rodata            const     0x800'c25c    0x28  commands.o [1]
+  .rodata            const     0x800'c284    0x28  commandTable.o [1]
+  .rodata            const     0x800'c2ac    0x28  commandTable.o [1]
+  .rodata            const     0x800'c2d4    0x28  commandTable.o [1]
+  .rodata            const     0x800'c2fc    0x28  commandTable.o [1]
+  .rodata            const     0x800'c324    0x28  commandTable.o [1]
+  .rodata            const     0x800'c34c    0x28  commandTable.o [1]
+  .rodata            const     0x800'c374    0x28  commandTable.o [1]
+  .rodata            const     0x800'c39c    0x28  commandTable.o [1]
+  .rodata            const     0x800'c3c4    0x28  commandTable.o [1]
+  .rodata            const     0x800'c3ec    0x28  commandTable.o [1]
+  .text              ro code   0x800'c414    0x28  data_init.o [4]
+  .rodata            const     0x800'c43c    0x24  commands.o [1]
+  .rodata            const     0x800'c460    0x24  commands.o [1]
+  .rodata            const     0x800'c484    0x24  commands.o [1]
+  .rodata            const     0x800'c4a8    0x24  commands.o [1]
+  .rodata            const     0x800'c4cc    0x24  commands.o [1]
+  .rodata            const     0x800'c4f0    0x24  commands.o [1]
+  .rodata            const     0x800'c514    0x24  commands.o [1]
+  .rodata            const     0x800'c538    0x24  commands.o [1]
+  .rodata            const     0x800'c55c    0x24  commands.o [1]
+  .rodata            const     0x800'c580    0x24  commands.o [1]
+  .rodata            const     0x800'c5a4    0x24  commands.o [1]
+  .rodata            const     0x800'c5c8    0x24  commands.o [1]
+  .rodata            const     0x800'c5ec    0x24  commands.o [1]
+  .rodata            const     0x800'c610    0x24  commands.o [1]
+  .rodata            const     0x800'c634    0x24  commands.o [1]
+  .rodata            const     0x800'c658    0x24  commands.o [1]
+  .rodata            const     0x800'c67c    0x24  commands.o [1]
+  .rodata            const     0x800'c6a0    0x24  commands.o [1]
+  .rodata            const     0x800'c6c4    0x24  commands.o [1]
+  .rodata            const     0x800'c6e8    0x24  commands.o [1]
+  .rodata            const     0x800'c70c    0x24  commands.o [1]
+  .rodata            const     0x800'c730    0x24  commands.o [1]
+  .rodata            const     0x800'c754    0x24  commands.o [1]
+  .rodata            const     0x800'c778    0x24  commandTable.o [1]
+  .rodata            const     0x800'c79c    0x24  commandTable.o [1]
+  .rodata            const     0x800'c7c0    0x24  commandTable.o [1]
+  .rodata            const     0x800'c7e4    0x24  main.o [1]
+  .iar.init_table    const     0x800'c808    0x20  - Linker created -
+  .rodata            const     0x800'c828    0x20  commands.o [1]
+  .rodata            const     0x800'c848    0x20  commands.o [1]
+  .rodata            const     0x800'c868    0x20  commands.o [1]
+  .rodata            const     0x800'c888    0x20  commands.o [1]
+  .rodata            const     0x800'c8a8    0x20  commands.o [1]
+  .rodata            const     0x800'c8c8    0x20  commands.o [1]
+  .rodata            const     0x800'c8e8    0x20  commands.o [1]
+  .rodata            const     0x800'c908    0x20  commands.o [1]
+  .rodata            const     0x800'c928    0x20  commands.o [1]
+  .rodata            const     0x800'c948    0x20  commands.o [1]
+  .rodata            const     0x800'c968    0x20  commands.o [1]
+  .rodata            const     0x800'c988    0x20  commands.o [1]
+  .rodata            const     0x800'c9a8    0x20  commandTable.o [1]
+  .text              ro code   0x800'c9c8    0x1e  cmain.o [4]
+  .text              ro code   0x800'c9e6     0x4  low_level_init.o [2]
+  .text              ro code   0x800'c9ea     0x4  exit.o [2]
+  .text              ro code   0x800'c9f0     0xa  cexit.o [4]
+  .text              ro code   0x800'c9fc    0x14  exit.o [6]
+  .rodata            const     0x800'ca10    0x1c  commands.o [1]
+  .rodata            const     0x800'ca2c    0x1c  commands.o [1]
+  .rodata            const     0x800'ca48    0x1c  commands.o [1]
+  .rodata            const     0x800'ca64    0x1c  commands.o [1]
+  .rodata            const     0x800'ca80    0x1c  commands.o [1]
+  .rodata            const     0x800'ca9c    0x1c  commands.o [1]
+  .rodata            const     0x800'cab8    0x1c  commands.o [1]
+  .rodata            const     0x800'cad4    0x1c  commands.o [1]
+  .rodata            const     0x800'caf0    0x1c  commands.o [1]
+  .rodata            const     0x800'cb0c    0x1c  commands.o [1]
+  .rodata            const     0x800'cb28    0x1c  commands.o [1]
+  .rodata            const     0x800'cb44    0x1c  commands.o [1]
+  .rodata            const     0x800'cb60    0x1c  commands.o [1]
+  .rodata            const     0x800'cb7c    0x1c  commands.o [1]
+  .rodata            const     0x800'cb98    0x1c  commandTable.o [1]
+  .rodata            const     0x800'cbb4    0x1c  commandTable.o [1]
+  .rodata            const     0x800'cbd0    0x18  commands.o [1]
+  .rodata            const     0x800'cbe8    0x18  commands.o [1]
+  .rodata            const     0x800'cc00    0x18  commands.o [1]
+  .rodata            const     0x800'cc18    0x18  commands.o [1]
+  .rodata            const     0x800'cc30    0x18  commands.o [1]
+  .rodata            const     0x800'cc48    0x18  commands.o [1]
+  .rodata            const     0x800'cc60    0x18  commands.o [1]
+  .rodata            const     0x800'cc78    0x18  commands.o [1]
+  .rodata            const     0x800'cc90    0x18  commands.o [1]
+  .rodata            const     0x800'cca8    0x18  commandTable.o [1]
+  .rodata            const     0x800'ccc0    0x18  commandTable.o [1]
+  .rodata            const     0x800'ccd8    0x14  commands.o [1]
+  .rodata            const     0x800'ccec    0x14  commands.o [1]
+  .rodata            const     0x800'cd00    0x14  commands.o [1]
+  .rodata            const     0x800'cd14    0x14  commands.o [1]
+  .rodata            const     0x800'cd28    0x14  commands.o [1]
+  .rodata            const     0x800'cd3c    0x14  commands.o [1]
+  .rodata            const     0x800'cd50    0x14  commands.o [1]
+  .rodata            const     0x800'cd64    0x14  commands.o [1]
+  .rodata            const     0x800'cd78    0x14  commands.o [1]
+  .rodata            const     0x800'cd8c    0x14  commands.o [1]
+  .rodata            const     0x800'cda0    0x14  commands.o [1]
+  .rodata            const     0x800'cdb4    0x14  commands.o [1]
+  .rodata            const     0x800'cdc8    0x14  commands.o [1]
+  .rodata            const     0x800'cddc    0x14  commandTable.o [1]
+  .rodata            const     0x800'cdf0    0x14  commandTable.o [1]
+  .rodata            const     0x800'ce04    0x14  commandTable.o [1]
+  .rodata            const     0x800'ce18    0x10  commands.o [1]
+  .rodata            const     0x800'ce28    0x10  commands.o [1]
+  .rodata            const     0x800'ce38    0x10  commands.o [1]
+  .rodata            const     0x800'ce48    0x10  commands.o [1]
+  .rodata            const     0x800'ce58    0x10  commands.o [1]
+  .rodata            const     0x800'ce68    0x10  commands.o [1]
+  .rodata            const     0x800'ce78    0x10  commands.o [1]
+  .rodata            const     0x800'ce88    0x10  commands.o [1]
+  .rodata            const     0x800'ce98    0x10  commands.o [1]
+  .rodata            const     0x800'cea8    0x10  commands.o [1]
+  .rodata            const     0x800'ceb8    0x10  commands.o [1]
+  .rodata            const     0x800'cec8    0x10  commands.o [1]
+  .rodata            const     0x800'ced8    0x10  commands.o [1]
+  .rodata            const     0x800'cee8    0x10  commandTable.o [1]
+  .rodata            const     0x800'cef8    0x10  commandTable.o [1]
+  .rodata            const     0x800'cf08    0x10  commandTable.o [1]
+  .rodata            const     0x800'cf18    0x10  commandTable.o [1]
+  .rodata            const     0x800'cf28    0x10  commandTable.o [1]
+  .rodata            const     0x800'cf38    0x10  commandTable.o [1]
+  .rodata            const     0x800'cf48    0x10  commandTable.o [1]
+  .rodata            const     0x800'cf58    0x10  commandTable.o [1]
+  .rodata            const     0x800'cf68    0x10  commandTable.o [1]
+  .rodata            const     0x800'cf78    0x10  commandTable.o [1]
+  .text              ro code   0x800'cf88    0x10  startup_stm32f2xx.o [1]
+  .rodata            const     0x800'cf98     0xc  commands.o [1]
+  .rodata            const     0x800'cfa4     0xc  commands.o [1]
+  .rodata            const     0x800'cfb0     0xc  commands.o [1]
+  .rodata            const     0x800'cfbc     0xc  commands.o [1]
+  .rodata            const     0x800'cfc8     0xc  commands.o [1]
+  .rodata            const     0x800'cfd4     0xc  commands.o [1]
+  .rodata            const     0x800'cfe0     0xc  commands.o [1]
+  .rodata            const     0x800'cfec     0xc  commands.o [1]
+  .rodata            const     0x800'cff8     0xc  commands.o [1]
+  .rodata            const     0x800'd004     0xc  commands.o [1]
+  .rodata            const     0x800'd010     0xc  commands.o [1]
+  .rodata            const     0x800'd01c     0xc  commands.o [1]
+  .rodata            const     0x800'd028     0xc  commands.o [1]
+  .rodata            const     0x800'd034     0xc  commands.o [1]
+  .rodata            const     0x800'd040     0xc  commands.o [1]
+  .rodata            const     0x800'd04c     0xc  commands.o [1]
+  .rodata            const     0x800'd058     0xc  commandTable.o [1]
+  .rodata            const     0x800'd064     0xc  commandTable.o [1]
+  .rodata            const     0x800'd070     0xc  commandTable.o [1]
+  .rodata            const     0x800'd07c     0xc  commandTable.o [1]
+  .rodata            const     0x800'd088     0xc  commandTable.o [1]
+  .rodata            const     0x800'd094     0xc  commandTable.o [1]
+  .rodata            const     0x800'd0a0     0xc  commandTable.o [1]
+  .rodata            const     0x800'd0ac     0xc  commandTable.o [1]
+  .rodata            const     0x800'd0b8     0xc  commandTable.o [1]
+  .rodata            const     0x800'd0c4     0xc  commandTable.o [1]
+  .rodata            const     0x800'd0d0     0xc  commandTable.o [1]
+  .rodata            const     0x800'd0dc     0xc  commandTable.o [1]
+  .rodata            const     0x800'd0e8     0xc  commandTable.o [1]
+  .rodata            const     0x800'd0f4     0xc  commandTable.o [1]
+  .rodata            const     0x800'd100     0xc  commandTable.o [1]
+  .rodata            const     0x800'd10c     0xc  commandTable.o [1]
+  .rodata            const     0x800'd118     0xc  commandTable.o [1]
+  .rodata            const     0x800'd124     0xc  commandTable.o [1]
+  .rodata            const     0x800'd130     0xc  commandTable.o [1]
+  .rodata            const     0x800'd13c     0xc  commandTable.o [1]
+  .rodata            const     0x800'd148     0xc  commandTable.o [1]
+  .rodata            const     0x800'd154     0xc  commandTable.o [1]
+  .rodata            const     0x800'd160     0xc  commandTable.o [1]
+  .rodata            const     0x800'd16c     0xc  commandTable.o [1]
+  .rodata            const     0x800'd178     0xc  commandTable.o [1]
+  .rodata            const     0x800'd184     0xc  commandTable.o [1]
+  .rodata            const     0x800'd190     0xc  commandTable.o [1]
+  .rodata            const     0x800'd19c     0xc  commandTable.o [1]
+  .rodata            const     0x800'd1a8     0xc  commandTable.o [1]
+  .rodata            const     0x800'd1b4     0xc  commandTable.o [1]
+  .rodata            const     0x800'd1c0     0xc  commandTable.o [1]
+  .rodata            const     0x800'd1cc     0xc  commandTable.o [1]
+  .text              ro code   0x800'd1d8     0xc  cstartup_M.o [4]
+  .rodata            const     0x800'd1e4     0x8  commands.o [1]
+  .rodata            const     0x800'd1ec     0x8  commands.o [1]
+  .rodata            const     0x800'd1f4     0x8  commands.o [1]
+  .rodata            const     0x800'd1fc     0x8  commands.o [1]
+  .rodata            const     0x800'd204     0x8  commands.o [1]
+  .rodata            const     0x800'd20c     0x8  commands.o [1]
+  .rodata            const     0x800'd214     0x8  commands.o [1]
+  .rodata            const     0x800'd21c     0x8  commands.o [1]
+  .rodata            const     0x800'd224     0x8  commands.o [1]
+  .rodata            const     0x800'd22c     0x8  commands.o [1]
+  .rodata            const     0x800'd234     0x8  commands.o [1]
+  .rodata            const     0x800'd23c     0x8  commands.o [1]
+  .rodata            const     0x800'd244     0x8  commands.o [1]
+  .rodata            const     0x800'd24c     0x8  commands.o [1]
+  .rodata            const     0x800'd254     0x8  commands.o [1]
+  .rodata            const     0x800'd25c     0x8  commands.o [1]
+  .rodata            const     0x800'd264     0x8  commands.o [1]
+  .rodata            const     0x800'd26c     0x8  commands.o [1]
+  .rodata            const     0x800'd274     0x8  commands.o [1]
+  .rodata            const     0x800'd27c     0x8  commands.o [1]
+  .rodata            const     0x800'd284     0x8  commands.o [1]
+  .rodata            const     0x800'd28c     0x8  commands.o [1]
+  .rodata            const     0x800'd294     0x8  commands.o [1]
+  .rodata            const     0x800'd29c     0x8  commands.o [1]
+  .rodata            const     0x800'd2a4     0x8  commands.o [1]
+  .rodata            const     0x800'd2ac     0x8  commands.o [1]
+  .rodata            const     0x800'd2b4     0x8  commands.o [1]
+  .rodata            const     0x800'd2bc     0x8  commandTable.o [1]
+  .rodata            const     0x800'd2c4     0x8  commandTable.o [1]
+  .rodata            const     0x800'd2cc     0x8  commandTable.o [1]
+  .rodata            const     0x800'd2d4     0x8  commandTable.o [1]
+  .rodata            const     0x800'd2dc     0x8  commandTable.o [1]
+  .rodata            const     0x800'd2e4     0x8  commandTable.o [1]
+  .rodata            const     0x800'd2ec     0x8  commandTable.o [1]
+  .rodata            const     0x800'd2f4     0x8  commandTable.o [1]
+  .rodata            const     0x800'd2fc     0x8  commandTable.o [1]
+  .rodata            const     0x800'd304     0x8  commandTable.o [1]
+  .rodata            const     0x800'd30c     0x8  commandTable.o [1]
+  .rodata            const     0x800'd314     0x8  commandTable.o [1]
+  .rodata            const     0x800'd31c     0x8  commandTable.o [1]
+  .rodata            const     0x800'd324     0x8  commandTable.o [1]
+  .rodata            const     0x800'd32c     0x8  commandTable.o [1]
+  .rodata            const     0x800'd334     0x8  commandTable.o [1]
+  .rodata            const     0x800'd33c     0x8  commandTable.o [1]
+  .rodata            const     0x800'd344     0x8  commandTable.o [1]
+  .rodata            const     0x800'd34c     0x8  commandTable.o [1]
+  .rodata            const     0x800'd354     0x8  commandTable.o [1]
+  .rodata            const     0x800'd35c     0x8  commandTable.o [1]
+  .rodata            const     0x800'd364     0x8  commandTable.o [1]
+  .rodata            const     0x800'd36c     0x8  commandTable.o [1]
+  .rodata            const     0x800'd374     0x8  commandTable.o [1]
+  .rodata            const     0x800'd37c     0x8  commandTable.o [1]
+  .rodata            const     0x800'd384     0x8  commandTable.o [1]
+  .rodata            const     0x800'd38c     0x8  iar_stm32f207zg_sk.o [1]
+  .rodata            const     0x800'd394     0x6  xlocale_c.o [2]
+  .rodata            const     0x800'd39c     0x4  commands.o [1]
+  .rodata            const     0x800'd3a0     0x4  commands.o [1]
+  .rodata            const     0x800'd3a4     0x4  commands.o [1]
+  .rodata            const     0x800'd3a8     0x4  commands.o [1]
+  .rodata            const     0x800'd3ac     0x4  commands.o [1]
+  .rodata            const     0x800'd3b0     0x4  commands.o [1]
+  .rodata            const     0x800'd3b4     0x4  commandTable.o [1]
+  .rodata            const     0x800'd3b8     0x4  commandTable.o [1]
+  .rodata            const     0x800'd3bc     0x4  commandTable.o [1]
+  .rodata            const     0x800'd3c0     0x4  commandTable.o [1]
+  .text              ro code   0x800'd3c4     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3c8     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3cc     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3d0     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3d4     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3d8     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3dc     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3e0     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3e4     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3e8     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3ec     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3f0     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3f4     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3f8     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd3fc     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd400     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd404     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd408     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd40c     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd410     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd414     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd418     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd41c     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd420     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd424     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd428     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd42c     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd430     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd434     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd438     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd43c     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd440     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd444     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd448     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd44c     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd450     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd454     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd458     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd45c     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd460     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd464     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd468     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd46c     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd470     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd474     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd478     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd47c     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd480     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd484     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd488     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd48c     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd490     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd494     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd498     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd49c     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4a0     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4a4     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4a8     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4ac     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4b0     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4b4     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4b8     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4bc     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4c0     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4c4     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4c8     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4cc     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4d0     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4d4     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4d8     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4dc     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4e0     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4e4     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4e8     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4ec     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4f0     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4f4     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4f8     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd4fc     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd500     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd504     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd508     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd50c     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd510     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd514     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd518     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd51c     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd520     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd524     0x4  startup_stm32f2xx.o [1]
+  .text              ro code   0x800'd528     0x4  startup_stm32f2xx.o [1]
+  .rodata            const     0x800'd52c     0x0  zero_init3.o [4]
+  .rodata            const     0x800'd52c     0x0  lz77_init_single.o [4]
+  Initializer bytes  const     0x800'd52c    0x6b  <for P3-1>
+                             - 0x800'd597  0xd413
+
+"P3", part 1 of 3:                           0xcd
+  P3-1                        0x2000'0000    0xcd  <Init block>
+    .data            inited   0x2000'0000     0x4  commands.o [1]
+    .data            inited   0x2000'0004     0x4  commands.o [1]
+    .data            inited   0x2000'0008     0x4  commands.o [1]
+    .data            inited   0x2000'000c    0x10  iar_stm32f207zg_sk.o [1]
+    .data            inited   0x2000'001c    0x10  stm32f2xx_rcc.o [1]
+    .data            inited   0x2000'002c     0x4  system_stm32f2xx.o [1]
+    .data            inited   0x2000'0030    0x10  system_stm32f2xx.o [1]
+    .data            inited   0x2000'0040     0x4  timer.o [1]
+    .data            inited   0x2000'0044    0x38  xlocale_c.o [2]
+    .data            inited   0x2000'007c    0x48  xlocale_c.o [2]
+    .data            inited   0x2000'00c4     0x2  SyncTimer.o [1]
+    .data            inited   0x2000'00c6     0x1  commandLine.o [1]
+    .data            inited   0x2000'00c7     0x1  commands.o [1]
+    .data            inited   0x2000'00c8     0x1  commands.o [1]
+    .data            inited   0x2000'00c9     0x1  commands.o [1]
+    .data            inited   0x2000'00ca     0x1  commands.o [1]
+    .data            inited   0x2000'00cb     0x1  commands.o [1]
+    .data            inited   0x2000'00cc     0x1  commands.o [1]
+                            - 0x2000'00cd    0xcd
+
+"P3", part 2 of 3:                          0x690
+  .bss               zero     0x2000'00d0   0x200  debug_usart.o [1]
+  .bss               zero     0x2000'02d0   0x12c  salvomem.o [5]
+  .bss               zero     0x2000'03fc   0x100  commands.o [1]
+  .bss               zero     0x2000'04fc    0xf0  salvomem.o [5]
+  .bss               zero     0x2000'05ec    0x80  debug_usart.o [1]
+  .bss               zero     0x2000'066c    0x50  commandLine.o [1]
+  .bss               zero     0x2000'06bc    0x20  stm32f2xx_it.o [1]
+  .bss               zero     0x2000'06dc    0x10  debug_usart.o [1]
+  .bss               zero     0x2000'06ec    0x10  debug_usart.o [1]
+  .bss               zero     0x2000'06fc     0x8  commands.o [1]
+  .bss               zero     0x2000'0704     0x4  commandLine.o [1]
+  .bss               zero     0x2000'0708     0x4  commandLine.o [1]
+  .bss               zero     0x2000'070c     0x4  commands.o [1]
+  .bss               zero     0x2000'0710     0x4  commands.o [1]
+  .bss               zero     0x2000'0714     0x4  salvohook_interrupt.o [1]
+  .bss               zero     0x2000'0718     0x4  spi.o [1]
+  .bss               zero     0x2000'071c     0x4  SyncTimer.o [1]
+  .bss               zero     0x2000'0720     0x4  SyncTimer.o [1]
+  .bss               zero     0x2000'0724     0x4  SyncTimer.o [1]
+  .bss               zero     0x2000'0728     0x4  timer.o [1]
+  .bss               zero     0x2000'072c     0x4  salvomem.o [5]
+  .bss               zero     0x2000'0730     0x4  salvomem.o [5]
+  .bss               zero     0x2000'0734     0x4  salvomem.o [5]
+  .bss               zero     0x2000'0738     0x4  salvomem.o [5]
+  .bss               zero     0x2000'073c     0x4  salvomem.o [5]
+  .bss               zero     0x2000'0740     0x4  salvomem.o [5]
+  .bss               zero     0x2000'0744     0x4  salvomem.o [5]
+  .bss               zero     0x2000'0748     0x2  commandLine.o [1]
+  .bss               zero     0x2000'074a     0x2  commands.o [1]
+  .bss               zero     0x2000'074c     0x2  commands.o [1]
+  .bss               zero     0x2000'074e     0x2  commands.o [1]
+  .bss               zero     0x2000'0750     0x2  SyncTimer.o [1]
+  .bss               zero     0x2000'0752     0x2  SyncTimer.o [1]
+  .bss               zero     0x2000'0754     0x2  SyncTimer.o [1]
+  .bss               zero     0x2000'0756     0x1  commands.o [1]
+  .bss               zero     0x2000'0757     0x1  commands.o [1]
+  .bss               zero     0x2000'0758     0x1  commands.o [1]
+  .bss               zero     0x2000'0759     0x1  commands.o [1]
+  .bss               zero     0x2000'075a     0x1  commands.o [1]
+  .bss               zero     0x2000'075b     0x1  commands.o [1]
+  .bss               zero     0x2000'075c     0x1  SyncTimer.o [1]
+  .bss               zero     0x2000'075d     0x1  SyncTimer.o [1]
+  .bss               zero     0x2000'075e     0x1  salvomem.o [5]
+                            - 0x2000'075f   0x68f
+
+"P3", part 3 of 3:                          0x400
+  CSTACK                      0x2000'0760   0x400  <Block>
+    CSTACK           uninit   0x2000'0760   0x400  <Block tail>
+                            - 0x2000'0b60   0x400
+
+Unused ranges:
+
+         From           To      Size
+         ----           --      ----
+   0x800'd597   0x80d'ffff  0xd'2a69
+  0x2000'00cd  0x2000'00cf       0x3
+  0x2000'0b60  0x2002'0000  0x1'f4a1
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address      Size
+          -------      ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x68f:
+          0x2000'00d0  0x68f
+
+Copy/lz77 (__iar_lz77_init_single3)
+    1 source range, total size 0x6b (52% of destination):
+           0x800'd52c   0x6b
+    1 destination range, total size 0xcd:
+          0x2000'0000   0xcd
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                   ro code  ro data  rw data
+    ------                   -------  -------  -------
+command line/config:
+    --------------------------------------------------
+    Total:
+
+E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj: [1]
+    ConfigureGPIOPins.o          200
+    SyncTimer.o                  308        1       22
+    UserCommunication_SPI.o      140
+    bsp.o                        274
+    circbuf.o                    154
+    commandLine.o                640                91
+    commandTable.o                     10 255
+    commands.o                20 256    3 698      302
+    debug.o                      410
+    debug_usart.o                500               672
+    iar_stm32f207zg_sk.o         100       16       16
+    main.o                       224       36
+    misc.o                       120
+    salvohook_idle.o               2
+    salvohook_interrupt.o         36                 4
+    salvohook_wdt.o                2
+    spi.o                      1 068                 4
+    startup_stm32f2xx.o          764
+    stm32f2xx_exti.o             208
+    stm32f2xx_flash.o            120
+    stm32f2xx_gpio.o             348
+    stm32f2xx_it.o                86                32
+    stm32f2xx_rcc.o              804        8       16
+    stm32f2xx_spi.o              252
+    stm32f2xx_syscfg.o            88
+    stm32f2xx_tim.o              212
+    stm32f2xx_usart.o            414
+    system_stm32f2xx.o           424       11       20
+    timer.o                      196        2        8
+    utilities.o                  120
+    --------------------------------------------------
+    Total:                    28 470   14 027    1 187
+
+dl7M_tlf.a: [2]
+    abs.o                          8
+    exit.o                         4
+    iar_Stoflt.o                 452
+    iar_Stopfx.o                 290
+    iar_Stoulx.o                 332       80
+    iar_Stoxflt.o                540
+    isalpha.o                     20
+    isspace.o                     20
+    low_level_init.o               4
+    tolower.o                     20
+    xlocale_c.o                   76       73      128
+    --------------------------------------------------
+    Total:                     1 766      153      128
+
+m7M_tl.a: [3]
+    DblAdd.o                     378
+    DblCmpEq.o                    32
+    DblCmpGe.o                    46
+    DblCmpLe.o                    46
+    DblDiv.o                     582
+    DblMul.o                     418
+    DblSub.o                     226
+    DblToFlt.o                   104
+    DblToS32.o                    58
+    FltAdd.o                     214
+    FltCmpGe.o                    36
+    FltCmpLe.o                    36
+    FltMul.o                     216
+    FltSub.o                     128
+    FltToDbl.o                    72
+    FltToS32.o                    42
+    S32ToDbl.o                    34
+    S32ToFlt.o                    36
+    U32ToFlt.o                    28
+    frexp.o                      112
+    iar_Exp64.o                  884
+    ldexp.o                      314
+    pow64.o                    1 812    1 056
+    strto64.o                  1 028       72
+    --------------------------------------------------
+    Total:                     6 882    1 128
+
+rt7M_tl.a: [4]
+    ABImemclr4.o                   6
+    ABImemset48.o                 50
+    cexit.o                       10
+    cmain.o                       30
+    cstartup_M.o                  12
+    data_init.o                   40
+    lz77_init_single.o           122
+    memchr.o                      88
+    strcmp.o                      18
+    zero_init3.o                  58
+    --------------------------------------------------
+    Total:                       434
+
+salvo.a: [5]
+    salvobinsem.o                208
+    salvoevent.o                 300
+    salvoinit.o                   72
+    salvoinit2.o                 122
+    salvomem.o                                     569
+    salvoportiararm.o            108
+    salvoqdel.o                  160
+    salvoqins.o                  172
+    salvosched.o                 536
+    salvotimer.o                  44
+    --------------------------------------------------
+    Total:                     1 722               569
+
+shb_l.a: [6]
+    exit.o                        20
+    --------------------------------------------------
+    Total:                        20
+
+    Gaps                          33       12
+    Linker created                         32    1 024
+------------------------------------------------------
+    Grand Total:              39 327   15 352    2 908
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                       Address   Size  Type      Object
+-----                       -------   ----  ----      ------
+.iar.init_table$$Base    0x800'c808          --   Gb  - Linker created -
+.iar.init_table$$Limit   0x800'c828          --   Gb  - Linker created -
+?main                    0x800'c9c9         Code  Gb  cmain.o [4]
+AHBPrescTable           0x2000'0030   0x10  Data  Gb  system_stm32f2xx.o [1]
+APBAHBPrescTable        0x2000'001c   0x10  Data  Lc  stm32f2xx_rcc.o [1]
+BSP_init                 0x800'68a9   0x10  Code  Gb  bsp.o [1]
+BusFault_Handler         0x800'baed    0x2  Code  Gb  stm32f2xx_it.o [1]
+CSTACK$$Base            0x2000'0760          --   Gb  - Linker created -
+CSTACK$$Limit           0x2000'0b60          --   Gb  - Linker created -
+CircBufEmpty             0x800'8571   0x12  Code  Gb  circbuf.o [1]
+CircBufGet               0x800'853b   0x36  Code  Gb  circbuf.o [1]
+CircBufInit              0x800'84e9   0x22  Code  Gb  circbuf.o [1]
+CircBufPut               0x800'850b   0x30  Code  Gb  circbuf.o [1]
+CmdBlinkLED              0x800'1fef   0x6e  Code  Gb  commands.o [1]
+CmdBlinkLED::blinks     0x2000'0710    0x4  Data  Lc  commands.o [1]
+CmdGpioPin               0x800'0351   0xae  Code  Gb  commands.o [1]
+CmdInitSPIPeripheral     0x800'205d    0xa  Code  Gb  commands.o [1]
+CmdLineGetArgFloat       0x800'5b2b   0x2c  Code  Gb  commandLine.o [1]
+CmdLineGetArgString      0x800'5ae1   0x22  Code  Gb  commandLine.o [1]
+CmdLineGetArgUInt        0x800'5b03   0x28  Code  Gb  commandLine.o [1]
+CmdLineLookup            0x800'59a3  0x13e  Code  Gb  commandLine.o [1]
+CmdLineLookup::index    0x2000'0708    0x4  Data  Lc  commandLine.o [1]
+CmdPrintPrompt           0x800'5981   0x1a  Code  Lc  commandLine.o [1]
+CmdPrintPrompt::lineno  0x2000'0748    0x2  Data  Lc  commandLine.o [1]
+CmdSpeed                 0x800'45bd   0xec  Code  Gb  commands.o [1]
+CmdUserSpiTestSequence01
+                         0x800'1ef9   0xf6  Code  Gb  commands.o [1]
+CmdUserSpi_ATP_Process   0x800'0409  0x270  Code  Gb  commands.o [1]
+CmdUserSpi_BurstForLowGainAHRS
+                         0x800'2405  0x120  Code  Gb  commands.o [1]
+CmdUserSpi_BurstForLowGainAHRS::swStatusBit
+                        0x2000'074c    0x2  Data  Lc  commands.o [1]
+CmdUserSpi_BurstRead     0x800'0e4d   0x68  Code  Gb  commands.o [1]
+CmdUserSpi_BurstRead_A1
+                         0x800'256d  0x462  Code  Gb  commands.o [1]
+CmdUserSpi_BurstRead_F1
+                         0x800'0ec9   0x64  Code  Gb  commands.o [1]
+CmdUserSpi_BurstRead_F2
+                         0x800'21f1  0x1fc  Code  Gb  commands.o [1]
+CmdUserSpi_BurstRead_S0
+                         0x800'0f49   0x70  Code  Gb  commands.o [1]
+CmdUserSpi_BurstRead_S1
+                         0x800'0fd5   0x70  Code  Gb  commands.o [1]
+CmdUserSpi_DisplayConverted
+                         0x800'44d9   0x18  Code  Gb  commands.o [1]
+CmdUserSpi_DisplayHex    0x800'44f1   0x30  Code  Gb  commands.o [1]
+CmdUserSpi_DontWaitForDRDY
+                         0x800'4739   0x26  Code  Gb  commands.o [1]
+CmdUserSpi_GetAccels     0x800'1385  0x144  Code  Gb  commands.o [1]
+CmdUserSpi_GetBoardTemp
+                         0x800'1225  0x11e  Code  Gb  commands.o [1]
+CmdUserSpi_GetRates      0x800'14ed  0x1ba  Code  Gb  commands.o [1]
+CmdUserSpi_GetSensorValues
+                         0x800'16dd  0x1b2  Code  Gb  commands.o [1]
+CmdUserSpi_HoldChipSelect
+                         0x800'4521   0x2e  Code  Gb  commands.o [1]
+CmdUserSpi_IndraTesting
+                         0x800'2d95  0x950  Code  Gb  commands.o [1]
+CmdUserSpi_MagAlign      0x800'2a9d  0x28a  Code  Gb  commands.o [1]
+CmdUserSpi_ReadRegister
+                         0x800'18e9  0x21c  Code  Gb  commands.o [1]
+CmdUserSpi_ReadRegisterHex
+                         0x800'1b29  0x17c  Code  Gb  commands.o [1]
+CmdUserSpi_ReadRegisterHex2
+                         0x800'2085  0x156  Code  Gb  commands.o [1]
+CmdUserSpi_SelfTest      0x800'0c79  0x1cc  Code  Gb  commands.o [1]
+CmdUserSpi_SpeedTest     0x800'189d   0x20  Code  Gb  commands.o [1]
+CmdUserSpi_ToggleChipSelect
+                         0x800'4559   0x2e  Code  Gb  commands.o [1]
+CmdUserSpi_WaitForDRDY   0x800'4707   0x26  Code  Gb  commands.o [1]
+CmdUserSpi_WhoAmI        0x800'1d1d  0x1ce  Code  Gb  commands.o [1]
+CmdUserSpi_WriteRegister
+                         0x800'1cad   0x60  Code  Gb  commands.o [1]
+CmdUserSpi_burstReadSwitch
+                         0x800'29fd   0x6a  Code  Gb  commands.o [1]
+CmdUserSpi_jdInitProcess
+                         0x800'0679  0x5de  Code  Gb  commands.o [1]
+CmdUserUsart             0x800'0313   0x3e  Code  Gb  commands.o [1]
+CmdUser_OnePPSAdjust     0x800'475f   0x4e  Code  Gb  commands.o [1]
+CmdUser_OnePPSTest       0x800'47b5   0xc8  Code  Gb  commands.o [1]
+CmdUser_Ping             0x800'49a1   0x12  Code  Gb  commands.o [1]
+CmdUser_PowerOff         0x800'4893   0x16  Code  Gb  commands.o [1]
+CmdUser_PowerOn          0x800'487d   0x16  Code  Gb  commands.o [1]
+CmdUser_SPIMode          0x800'4955   0x4c  Code  Gb  commands.o [1]
+CmdUser_UARTMode         0x800'48f1   0x64  Code  Gb  commands.o [1]
+CmdUser_Ulock_FDS        0x800'49b3   0x2a  Code  Gb  commands.o [1]
+CmdUser_clearFDE         0x800'4a35   0x1a  Code  Gb  commands.o [1]
+CmdUser_readACDP         0x800'4b97   0x3e  Code  Gb  commands.o [1]
+CmdUser_readACDT         0x800'4d9d   0x3a  Code  Gb  commands.o [1]
+CmdUser_readAIDT         0x800'4d35   0x3a  Code  Gb  commands.o [1]
+CmdUser_readANDT         0x800'4c6f   0x3c  Code  Gb  commands.o [1]
+CmdUser_readANOISPER     0x800'4a4f   0x3e  Code  Gb  commands.o [1]
+CmdUser_readDSR          0x800'4e65   0x3a  Code  Gb  commands.o [1]
+CmdUser_readFDE          0x800'49dd   0x3e  Code  Gb  commands.o [1]
+CmdUser_readINOISPER     0x800'4b2f   0x3e  Code  Gb  commands.o [1]
+CmdUser_readRCDP         0x800'4c09   0x3c  Code  Gb  commands.o [1]
+CmdUser_readRCDT         0x800'4dff   0x3a  Code  Gb  commands.o [1]
+CmdUser_readRNDT         0x800'4cd3   0x3a  Code  Gb  commands.o [1]
+CmdUser_readRNOISPER     0x800'4ac1   0x3e  Code  Gb  commands.o [1]
+CmdUser_saveconfigure    0x800'4e9f   0xc0  Code  Gb  commands.o [1]
+CmdUser_writeACDP        0x800'4bd5   0x2a  Code  Gb  commands.o [1]
+CmdUser_writeACDT        0x800'4dd7   0x28  Code  Gb  commands.o [1]
+CmdUser_writeAIDT        0x800'4d75   0x28  Code  Gb  commands.o [1]
+CmdUser_writeANDT        0x800'4cab   0x28  Code  Gb  commands.o [1]
+CmdUser_writeANOISPER    0x800'4a91   0x2a  Code  Gb  commands.o [1]
+CmdUser_writeFDE         0x800'4a1b   0x1a  Code  Gb  commands.o [1]
+CmdUser_writeINOISPER    0x800'4b6d   0x2a  Code  Gb  commands.o [1]
+CmdUser_writeRCDP        0x800'4c45   0x2a  Code  Gb  commands.o [1]
+CmdUser_writeRCDT        0x800'4e3d   0x28  Code  Gb  commands.o [1]
+CmdUser_writeRNDT        0x800'4d0d   0x28  Code  Gb  commands.o [1]
+CmdUser_writeRNOISPER    0x800'4b05   0x2a  Code  Gb  commands.o [1]
+CmdVersion               0x800'0185   0x34  Code  Gb  commands.o [1]
+DRDY_interval            0x800'01b9   0x4c  Code  Gb  commands.o [1]
+DataReadyContinueFlag   0x2000'0759    0x1  Data  Lc  commands.o [1]
+DataRedayCount          0x2000'074a    0x2  Data  Gb  commands.o [1]
+DebugFlag               0x2000'00ca    0x1  Data  Lc  commands.o [1]
+DebugMon_Handler         0x800'baf1    0x2  Code  Gb  stm32f2xx_it.o [1]
+DebugPrintEndline        0x800'5199    0xa  Code  Gb  debug.o [1]
+DebugPrintFloat          0x800'5101   0x98  Code  Gb  debug.o [1]
+DebugPrintHex            0x800'50e3   0x1e  Code  Gb  debug.o [1]
+DebugPrintInt            0x800'50c5   0x1e  Code  Gb  debug.o [1]
+DebugPrintString         0x800'50a5   0x20  Code  Gb  debug.o [1]
+DebugSerialPutChar       0x800'72a3   0x28  Code  Gb  debug_usart.o [1]
+DebugSerialReadLine      0x800'7249   0x5a  Code  Gb  debug_usart.o [1]
+DelayMs                  0x800'6027    0xe  Code  Gb  timer.o [1]
+DelayTime               0x2000'0004    0x4  Data  Lc  commands.o [1]
+Drdy_Output              0x800'48ad   0x3a  Code  Gb  commands.o [1]
+Dtentox                  0x800'77e5  0x178  Code  Lc  strto64.o [3]
+EXTI15_10_IRQHandler     0x800'02a7   0x1a  Code  Gb  commands.o [1]
+EXTI3_IRQHandler         0x800'028d   0x1a  Code  Gb  commands.o [1]
+EXTI9_5_IRQHandler       0x800'02c1   0x52  Code  Gb  commands.o [1]
+EXTI_ClearITPendingBit   0x800'5843    0x6  Code  Gb  stm32f2xx_exti.o [1]
+EXTI_GetITStatus         0x800'581d   0x26  Code  Gb  stm32f2xx_exti.o [1]
+EXTI_Init                0x800'5791   0x7a  Code  Gb  stm32f2xx_exti.o [1]
+EXTI_StructInit          0x800'580b   0x12  Code  Gb  stm32f2xx_exti.o [1]
+Edgefall_count          0x2000'075a    0x1  Data  Lc  commands.o [1]
+Edgefall_interval       0x2000'070c    0x4  Data  Lc  commands.o [1]
+ElapsedTime_sec         0x2000'071c    0x4  Data  Gb  SyncTimer.o [1]
+ElapsedTime_usec        0x2000'0720    0x4  Data  Gb  SyncTimer.o [1]
+FLASH_DataCacheCmd       0x800'7dd9   0x24  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_InstructionCacheCmd
+                         0x800'7db5   0x24  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_PrefetchBufferCmd
+                         0x800'7d91   0x24  Code  Gb  stm32f2xx_flash.o [1]
+FLASH_SetLatency         0x800'7d89    0x8  Code  Gb  stm32f2xx_flash.o [1]
+GPIO_Init                0x800'55dd   0xca  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_PIN                 0x800'd38c    0x8  Data  Gb  iar_stm32f207zg_sk.o [1]
+GPIO_PORT               0x2000'000c   0x10  Data  Gb  iar_stm32f207zg_sk.o [1]
+GPIO_PinAFConfig         0x800'56d7   0x62  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_ResetBits           0x800'56c3    0x4  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_SetBits             0x800'56bf    0x4  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_StructInit          0x800'56a7   0x18  Code  Gb  stm32f2xx_gpio.o [1]
+GPIO_WriteBit            0x800'56c7   0x10  Code  Gb  stm32f2xx_gpio.o [1]
+HardFault               0x2000'06bc   0x20  Data  Gb  stm32f2xx_it.o [1]
+HardFault_Handler        0x800'bac9   0x22  Code  Gb  stm32f2xx_it.o [1]
+InitCommandLine          0x800'599b    0x8  Code  Gb  commandLine.o [1]
+InitCommunication_UserSPI
+                         0x800'6947   0x6c  Code  Gb  UserCommunication_SPI.o [1]
+InitDebugSerialCommunication
+                         0x800'72cb   0xe8  Code  Gb  debug_usart.o [1]
+InitGPIOPin_DataReady    0x800'7181   0x36  Code  Gb  ConfigureGPIOPins.o [1]
+InitGPIOPin_SharedCommunication
+                         0x800'71ed   0x4c  Code  Gb  ConfigureGPIOPins.o [1]
+InitGPIOPin_Sync         0x800'71b7   0x36  Code  Gb  ConfigureGPIOPins.o [1]
+InitSystemTimer          0x800'6035   0x14  Code  Gb  timer.o [1]
+InitTimer_TIM5           0x800'a425   0x6c  Code  Gb  SyncTimer.o [1]
+MemManage_Handler        0x800'baeb    0x2  Code  Gb  stm32f2xx_it.o [1]
+NMI_Handler              0x800'ba9d    0x2  Code  Gb  stm32f2xx_it.o [1]
+NVIC_Init                0x800'5861   0x68  Code  Gb  misc.o [1]
+ODR_Hz                  0x2000'0008    0x4  Data  Lc  commands.o [1]
+OSClrWDTHook             0x800'9ca1    0x2  Code  Gb  salvohook_wdt.o [1]
+OSCreateBinSem           0x800'8725   0x20  Code  Gb  salvobinsem.o [5]
+OSCreateTask             0x800'a975   0x54  Code  Gb  salvoinit2.o [5]
+OSCtxSw                  0x800'9cd1         Code  Gb  salvoportiararm.o [5]
+OSDelDelayQ              0x800'9027   0x50  Code  Gb  salvoqdel.o [5]
+OSDelPrioQ               0x800'8fdd   0x4a  Code  Gb  salvoqdel.o [5]
+OSDisableHook            0x800'58d9    0xc  Code  Gb  salvohook_interrupt.o [1]
+OSDispatch               0x800'9ca5         Code  Gb  salvoportiararm.o [5]
+OSEnableHook             0x800'58e5   0x12  Code  Gb  salvohook_interrupt.o [1]
+OSIdlingHook             0x800'9d11    0x2  Code  Gb  salvohook_idle.o [1]
+OSInit                   0x800'a92d   0x48  Code  Gb  salvoinit.o [5]
+OSInitPrioTask           0x800'a9d1   0x1e  Code  Gb  salvoinit2.o [5]
+OSInsDelayQ              0x800'90c1   0x62  Code  Gb  salvoqins.o [5]
+OSInsPrioQ               0x800'907d   0x44  Code  Gb  salvoqins.o [5]
+OSReturn                 0x800'9d03         Code  Gb  salvoportiararm.o [5]
+OSSched                  0x800'9a89  0x218  Code  Gb  salvosched.o [5]
+OSSignalBinSem           0x800'877d   0x6e  Code  Gb  salvobinsem.o [5]
+OSTimer                  0x800'7be1   0x2c  Code  Gb  salvotimer.o [5]
+OSWaitBinSem             0x800'8745   0x38  Code  Gb  salvobinsem.o [5]
+OSWaitEvent              0x800'8e51  0x12c  Code  Gb  salvoevent.o [5]
+OScTcbP                 0x2000'072c    0x4  Data  Gb  salvomem.o [5]
+OSdelayQP               0x2000'073c    0x4  Data  Gb  salvomem.o [5]
+OSecbArea               0x2000'02d0  0x12c  Data  Gb  salvomem.o [5]
+OSeligQP                0x2000'0730    0x4  Data  Gb  salvomem.o [5]
+OSframeP                0x2000'0744    0x4  Data  Gb  salvomem.o [5]
+OSlostTicks             0x2000'075e    0x1  Data  Gb  salvomem.o [5]
+OSsigQinP               0x2000'0734    0x4  Data  Gb  salvomem.o [5]
+OSsigQoutP              0x2000'0738    0x4  Data  Gb  salvomem.o [5]
+OStcbArea               0x2000'04fc   0xf0  Data  Gb  salvomem.o [5]
+OStimerTicks            0x2000'0740    0x4  Data  Gb  salvomem.o [5]
+OnePPSCount             0x2000'0750    0x2  Data  Gb  SyncTimer.o [1]
+OnePPSCountFlag         0x2000'0752    0x2  Data  Gb  SyncTimer.o [1]
+OnePPSTest              0x2000'075b    0x1  Data  Gb  commands.o [1]
+PowerInit                0x800'6867   0x36  Code  Gb  bsp.o [1]
+PowerOff                 0x800'684f    0xc  Code  Gb  bsp.o [1]
+PowerOn                  0x800'685b    0xc  Code  Gb  bsp.o [1]
+RCC_AHB1PeriphClockCmd   0x800'54c1   0x1c  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_APB1PeriphClockCmd   0x800'54dd   0x1c  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_APB1PeriphResetCmd   0x800'5515   0x1c  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_APB2PeriphClockCmd   0x800'54f9   0x1c  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_APB2PeriphResetCmd   0x800'5531   0x1c  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_DeInit               0x800'52b9   0x3a  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_GetClocksFreq        0x800'53bf  0x102  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_GetFlagStatus        0x800'554d   0x46  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_GetSYSCLKSource      0x800'537b    0xc  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_HCLKConfig           0x800'5387   0x12  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_HSEConfig            0x800'52f3    0xc  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_PCLK1Config          0x800'5399   0x12  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_PCLK2Config          0x800'53ab   0x14  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_PLLCmd               0x800'535d    0xc  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_PLLConfig            0x800'533b   0x22  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_SYSCLKConfig         0x800'5369   0x12  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_WaitForHSEStartUp    0x800'52ff   0x3c  Code  Gb  stm32f2xx_rcc.o [1]
+RCC_config               0x800'68b9   0x7e  Code  Gb  bsp.o [1]
+ReadFromRegisters        0x800'5d91   0xc6  Code  Gb  spi.o [1]
+ReadFromRegisters_noChipSelect
+                         0x800'5e57   0xac  Code  Gb  spi.o [1]
+Read_from_register       0x800'58fd   0x38  Code  Gb  commandLine.o [1]
+Region$$Table$$Base      0x800'c808          --   Gb  - Linker created -
+Region$$Table$$Limit     0x800'c828          --   Gb  - Linker created -
+RxWord                  0x2000'03fc  0x100  Data  Lc  commands.o [1]
+SPI3_IRQHandler          0x800'5cd7    0xc  Code  Gb  spi.o [1]
+SPI_Cmd                  0x800'7baf   0x1e  Code  Gb  stm32f2xx_spi.o [1]
+SPI_I2S_DeInit           0x800'7ae5   0x58  Code  Gb  stm32f2xx_spi.o [1]
+SPI_I2S_GetFlagStatus    0x800'7bcd   0x14  Code  Gb  stm32f2xx_spi.o [1]
+SPI_Init                 0x800'7b3d   0x3e  Code  Gb  stm32f2xx_spi.o [1]
+SPI_Mode                0x2000'00cb    0x1  Data  Gb  commands.o [1]
+SPI_StructInit           0x800'7b89   0x26  Code  Gb  stm32f2xx_spi.o [1]
+STM_EVAL_LEDOff          0x800'7d3d   0x18  Code  Gb  iar_stm32f207zg_sk.o [1]
+STM_EVAL_LEDOn           0x800'7d25   0x18  Code  Gb  iar_stm32f207zg_sk.o [1]
+STM_EVAL_LEDToggle       0x800'7d55   0x28  Code  Gb  iar_stm32f207zg_sk.o [1]
+SYSCFG_EXTILineConfig    0x800'5739   0x52  Code  Gb  stm32f2xx_syscfg.o [1]
+SetSysClock              0x800'7edf   0x96  Code  Lc  system_stm32f2xx.o [1]
+SysTick_Config           0x800'5fd5   0x30  Code  Lc  timer.o [1]
+SysTick_Handler          0x800'6005   0x22  Code  Gb  timer.o [1]
+SystemCoreClock         0x2000'002c    0x4  Data  Gb  system_stm32f2xx.o [1]
+SystemCoreClockUpdate    0x800'7e3d   0xa2  Code  Gb  system_stm32f2xx.o [1]
+SystemInit               0x800'7e01   0x3c  Code  Gb  system_stm32f2xx.o [1]
+TIM5_IRQHandler          0x800'a491   0x88  Code  Gb  SyncTimer.o [1]
+TIM5_IRQHandler::TimerCounter
+                        0x2000'0754    0x2  Data  Lc  SyncTimer.o [1]
+TIM5_IRQHandler::pinState
+                        0x2000'075d    0x1  Data  Lc  SyncTimer.o [1]
+TIM_Cmd                  0x800'a5db   0x1e  Code  Gb  stm32f2xx_tim.o [1]
+TIM_ITConfig             0x800'a615   0x18  Code  Gb  stm32f2xx_tim.o [1]
+TIM_TimeBaseInit         0x800'a559   0x6a  Code  Gb  stm32f2xx_tim.o [1]
+TIM_TimeBaseStructInit   0x800'a5c3   0x18  Code  Gb  stm32f2xx_tim.o [1]
+TaskCommandLine          0x800'a8dd   0x26  Code  Gb  main.o [1]
+ToggleCSFlag            0x2000'00cc    0x1  Data  Lc  commands.o [1]
+ToggleSyncPin           0x2000'075c    0x1  Data  Gb  SyncTimer.o [1]
+Toggle_CS_Flag          0x2000'00c6    0x1  Data  Lc  commandLine.o [1]
+TotalTests              0x2000'0000    0x4  Data  Lc  commands.o [1]
+TotalWords              0x2000'0757    0x1  Data  Lc  commands.o [1]
+USART2_IRQHandler        0x800'73b3   0x68  Code  Gb  debug_usart.o [1]
+USART_Cmd                0x800'8669   0x1e  Code  Gb  stm32f2xx_usart.o [1]
+USART_GetFlagStatus      0x800'8707   0x1c  Code  Gb  stm32f2xx_usart.o [1]
+USART_ITConfig           0x800'8697   0x70  Code  Gb  stm32f2xx_usart.o [1]
+USART_Init               0x800'8585   0xd6  Code  Gb  stm32f2xx_usart.o [1]
+USART_ReceiveData        0x800'868f    0x8  Code  Gb  stm32f2xx_usart.o [1]
+USART_SendData           0x800'8687    0x8  Code  Gb  stm32f2xx_usart.o [1]
+UsageFault_Handler       0x800'baef    0x2  Code  Gb  stm32f2xx_it.o [1]
+WaitForDRDY             0x2000'00c9    0x1  Data  Lc  commands.o [1]
+WriteToRegister          0x800'5f03   0x84  Code  Gb  spi.o [1]
+Write_to_register        0x800'5935   0x4c  Code  Gb  commandLine.o [1]
+_BurstRead               0x800'1081  0x168  Code  Gb  commands.o [1]
+_DisplayMesage_A1        0x800'414d  0x12a  Code  Gb  commands.o [1]
+_DisplayMesage_A2        0x800'4289  0x122  Code  Gb  commands.o [1]
+_DisplayMesage_F1        0x800'3d01  0x100  Code  Gb  commands.o [1]
+_DisplayMesage_N1        0x800'43bd  0x11c  Code  Gb  commands.o [1]
+_DisplayMesage_S0        0x800'3e29   0xea  Code  Gb  commands.o [1]
+_DisplayMesage_S1        0x800'3f21  0x21a  Code  Gb  commands.o [1]
+_DisplayMesage_S1::swStatusBit
+                        0x2000'074e    0x2  Data  Lc  commands.o [1]
+_DisplayMesage_Stnd      0x800'3bc5  0x126  Code  Gb  commands.o [1]
+_InitDataReady           0x800'0205   0x88  Code  Gb  commands.o [1]
+_LocaleC_isalpha         0x800'8f83    0xc  Code  Gb  xlocale_c.o [2]
+_LocaleC_islower         0x800'8f7d    0x4  Code  Gb  xlocale_c.o [2]
+_LocaleC_isspace         0x800'8f99   0x14  Code  Gb  xlocale_c.o [2]
+_LocaleC_isupper         0x800'8f81    0x2  Code  Gb  xlocale_c.o [2]
+_LocaleC_tolower         0x800'8fad    0xc  Code  Gb  xlocale_c.o [2]
+_Locale_lconv           0x2000'0044   0x38  Data  Lc  xlocale_c.o [2]
+_PrintHeader             0x800'3b35   0x72  Code  Gb  commands.o [1]
+_SPI3_Init               0x800'5b7d  0x136  Code  Gb  spi.o [1]
+_SendIndraConfigCmds     0x800'3849   0xc8  Code  Gb  commands.o [1]
+_SendJDConfigCmds        0x800'3771   0xc8  Code  Gb  commands.o [1]
+_SetOutputDataRate       0x800'3a61   0xcc  Code  Gb  commands.o [1]
+_SetSPIClockSpeed        0x800'46b1   0x56  Code  Gb  commands.o [1]
+_ToggleInputPin          0x800'392d  0x104  Code  Gb  commands.o [1]
+_UserCommSpiDMADoneCallback
+                         0x800'6939    0xe  Code  Lc  UserCommunication_SPI.o [1]
+_WhoAmI                  0x800'36f5   0x60  Code  Gb  commands.o [1]
+__NVIC_SetPriority       0x800'5fa9   0x2c  Code  Lc  timer.o [1]
+__aeabi_cdcmpeq          0x800'7fa9         Code  Gb  DblCmpEq.o [3]
+__aeabi_cdcmple          0x800'6a19         Code  Gb  DblCmpLe.o [3]
+__aeabi_cdrcmple         0x800'69e9         Code  Gb  DblCmpGe.o [3]
+__aeabi_cfcmple          0x800'715d         Code  Gb  FltCmpLe.o [3]
+__aeabi_cfrcmple         0x800'6325         Code  Gb  FltCmpGe.o [3]
+__aeabi_d2f              0x800'62bd         Code  Gb  DblToFlt.o [3]
+__aeabi_d2iz             0x800'67d5         Code  Gb  DblToS32.o [3]
+__aeabi_dadd             0x800'637d         Code  Gb  DblAdd.o [3]
+__aeabi_ddiv             0x800'658d         Code  Gb  DblDiv.o [3]
+__aeabi_dmul             0x800'6119         Code  Gb  DblMul.o [3]
+__aeabi_dsub             0x800'7c41         Code  Gb  DblSub.o [3]
+__aeabi_f2d              0x800'60d1         Code  Gb  FltToDbl.o [3]
+__aeabi_f2iz             0x800'6349         Code  Gb  FltToS32.o [3]
+__aeabi_fmul             0x800'74bd         Code  Gb  FltMul.o [3]
+__aeabi_fsub             0x800'743d         Code  Gb  FltSub.o [3]
+__aeabi_i2d              0x800'69c5         Code  Gb  S32ToDbl.o [3]
+__aeabi_i2f              0x800'60ad         Code  Gb  S32ToFlt.o [3]
+__aeabi_memclr4          0x800'606d         Code  Gb  ABImemclr4.o [4]
+__aeabi_ui2f             0x800'6571         Code  Gb  U32ToFlt.o [3]
+__cmain                  0x800'c9c9         Code  Gb  cmain.o [4]
+__exit                   0x800'c9fd   0x14  Code  Gb  exit.o [6]
+__iar_Exp64              0x800'8175  0x320  Code  Gb  iar_Exp64.o [3]
+__iar_Memchr             0x800'88f5         Code  Gb  memchr.o [4]
+__iar_Memset4_word       0x800'7c0d         Code  Gb  ABImemset48.o [4]
+__iar_Memset8_word       0x800'7c0d         Code  Gb  ABImemset48.o [4]
+__iar_Pow64              0x800'6a49  0x682  Code  Lc  pow64.o [3]
+__iar_Sto64              0x800'795d  0x152  Code  Gb  strto64.o [3]
+__iar_Stoflt             0x800'8a71  0x1c4  Code  Gb  iar_Stoflt.o [2]
+__iar_Stopfx             0x800'894d  0x122  Code  Gb  iar_Stopfx.o [2]
+__iar_Stoulx             0x800'7595  0x13a  Code  Gb  iar_Stoulx.o [2]
+__iar_Stoxflt            0x800'8c35  0x1e6  Code  Gb  iar_Stoxflt.o [2]
+__iar_Stoxflt::digits    0x800'8e20   0x18  Data  Lc  iar_Stoxflt.o [2]
+__iar_Stoxflt::vals      0x800'8e38   0x18  Data  Lc  iar_Stoxflt.o [2]
+__iar_dadd               0x800'7c51         Code  Gb  DblSub.o [3]
+__iar_data_init3         0x800'c415   0x28  Code  Gb  data_init.o [4]
+__iar_dsub               0x800'638d         Code  Gb  DblAdd.o [3]
+__iar_dsubStart          0x800'639f         Code  Gb  DblAdd.o [3]
+__iar_fadd               0x800'7449         Code  Gb  FltSub.o [3]
+__iar_frexp              0x800'7fd5         Code  Gb  frexp.o [3]
+__iar_frexp64            0x800'7fc9         Code  Gb  frexp.o [3]
+__iar_frexpl             0x800'7fd5         Code  Gb  frexp.o [3]
+__iar_fsub               0x800'87f5         Code  Gb  FltAdd.o [3]
+__iar_fsubStart          0x800'8805         Code  Gb  FltAdd.o [3]
+__iar_globLocale        0x2000'007c   0x48  Data  Lc  xlocale_c.o [2]
+__iar_global_Locale      0x800'8fb9    0x4  Code  Gb  xlocale_c.o [2]
+__iar_ldexp64            0x800'8039         Code  Gb  ldexp.o [3]
+__iar_lz77_init_single3
+                         0x800'523f   0x7a  Code  Gb  lz77_init_single.o [4]
+__iar_pow64              0x800'7151    0xc  Code  Gb  pow64.o [3]
+__iar_pow_medium         0x800'7151    0xc  Code  Gb  pow64.o [3]
+__iar_pow_medium64       0x800'7151    0xc  Code  Gb  pow64.o [3]
+__iar_pow_mediuml        0x800'7151    0xc  Code  Gb  pow64.o [3]
+__iar_program_start      0x800'd1d9         Code  Gb  cstartup_M.o [4]
+__iar_scalbln64          0x800'8039         Code  Gb  ldexp.o [3]
+__iar_scalbn64           0x800'8039         Code  Gb  ldexp.o [3]
+__iar_zero_init3         0x800'6073   0x3a  Code  Gb  zero_init3.o [4]
+__low_level_init         0x800'c9e7    0x4  Code  Gb  low_level_init.o [2]
+__vector_table           0x800'0000         Data  Gb  startup_stm32f2xx.o [1]
+_call_main               0x800'c9d5         Code  Gb  cmain.o [4]
+_exit                    0x800'c9f1         Code  Gb  cexit.o [4]
+_main                    0x800'c9e3         Code  Gb  cmain.o [4]
+_spi_set_baud            0x800'5ce3   0x5a  Code  Gb  spi.o [1]
+abs                      0x800'6373    0x8  Code  Gb  abs.o [2]
+atof                     0x800'7add    0x8  Code  Gb  strto64.o [3]
+atoi                     0x800'76d5    0x2  Code  Gb  iar_Stoulx.o [2]
+ddiv                     0x800'7757   0x76  Code  Lc  strto64.o [3]
+digits                   0x800'bb6c   0x28  Data  Lc  iar_Stoulx.o [2]
+displayHex              0x2000'0758    0x1  Data  Lc  commands.o [1]
+dmul                     0x800'76e1   0x76  Code  Lc  strto64.o [3]
+dt_usec                 0x2000'0724    0x4  Data  Gb  SyncTimer.o [1]
+endingAddress           0x2000'0756    0x1  Data  Lc  commands.o [1]
+exit                     0x800'c9eb    0x4  Code  Gb  exit.o [2]
+freqRatio               0x2000'00c4    0x2  Data  Gb  SyncTimer.o [1]
+frexp                    0x800'7fc9         Code  Gb  frexp.o [3]
+frexpl                   0x800'7fc9         Code  Gb  frexp.o [3]
+gCircRxBufMemory        0x2000'05ec   0x80  Data  Lc  debug_usart.o [1]
+gCircTxBufMemory        0x2000'00d0  0x200  Data  Lc  debug_usart.o [1]
+gCmdLine                0x2000'066c   0x50  Data  Lc  commandLine.o [1]
+gCmdLineIndex           0x2000'0704    0x4  Data  Lc  commandLine.o [1]
+gCommands                0x800'9128  0x4c0  Data  Gb  commandTable.o [1]
+gDebugUsartRxCircBuf    0x2000'06dc   0x10  Data  Lc  debug_usart.o [1]
+gDebugUsartTxCircBuf    0x2000'06ec   0x10  Data  Lc  debug_usart.o [1]
+gIsrDisableCount        0x2000'0714    0x4  Data  Lc  salvohook_interrupt.o [1]
+gOsSysTicks             0x2000'0040    0x4  Data  Lc  timer.o [1]
+gSPI3CallbackOnDMAComplete
+                        0x2000'0718    0x4  Data  Gb  spi.o [1]
+gSysTicks               0x2000'0728    0x4  Data  Lc  timer.o [1]
+isalpha                  0x800'8fc9   0x14  Code  Gb  isalpha.o [2]
+isspace                  0x800'88cb   0x14  Code  Gb  isspace.o [2]
+itoa                     0x800'51b9   0x86  Code  Lc  debug.o [1]
+ldexp                    0x800'8039         Code  Gb  ldexp.o [3]
+ldexpl                   0x800'8039         Code  Gb  ldexp.o [3]
+led_off                  0x800'6833    0xe  Code  Gb  bsp.o [1]
+led_on                   0x800'6825    0xe  Code  Gb  bsp.o [1]
+led_toggle               0x800'6841    0xe  Code  Gb  bsp.o [1]
+lnbias                   0x800'9668  0x420  Data  Lc  pow64.o [3]
+localeconv               0x800'8fbd    0x4  Code  Gb  xlocale_c.o [2]
+main                     0x800'a84d   0x8e  Code  Gb  main.o [1]
+memchr                   0x800'88f5         Code  Gb  memchr.o [4]
+msgType                 0x2000'06fc    0x8  Data  Lc  commands.o [1]
+nabs                     0x800'3b2d    0x8  Code  Gb  commands.o [1]
+ndigs                    0x800'bb44   0x28  Data  Lc  iar_Stoulx.o [2]
+numberOfBytes           0x2000'00c8    0x1  Data  Lc  commands.o [1]
+pow                      0x800'7151    0xc  Code  Gb  pow64.o [3]
+powl                     0x800'7151    0xc  Code  Gb  pow64.o [3]
+pows                     0x800'bc20   0x48  Data  Lc  strto64.o [3]
+read_write_37            0x800'4f5f   0x3a  Code  Gb  commands.o [1]
+save_fault_cpu_state     0x800'ba9f   0x24  Code  Lc  stm32f2xx_it.o [1]
+scalbln                  0x800'8039         Code  Gb  ldexp.o [3]
+scalblnl                 0x800'8039         Code  Gb  ldexp.o [3]
+scalbn                   0x800'8039         Code  Gb  ldexp.o [3]
+scalbnl                  0x800'8039         Code  Gb  ldexp.o [3]
+spi_configure            0x800'5cb3   0x24  Code  Gb  spi.o [1]
+spi_go_even_faster       0x800'5d4b    0xe  Code  Gb  spi.o [1]
+spi_go_fast              0x800'5d3d    0xe  Code  Gb  spi.o [1]
+spi_go_faster            0x800'5d67    0xe  Code  Gb  spi.o [1]
+spi_go_really_slow       0x800'5d83    0xe  Code  Gb  spi.o [1]
+spi_go_slightly_faster   0x800'5d59    0xe  Code  Gb  spi.o [1]
+spi_go_slow              0x800'5d75    0xe  Code  Gb  spi.o [1]
+startingAddress         0x2000'00c7    0x1  Data  Lc  commands.o [1]
+strcmp                   0x800'6811         Code  Gb  strcmp.o [4]
+strcpy                   0x800'655b   0x14  Code  Gb  utilities.o [1]
+strtok_r                 0x800'64f7   0x64  Code  Gb  utilities.o [1]
+tolower                  0x800'88df   0x14  Code  Gb  tolower.o [2]
+
+
+[1] = E:\ST_SPI_FW\SPI_MasterV1.0.4\software\Trunk\iar\Debug\Obj
+[2] = dl7M_tlf.a
+[3] = m7M_tl.a
+[4] = rt7M_tl.a
+[5] = salvo.a
+[6] = shb_l.a
+
+  39 327 bytes of readonly  code memory
+  15 352 bytes of readonly  data memory
+   2 908 bytes of readwrite data memory
+
+Errors: none
+Warnings: 1
