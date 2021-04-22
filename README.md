@@ -2,7 +2,7 @@
 SPI-function-test
 Language:Python and C
 
-Consists of two parts:
+Consists of two parts(Now,IMU381.IMU383,IMU331BI,IMU330BA were supported):
 
 1.Host computer script.
 2.STM32 lower computer.
