@@ -30,6 +30,7 @@ User guides:
 
 
 Test file and verification file specification:
+
 1.The file name must end with 'Cfile.txt'.
 2.Only one command can be placed in a line.
 3.A command is divided into three sections separated by '#'.Example:default_check1#Test data is transmitted MSB first from the UUT, Read Product ID register (0x56)#560A
