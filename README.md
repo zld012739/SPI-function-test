@@ -36,3 +36,7 @@ Test file and verification file specification:
 3.A command is divided into three sections separated by '#'.Example:default_check1#Test data is transmitted MSB first from the UUT, Read Product ID register (0x56)#560A
 4.First section means Command type(used by script,map to the way of deal the result), second section is the description of command and the last one is command send to STM32.
 5.In verification file the one line place a expected result of one command.
+
+
+HW Platform:
+![image](https://github.com/zld012739/SPI-function-test/blob/master/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20210422161944.jpg)
